@@ -1,4 +1,5 @@
 "use client";
+import { AboutUs } from '@/components/aboutUs/AboutUs';
 import Image from "next/image";
 import styles from "./page.module.css";
 import Navbar from "@/components/navbar/Navbar";
@@ -21,6 +22,7 @@ export default function Home() {
     <>
       <Navbar />
       <Slider/>
+      <AboutUs />
       <Footer/>
     </>
   );

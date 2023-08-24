@@ -1,0 +1,13 @@
+.aboutsUs {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 5%; // 10% ???
+
+  .info {
+    width: 70%;
+    margin-bottom: 100px;
+  }
+}
