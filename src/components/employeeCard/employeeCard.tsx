@@ -10,11 +10,11 @@ export interface WorkerCardProps {
 }
 
 export const EmployeeCard: FC<WorkerCardProps> = ({img, name, description}) => {
-  return <div className={styles.employeeCard}>
-    <div className={styles.withoutDesc}>
+  return (
+    <div className={styles.card}>
       <Image src={img} alt="image" width={50} height={70}/>
-      <span className={styles.name}>{name}</span>
+      <h2>{name}</h2>
+      <span>{description}</span>
     </div>
-    <span className={styles.desc}>{description}</span>
-  </div>
+  )
 }
