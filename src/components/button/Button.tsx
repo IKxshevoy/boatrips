@@ -8,7 +8,7 @@ interface ButtonProps {
 
 const Button = ({url}: ButtonProps) => {
   return (
-    <Link href={url} className={styles.button}>Read More</Link>
+    <Link href={url} className={styles["button"]}>Read More</Link>
   )
 }
 

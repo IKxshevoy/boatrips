@@ -5,23 +5,21 @@ import Navbar from "@/components/navbar/Navbar";
 import Button from "@/components/button/Button";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import Footer from "@/components/footer/Footer";
 import Slider from "@/components/slider/Slider";
+import TourCards from "@/components/tourCards/TourCards";
+
+
 
 export default function Home() {
-  
-
   return (
     <>
       <Navbar />
-      <Slider/>
-      <Footer/>
+      <Slider />
+      <TourCards/>
+      <Footer />
     </>
   );
 }

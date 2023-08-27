@@ -1,0 +1,94 @@
+.container { padding-inline: 16px; }
+
+.section { padding-block-end: 80px; }
+
+.title {
+    color: hsl(209, 40%, 14%);;
+    font-weight: 600;
+    line-height: 1.45;
+    font-size: 3.6rem;
+}
+
+.section-title { 
+  margin-block: 10px;
+}
+
+.desti .section-title { margin-block-end: 40px; }
+
+.desti-list {
+    display: grid;
+    gap: 30px;
+}
+
+.btn {
+  height: 50px;
+  color: #fff;
+  padding-inline: 30px;
+  border-radius: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: max-content;
+  transition: 250ms ease;
+}
+
+.btn-primary { background-color: hsl(249, 95%, 63%); }
+
+.btn-primary:is(:hover, :focus-visible) {
+  background-color: hsl(249, 63%, 54%);
+  box-shadow: 0 5px 10px hsla(249, 95%, 63%, 25%);
+}
+
+.desti .btn {
+  margin-inline: auto;
+  margin-block-start: 40px;
+}
+
+
+@media (min-width: 575px) {
+
+  .container {
+      max-width: 540px;
+      width: 100%;
+      margin-inline: auto;
+  }
+  
+  .desti-list { grid-template-columns: 1fr 1fr; }
+  
+}
+
+@media (min-width: 768px) {
+  .container { max-width: 720px; }
+
+  .btn {
+    height: 60px;
+    padding-inline: 40px;
+  }
+
+  :is(.desti) :is(.section-title) {
+    text-align: center;
+  }
+
+  .desti .section-title { margin-block-end: 65px; }
+
+  .desti-list { gap: 50px 35px; }
+
+  .desti .btn { margin-block-start: 60px; }
+}
+
+@media (min-width: 992px) {
+  .container { max-width: 950px; }
+
+  .desti-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .container { max-width: 1150px; }
+}
+
+@media (min-width: 1400px) {
+  .container { max-width: 1350px; }
+
+  .desti-list { gap: 50px; }
+}
