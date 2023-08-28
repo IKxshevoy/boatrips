@@ -1,13 +1,28 @@
-import { EmployeesList } from '@/components/employeesList/employeesList';
+import Image from 'next/image';
 import styles from './aboutUs.module.scss'
 
 export const AboutUs = () => {
   return(
-    <div className={styles.aboutsUs}>
-      <h2>About us</h2>
-      <div className={styles.info}>Boatrips is a Portuguese company based in Lagos since 2000. We offer different types of experiences such as the traditional boat trip to the caves and rock formations of Ponta da Piedade, coastal tours with snorkeling, cave trips, and dolphin watching tours.
-        At Boatrips, we take great pride in the quality and variety of tours we offer. When visitors book a tour with us, they are not only booking a Lagos boat trip, they are booking an experience. Therefore, in order to have the best experience possible, attention to detail is of the utmost importance.</div>
-      <EmployeesList />
-    </div>
+    <section className={`${styles.about} ${styles.section}`} id="about">
+      <div className={`${styles.about__container} ${styles.container} ${styles.grid}`}>
+          <div className={styles.about__data}>
+              <h2 className={`${styles.section__title} ${styles.about__title}`}>More Information <br/> About The Best Beaches</h2>
+              <p className={styles.about__description}>You can find the most beautiful and pleasant places at the best
+                  prices with special discounts, you choose the place we will guide you all the way to wait, get your
+                  place now.
+              </p>
+              <a href="#" className={styles.button}>Reserve a place</a>
+          </div>
+          <div className={styles.about__img}>
+              <div className={styles.about__imgOverlay}>
+                  <Image src="/employee.jpg" alt="" className={styles.about__imgOne} width={70} height={100}/>
+              </div>
+
+              <div className={styles.about__imgOverlay}>
+                  <Image src="/employee.jpg" alt="" className={styles.about__imgTwo} width={70} height={100}/>
+              </div>
+          </div>
+      </div>
+    </section>
   )
 }
