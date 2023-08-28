@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./tourCards.module.scss";
+import styles from "./tourCardsList.module.scss";
 import TourCard, { ITourCard } from "../tourCard/TourCard";
 
 const cards: ITourCard[] = [
@@ -32,7 +32,7 @@ const cards: ITourCard[] = [
   },
 ];
 
-const TourCards = () => {
+const TourCardsList = () => {
   return (
     <section
       className={`${styles.section} ${styles.desti}`}
@@ -65,4 +65,4 @@ const TourCards = () => {
   );
 };
 
-export default TourCards;
+export default TourCardsList;

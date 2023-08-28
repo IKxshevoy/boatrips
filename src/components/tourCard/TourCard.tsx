@@ -33,14 +33,12 @@ const TourCard = ({
         />
         <span className={styles.cardPrice}>${price}</span>
       </div>
-
       <div className={styles.cardContent}>
         <h3 className={styles.title}>
           <a href="#" className={styles.cardTitle}>
             {title}
           </a>
         </h3>
-
         <address className={styles.cardText}>{address}</address>
         <div className={styles.cardRating}>
           <span className={styles.span}>
