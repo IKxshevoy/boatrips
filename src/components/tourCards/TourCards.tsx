@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./tourCards.module.css";
+import styles from "./tourCards.module.scss";
 import TourCard, { ITourCard } from "../tourCard/TourCard";
 
 const cards: ITourCard[] = [
@@ -35,17 +35,16 @@ const cards: ITourCard[] = [
 const TourCards = () => {
   return (
     <section
-      className={`${styles["section"]} ${styles["desti"]}`}
+      className={`${styles.section} ${styles.desti}`}
       aria-label="destination"
     >
-      <div className={styles["container"]}>
-        <h2 className={`${styles["title"]} ${styles["section-title"]}`}>
+      <div className={styles.container}>
+        <h2 className={`${styles.title} ${styles.sectionTitle}`}>
           Explore Top Destination
         </h2>
-
-        <ul className={styles["desti-list"]}>
-          {cards.map((card) => (
-            <li>
+        <ul className={styles.destiList}>
+          {cards.map((card, index) => (
+            <li key={index}>
               <TourCard
                 imgSrc={card.imgSrc}
                 alt={card.alt}
@@ -58,8 +57,7 @@ const TourCards = () => {
             </li>
           ))}
         </ul>
-
-        <a href="#" className={`${styles["btn"]} ${styles["btn-primary"]}`}>
+        <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>
           View All Destination
         </a>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
-import styles from "./tourCard.module.css";
+import styles from "./tourCard.module.scss";
 
 export interface ITourCard {
   imgSrc: string;
@@ -23,31 +23,31 @@ const TourCard = ({
   reviews,
 }: ITourCard) => {
   return (
-    <div className={styles["desti-card"]}>
-      <div className={`${styles["card-banner"]} ${styles["img-holder"]}`}>
+    <div className={styles.destiCard}>
+      <div className={`${styles.cardBanner} ${styles.imgHolder}`}>
         <img
           src={imgSrc}
           alt={alt}
           loading="lazy"
-          className={styles["img-cover"]}
+          className={styles.imgCover}
         />
-        <span className={styles["card-price"]}>${price}</span>
+        <span className={styles.cardPrice}>${price}</span>
       </div>
 
-      <div className={styles["card-content"]}>
-        <h3 className={styles["title"]}>
-          <a href="#" className={styles["card-title"]}>
+      <div className={styles.cardContent}>
+        <h3 className={styles.title}>
+          <a href="#" className={styles.cardTitle}>
             {title}
           </a>
         </h3>
 
-        <address className={styles["card-text"]}>{address}</address>
-        <div className={styles["card-rating"]}>
-          <span className={styles["span"]}>
+        <address className={styles.cardText}>{address}</address>
+        <div className={styles.cardRating}>
+          <span className={styles.span}>
             <FontAwesomeIcon icon={faStar} />
             {rating}
           </span>
-          <p className={styles["rating-text"]}>({reviews} Review)</p>
+          <p className={styles.ratingText}>({reviews} Review)</p>
         </div>
       </div>
     </div>
