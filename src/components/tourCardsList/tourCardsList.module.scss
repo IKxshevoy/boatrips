@@ -17,11 +17,11 @@
   margin-block: 10px;
 }
 
-.desti .sectionTitle {
+.destinations .sectionTitle {
   margin-block-end: 40px;
 }
 
-.destiList {
+.destinationsList {
   display: grid;
   gap: 30px;
 }
@@ -49,7 +49,7 @@
   }
 }
 
-.desti .btn {
+.destinations .btn {
   margin-inline: auto;
   margin-block-start: 40px;
 }
@@ -61,7 +61,7 @@
     margin-inline: auto;
   }
 
-  .destiList {
+  .destinationsList {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -76,20 +76,20 @@
     padding-inline: 40px;
   }
 
-  .desti,
+  .destinations,
   .sectionTitle {
     text-align: center;
   }
 
-  .desti .sectionTitle {
+  .destinations .sectionTitle {
     margin-block-end: 65px;
   }
 
-  .destiList {
+  .destinationsList {
     gap: 50px 35px;
   }
 
-  .desti .btn {
+  .destinations .btn {
     margin-block-start: 60px;
   }
 }
@@ -99,7 +99,7 @@
     max-width: 950px;
   }
 
-  .destiList {
+  .destinationsList {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -115,7 +115,7 @@
     max-width: 1350px;
   }
 
-  .destiList {
+  .destinationsList {
     gap: 50px;
   }
 }

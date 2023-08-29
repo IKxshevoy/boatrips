@@ -35,14 +35,14 @@ const cards: ITourCard[] = [
 const TourCardsList = () => {
   return (
     <section
-      className={`${styles.section} ${styles.desti}`}
-      aria-label="destination"
+      className={`${styles.section} ${styles.destinations}`}
+      aria-label="destinations"
     >
       <div className={styles.container}>
         <h2 className={`${styles.title} ${styles.sectionTitle}`}>
-          Explore Top Destination
+          Explore Top Destinations
         </h2>
-        <ul className={styles.destiList}>
+        <ul className={styles.destinationsList}>
           {cards.map((card, index) => (
             <li key={index}>
               <TourCard
@@ -58,7 +58,7 @@ const TourCardsList = () => {
           ))}
         </ul>
         <a href="#" className={`${styles.btn} ${styles.btnPrimary}`}>
-          View All Destination
+          View All Destinations
         </a>
       </div>
     </section>

@@ -13,7 +13,7 @@ export interface ITourCard {
   reviews: number;
 }
 
-const TourCard = ({
+const TourCard: React.FC<ITourCard> = ({
   imgSrc,
   alt,
   price,
@@ -21,9 +21,9 @@ const TourCard = ({
   address,
   rating,
   reviews,
-}: ITourCard) => {
+}) => {
   return (
-    <div className={styles.destiCard}>
+    <div className={styles.destinationCard}>
       <div className={`${styles.cardBanner} ${styles.imgHolder}`}>
         <img
           src={imgSrc}
