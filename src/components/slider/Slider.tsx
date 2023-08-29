@@ -1,13 +1,8 @@
 import styles from "./slider.module.scss";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import Image from "next/image";
+import MediaIconsList from "./mediaIconsList/MediaIconsList";
 
 interface Slide {
   title: string;
@@ -37,15 +32,6 @@ const slideContent: Slide[] = [
   },
   // Add more slide content objects as needed
 ];
-
-const MediaIcon: React.FC<{ icon: any }> = ({ icon }) => (
-  <Link href={"/"} className={styles.mediaIcon}>
-    <FontAwesomeIcon
-      icon={icon}
-      style={{ width: "35px", height: "35px" }}
-    />
-  </Link>
-);
 
 const Slider = () => {
   const [activeButton, setActiveButton] = useState<number | null>(0);
@@ -81,7 +67,7 @@ const Slider = () => {
               <br />
               <span>{slideContent[activeSlide].subTitle}</span>
             </h1>
-            <p className={styles.contentP}>
+            <p className={styles.contentText}>
               {slideContent[activeSlide].content}
             </p>
           </>
@@ -90,11 +76,7 @@ const Slider = () => {
           Read More
         </Link>
       </div>
-      <div className={styles.mediaIcons}>
-        <MediaIcon icon={faFacebook} />
-        <MediaIcon icon={faInstagram} />
-        <MediaIcon icon={faWhatsapp} />
-      </div>
+      <MediaIconsList/>
       <div className={styles.sliderNavigation}>
         {slideContent.map((_, index) => (
           <div
