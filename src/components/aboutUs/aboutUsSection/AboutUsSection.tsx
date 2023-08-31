@@ -14,7 +14,7 @@ interface IAboutUsSection {
 
 export const AboutUsSection: FC<IAboutUsSection> = ({title, subtitle, reverse, children }) => {
   return <div className={`${styles.about__container} ${reverse && styles.about__container__reverse}`}>
-    <Fade>
+    <Fade left={!reverse} right={reverse}>
       <div className={styles.about__data}>
         <h2 className={`${styles.about__title}`}>
           {title}
@@ -24,7 +24,7 @@ export const AboutUsSection: FC<IAboutUsSection> = ({title, subtitle, reverse, c
         </p>
       </div>
     </Fade>
-    <Fade>
+    <Fade right={!reverse} left={reverse}>
       <div className={styles.about__img}>
         <div className={styles.about__imgOverlay}>
           {children }
