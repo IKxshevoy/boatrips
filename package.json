@@ -16,11 +16,17 @@
     "@types/node": "20.4.10",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
+    "@videojs/themes": "^1.0.1",
     "classnames": "^2.3.2",
     "next": "13.4.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-reveal": "^1.2.2",
     "sass": "^1.66.1",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "video.js": "^8.5.2"
+  },
+  "devDependencies": {
+    "@types/video.js": "^7.3.52"
   }
 }

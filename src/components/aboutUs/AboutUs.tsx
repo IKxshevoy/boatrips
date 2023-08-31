@@ -1,28 +1,47 @@
+import { AboutUsSection } from '@/components/aboutUs/aboutUsSection/AboutUsSection';
+import VideoPlayer from '@/ui-kit/video/Video';
 import Image from 'next/image';
+import {
+  useLayoutEffect,
+  useState
+} from 'react';
 import styles from './aboutUs.module.scss'
+import { AboutUsMap } from '@/components/aboutUs/aboutUsMap/AboutUsMap';
 
 export const AboutUs = () => {
-  return(
-    <section className={`${styles.about} ${styles.section}`} id="about">
-      <div className={`${styles.about__container} ${styles.container} ${styles.grid}`}>
-          <div className={styles.about__data}>
-              <h2 className={`${styles.section__title} ${styles.about__title}`}>More Information <br/> About The Best Beaches</h2>
-              <p className={styles.about__description}>You can find the most beautiful and pleasant places at the best
-                  prices with special discounts, you choose the place we will guide you all the way to wait, get your
-                  place now.
-              </p>
-              <a href="#" className={styles.button}>Reserve a place</a>
-          </div>
-          <div className={styles.about__img}>
-              <div className={styles.about__imgOverlay}>
-                  <Image src="/employee.jpg" alt="" className={styles.about__imgOne} width={70} height={100}/>
-              </div>
+  const videoJsOptions = {
+    autoplay: true,
+    controls: true,
+    responsive: true,
+    fluid: true,
+    sources: [{
+      src: 'intro2.mp4',
+      type: 'video/mp4'
+    }],
+    poster: 'aboutUs2.jpg'
+  };
 
-              <div className={styles.about__imgOverlay}>
-                  <Image src="/employee.jpg" alt="" className={styles.about__imgTwo} width={70} height={100}/>
-              </div>
-          </div>
-      </div>
+  const [isFadeLoaded, setIsFadeLoaded] = useState(false);
+
+  useLayoutEffect(() => {
+    import('react-reveal/Fade').then(() => {
+      setIsFadeLoaded(true);
+    });
+  }, []);
+
+  return(
+    <section className={`${styles.about} ${!isFadeLoaded && styles.about__notFade}`}>
+      {isFadeLoaded &&
+        <>
+          <AboutUsSection title="About BOATRIPS" subtitle="You can find the most beautiful and pleasant places at the best" reverse={false}>
+            <Image src="/aboutUs1.jpg" alt="" width={500} height={100} layout="responsive"/>
+          </AboutUsSection>
+          <AboutUsSection title="About BOATRIPS" subtitle="You can find the most beautiful and pleasan" reverse={true}>
+            <VideoPlayer options={videoJsOptions} />
+          </AboutUsSection>
+          <AboutUsMap />
+        </>
+      }
     </section>
   )
 }
