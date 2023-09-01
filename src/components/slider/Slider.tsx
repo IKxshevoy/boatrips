@@ -1,15 +1,8 @@
-import classNames from "classnames";
-import styles from "./slider.module.css";
-import Button from "@/components/button/Button";
+import styles from "./slider.module.scss";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faWhatsapp,
-} from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import Image from "next/image";
+import MediaIconsList from "./mediaIconsList/MediaIconsList";
 
 interface Slide {
   title: string;
@@ -40,12 +33,6 @@ const slideContent: Slide[] = [
   // Add more slide content objects as needed
 ];
 
-const MediaIcon: React.FC<{ icon: any }> = ({ icon }) => (
-  <Link href={"/"} className={styles["media-icon"]}>
-    <FontAwesomeIcon icon={icon} style={{ width: "35px", height: "35px" }} />
-  </Link>
-);
-
 const Slider = () => {
   const [activeButton, setActiveButton] = useState<number | null>(0);
   const [activeSlide, setActiveSlide] = useState<number | null>(0);
@@ -67,38 +54,36 @@ const Slider = () => {
           alt={`Slide ${index + 1}`}
           layout="fill"
           objectFit="cover"
-          className={classNames(styles["image-slide"], {
-            [styles["active-slide"]]: activeSlide === index,
-          })}
+          className={`${styles.imageSlide} ${
+            activeSlide === index ? styles.activeSlide : ""
+          }`}
         />
       ))}
       <div className={styles.content}>
         {activeSlide !== null && (
           <>
-            <h1 className={styles["content-title"]}>
+            <h1 className={styles.contentTitle}>
               {slideContent[activeSlide].title}
               <br />
               <span>{slideContent[activeSlide].subTitle}</span>
             </h1>
-            <p className={styles["content-p"]}>
+            <p className={styles.contentText}>
               {slideContent[activeSlide].content}
             </p>
           </>
         )}
-        <Button url="/" />
+        <Link href={"#"} className={styles.button}>
+          Read More
+        </Link>
       </div>
-      <div className={styles["media-icons"]}>
-        <MediaIcon icon={faFacebook} />
-        <MediaIcon icon={faInstagram} />
-        <MediaIcon icon={faWhatsapp} />
-      </div>
-      <div className={styles["slider-navigation"]}>
+      <MediaIconsList/>
+      <div className={styles.sliderNavigation}>
         {slideContent.map((_, index) => (
           <div
             key={index}
-            className={classNames(styles["nav-btn"], {
-              [styles.active]: activeSlide === index,
-            })}
+            className={`${styles.navBtn} ${
+              activeSlide === index ? styles.active : ""
+            }`}
             onClick={() => sliderNav(index)}
           ></div>
         ))}

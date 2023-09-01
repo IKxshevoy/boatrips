@@ -6,7 +6,7 @@ import {
   faInstagram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
-import styles from "./footer.module.css";
+import styles from "./footer.module.scss";
 
 interface LinkItem {
   label: string;
@@ -15,7 +15,7 @@ interface LinkItem {
 
 const FooterLink: React.FC<LinkItem> = ({ label, href }) => (
   <li>
-    <Link href={href} className={styles["list-item"]}>
+    <Link href={href} className={styles.listItem}>
       {label}
     </Link>
   </li>
@@ -48,13 +48,13 @@ const Footer: React.FC = () => {
                 {title === "Connect"
                   ? (
                     <div className={styles.social}>
-                      <Link href={"/"} className={styles["social-link"]}>
+                      <Link href={"/"} className={styles.socialLink}>
                         <FontAwesomeIcon icon={faFacebook} />
                       </Link>
-                      <Link href={"/"} className={styles["social-link"]}>
+                      <Link href={"/"} className={styles.socialLink}>
                         <FontAwesomeIcon icon={faInstagram} />
                       </Link>
-                      <Link href={"/"} className={styles["social-link"]}>
+                      <Link href={"/"} className={styles.socialLink}>
                         <FontAwesomeIcon icon={faWhatsapp} />
                       </Link>
                     </div>
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
           ))}
         </div>
       </footer>
-      <div className={styles["end-text"]}>
+      <div className={styles.endText}>
         <p>Copyright 2022 All rights reserved </p>
       </div>
     </section>

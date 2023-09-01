@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import styles from "./navbar.module.css";
+import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 
@@ -49,25 +49,25 @@ const Navbar = () => {
       {isMenuActive ? (
         <FontAwesomeIcon
           icon={faX}
-          className={`${styles["menu-btn"]} ${styles.active}`}
+          className={`${styles.menuBtn} ${styles.active}`}
           onClick={toggleMenu}
         />
       ) : (
         <FontAwesomeIcon
           icon={faBars}
-          className={`${styles["menu-btn"]} ${styles.active}`}
+          className={`${styles.menuBtn} ${styles.active}`}
           onClick={toggleMenu}
         />
       )}
       <div
         className={`${styles.navigation} ${isMenuActive ? styles.active : ""}`}
       >
-        <div className={styles["navigation-items"]}>
+        <div className={styles.navigationItems}>
           {links.map((link) => (
             <Link
               key={link.title}
               href={link.url}
-              className={styles["menu-link"]}
+              className={styles.menuLink}
             >
               {link.title}
             </Link>
