@@ -19,6 +19,7 @@
       font-size: 3rem;
     }
   }
+
   &__container{
     overflow: hidden;
     width: 100%;
@@ -56,6 +57,7 @@
       img{
         transition: .3s;
       }
+
       img:hover{
         transform: scale(1.1);
       }
