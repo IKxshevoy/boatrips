@@ -1,12 +1,11 @@
+import { Title } from '@/ui-kit/title/Title';
 import Fade from 'react-reveal/Fade';
 import styles from '@/components/aboutUs/aboutUs.module.scss';
 
 export const AboutUsMap = () => <div className={`${styles.about__container} ${styles.about__container__directionColumnMap}`}>
   <Fade top>
     <div className={styles.about__data}>
-      <h2>
-        How to find us ?
-      </h2>
+      <Title title="How to find us ?"/>
       <p className={styles.about__description}>
         You can find the most beautiful and pleasant places at the best
         prices with special discounts, you choose the place we will guide you all the way to wait, get your

@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4009e0-f7a9-4245-a58b-fde9958b9afb" name="Changes" comment="" />
+    <list default="true" id="0a4009e0-f7a9-4245-a58b-fde9958b9afb" name="Changes" comment="add Title component, mb need to improve in the future">
+      <change afterPath="$PROJECT_DIR$/public/bg_title.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui-kit/title/Title.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui-kit/title/title.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aboutUs/aboutUs.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/aboutUs/aboutUs.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aboutUs/aboutUsMap/AboutUsMap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/aboutUs/aboutUsMap/AboutUsMap.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/aboutUs/aboutUsSection/AboutUsSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/aboutUs/aboutUsSection/AboutUsSection.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,15 +22,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="CSS File" />
+        <option value="TypeScript JSX File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/gallery" />
+        <entry key="$PROJECT_DIR$" value="feature/aboutUs" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -39,8 +49,9 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "feature/title",
     "last_opened_file_path": "C:/Users/Oleh/WebstormProjects/test-nftlook",
-    "list.type.of.created.stylesheet": "CSS",
+    "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -69,5 +80,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add Title component, mb need to improve in the future" />
+    <option name="LAST_COMMIT_MESSAGE" value="add Title component, mb need to improve in the future" />
   </component>
 </project>
