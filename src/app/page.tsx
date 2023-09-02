@@ -1,4 +1,5 @@
 "use client";
+import { AboutUs } from '@/components/aboutUs/AboutUs';
 import styles from "./page.module.scss";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
@@ -11,7 +12,8 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Slider />
+      <Slider/>
+      <AboutUs />
       <TourCards/>
       <Questions/>
       <Footer />
