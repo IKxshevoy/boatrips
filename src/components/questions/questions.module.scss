@@ -1,0 +1,23 @@
+.title {
+  padding-left: 100px;
+  margin-bottom: 70px;
+  font-size: 1.8rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  height: 100vh;
+  padding: 0 100px;
+
+  .accordionContainer {
+    height: inherit;
+    flex: 1;
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
