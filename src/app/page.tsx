@@ -7,7 +7,6 @@ import Slider from "@/components/slider/Slider";
 import TourCards from "@/components/tourCardsList/TourCardsList";
 import Questions from "@/components/questions/Questions";
 
-
 export default function Home() {
   return (
     <>
