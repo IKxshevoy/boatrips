@@ -11,20 +11,18 @@ interface IFeature {
 
 const Feature = ({ title, description, icon }: IFeature) => {
   return (
-    <li>
-      <div className={styles.featureListCard}>
-        <div className={styles.cardIcon}>
-          <FontAwesomeIcon
-            icon={icon}
-            style={{ width: "45px", height: "45px" }}
-          />
-        </div>
-        <div>
-          <h3 className={styles.cardTitle}>{title}</h3>
-          <p>{description}</p>
-        </div>
+    <div className={styles.featuresListCard}>
+      <div className={styles.cardIcon}>
+        <FontAwesomeIcon
+          icon={icon}
+          style={{ width: "45px", height: "45px" }}
+        />
       </div>
-    </li>
+      <div>
+        <h3 className={styles.cardTitle}>{title}</h3>
+        <p>{description}</p>
+      </div>
+    </div>
   );
 };
 

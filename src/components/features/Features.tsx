@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./features.module.scss";
 import Feature from "./feature/Feature";
 import {
@@ -8,6 +7,7 @@ import {
   faNotesMedical,
   faDog,
 } from "@fortawesome/free-solid-svg-icons";
+import ImageBanner from "./banner/ImageBanner";
 
 const benefits = [
   {
@@ -49,29 +49,11 @@ const benefits = [
 
 const Features = () => {
   return (
-    <section className={styles.feature} aria-label="features">
-      <div
-        className={`${styles.featureBanner} ${styles.hasBgImage} ${styles.hasAfter}`}
-        style={{ backgroundImage: `url('/slide1.jpg')` }}
-      >
-        <button
-          className={styles.playBtn}
-          aria-label="play video: Ponta de Piedade"
-        >
-          <Image
-            src="/play.svg"
-            width={60}
-            height={60}
-            loading="lazy"
-            alt="play icon"
-          />
-        </button>
-      </div>
-      <div className={`${styles.section} ${styles.featureContent}`}>
+    <section className={styles.features} aria-label="features">
+      <ImageBanner />
+      <div className={`${styles.section} ${styles.featuresContent}`}>
         <div className={styles.container}>
-          <h2>
-            Explore the Wonders of Our Boat Tours
-          </h2>
+          <h2>Explore the Wonders of Our Boat Tours</h2>
           <p className={styles.sectionText}>
             Embark on an unforgettable journey with Boatrips and experience the
             natural beauty of Lagos like never before. Our boat tours offer a
@@ -80,12 +62,9 @@ const Features = () => {
           </p>
           <ul>
             {benefits.map(({ title, description, icon, id }) => (
-              <Feature
-                title={title}
-                description={description}
-                icon={icon}
-                key={id}
-              />
+              <li key={id}>
+                <Feature title={title} description={description} icon={icon} />
+              </li>
             ))}
           </ul>
         </div>
