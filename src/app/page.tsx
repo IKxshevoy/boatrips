@@ -7,6 +7,7 @@ import Slider from "@/components/slider/Slider";
 import TourCards from "@/components/tourCardsList/TourCardsList";
 import Questions from "@/components/questions/Questions";
 import DestinationCards from '@/components/destinationCards/DestinationCards';
+import Features from '@/components/features/Features';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Slider/>
       <AboutUs />
       <TourCards/>
+      <Features/>
       <DestinationCards/>
       <Questions/>
       <Footer />
