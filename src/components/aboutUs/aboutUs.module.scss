@@ -39,8 +39,11 @@
 
   &__description{
     margin-top: 30px;
-    font-size: 16px;
-    color: #80808094;
+    margin-block: 16px 24px;
+    line-height: 28px;
+    font-weight: 400;
+    font-size: 1.8rem;
+    color: rgb(39 35 35 / 58%);
   }
 
   &__img{
