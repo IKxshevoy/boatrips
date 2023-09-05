@@ -34,8 +34,8 @@ export const AboutUs = () => {
       {isFadeLoaded &&
         <>
           <AboutUsSection
-            title="About BOATRIPS"
-            subtitle="You can find the most beautiful and pleasant places at the best You can find the most beautiful and pleasant places at the best You can find the most beautiful and pleasant places at the best"
+            title="A few words about us"
+            subtitle="Welcome to Boatrips, your premier choice for unforgettable experiences in Lagos, Portugal. Established in the picturesque coastal town of Lagos in the year 2000, we have been passionately crafting exceptional adventures for over two decades."
             reverse={false}
           >
             <Image src="/aboutUs1.jpg" alt="" width={500} height={100} layout="responsive"/>
