@@ -11,7 +11,7 @@
   }
 
   &__data{
-    width: 500px;
+    max-width: 750px;
     visibility: visible;
     opacity: 1;
   }
@@ -38,12 +38,11 @@
   }
 
   &__description{
-    margin-top: 30px;
-    margin-block: 16px 24px;
+    margin-block: 30px 24px;
     line-height: 28px;
     font-weight: 400;
-    font-size: 1.8rem;
-    color: rgb(39 35 35 / 58%);
+    font-size: 1.6rem;
+    color: rgb(39 35 35 / 85%);
   }
 
   &__img{

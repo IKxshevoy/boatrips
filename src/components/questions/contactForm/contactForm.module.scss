@@ -36,7 +36,7 @@
 
     button[type="submit"] {
       padding: 12px 0;
-      background-color: #004D95;
+      background-color: rgb(48, 95, 184);;
       color: #fff;
       border: none;
       border-radius: 20px;
@@ -44,7 +44,7 @@
       transition: background-color 0.3s ease-in-out;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: #197be4;
       }
     }
 }

@@ -8,6 +8,7 @@ import TourCards from "@/components/tourCardsList/TourCardsList";
 import Questions from "@/components/questions/Questions";
 import DestinationCards from '@/components/destinationCards/DestinationCards';
 import Features from '@/components/features/Features';
+import { AboutUsMap } from '@/components/aboutUs/aboutUsMap/AboutUsMap';
 
 export default function Home() {
   return (
@@ -15,10 +16,10 @@ export default function Home() {
       <Navbar />
       <Slider/>
       <AboutUs />
-      <TourCards/>
       <Features/>
       <DestinationCards/>
       <Questions/>
+      <AboutUsMap />
       <Footer />
     </>
   );

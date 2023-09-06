@@ -8,7 +8,7 @@ import styles from '@/components/aboutUs/aboutUs.module.scss';
 
 interface IAboutUsSection {
   title: string,
-  subtitle: string,
+  subtitle: ReactNode,
   reverse: boolean,
   children: ReactNode
 }

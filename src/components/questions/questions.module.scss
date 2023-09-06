@@ -1,16 +1,17 @@
-.title {
-  padding-left: 100px;
-  margin-bottom: 70px;
-  font-size: 1.8rem;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 100px;
+  background: transparent;
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 500px;
   gap: 50px;
-  height: 100vh;
-  padding: 0 100px;
+  margin-top: 60px;
 
   .accordionContainer {
     height: inherit;
