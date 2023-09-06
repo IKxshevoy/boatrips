@@ -53,7 +53,7 @@ const Features = () => {
       <ImageBanner />
       <div className={`${styles.section} ${styles.featuresContent}`}>
         <div className={styles.container}>
-          <h2>Explore the Wonders of Our Boat Tours</h2>
+          <h2>Why you should go with us?</h2>
           <p className={styles.sectionText}>
             Embark on an unforgettable journey with Boatrips and experience the
             natural beauty of Lagos like never before. Our boat tours offer a

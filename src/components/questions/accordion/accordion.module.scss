@@ -1,7 +1,7 @@
 .accordion {
   overflow: hidden;
   transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
-  background: #004D95;
+  background: rgb(48, 95, 184);;
   color: #fff;
   margin-bottom: 20px;
   border-radius: 15px;
@@ -28,7 +28,7 @@
 
   .accordionContent {
     padding: 20px;
-    background: #004D95;
+    background: rgb(48, 95, 184);;
     line-height: 1.5;
   }
 

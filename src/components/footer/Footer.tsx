@@ -76,7 +76,7 @@ const Footer: React.FC = () => {
         </div>
       </footer>
       <div className={styles.endText}>
-        <p>Copyright 2022 All rights reserved </p>
+        <p>Copyright 2023 All rights reserved </p>
       </div>
     </section>
   );
