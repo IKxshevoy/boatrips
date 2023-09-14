@@ -7,7 +7,7 @@ const DestinationText = () => {
   return (
     <div className={styles.greeting}>
       <div className={styles.description}>
-        <Title title="TOP EXPERIÊNCIAS" />
+        <Title title="OUR EXPIRIENCES" />
         <p className={styles.text}>
           "Welcome aboard! Dive into a world of endless possibilities as you
           explore our extensive array of captivating boat tours below, promising

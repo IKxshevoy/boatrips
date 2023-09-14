@@ -2,20 +2,35 @@
   display: flex;
   flex-direction: column;
   padding: 0 100px;
-  background: transparent;
+  margin-bottom: 110px;
+  background: rgb(48, 95, 184);
+}
+
+.title {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
 }
 
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  gap: 50px;
-  margin-top: 60px;
+  margin: 60px 0;
 
-  .accordionContainer {
-    height: inherit;
-    flex: 1;
+  .flexContainer {
+    display: flex;
+    width: 100%;
+    flex-grow: 1;
+    gap: 50px;
+
+    .accordionContainer {
+      flex: 1;
+    }
+    .contactForm {
+      flex: 1;
+    }
   }
   
   @media (max-width: 768px) {

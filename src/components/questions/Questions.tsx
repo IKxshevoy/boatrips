@@ -1,9 +1,7 @@
 import React from "react";
 import styles from "./questions.module.scss";
-import Accordion from "./accordion/AccordionContactForm";
+import Accordion from "./accordion/Accordion";
 import ContactForm from "./contactForm/ContactForm";
-import { AboutUsMap } from "../aboutUs/aboutUsMap/AboutUsMap";
-import { Title } from "@/ui-kit/title/Title";
 
 const questions = [
   {
@@ -42,14 +40,18 @@ const Questions = () => {
   return (
     <>
       <div className={styles.wrapper}>
-        <Title title="Popular questions"></Title>
+        <h2 className={styles.title}>Popular questions</h2>
         <div className={styles.container}>
-          <div className={styles.accordionContainer}>
-            {questions.map(({ title, content, id }) => (
-              <Accordion title={title} content={content} key={id} />
-            ))}
+          <div className={styles.flexContainer}>
+              <div className={styles.accordionContainer}>
+                {questions.map(({ title, content, id }) => (
+                  <Accordion title={title} content={content} key={id} />
+                ))}
+              </div>
+              <div className={styles.contactForm}>
+                <ContactForm />
+              </div>
           </div>
-          <ContactForm />
         </div>
       </div>
     </>

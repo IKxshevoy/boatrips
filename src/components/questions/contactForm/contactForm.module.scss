@@ -1,13 +1,14 @@
 .contactForm {
-    height: inherit;
+    height: 100%;
     flex: 1;
 
     &__title {
       margin-bottom: 25px;
+      color: #fff;
     }
 
     &__text {
-      color: rgb(127, 126, 127);
+      color: #fff;
       margin-bottom: 35px;
     }
 
@@ -29,22 +30,23 @@
       background: rgb(240, 230, 229);
 
       &::placeholder {
-        color: #999;
+        color: #000;
         font-size: 1rem;
       }
     }
 
     button[type="submit"] {
       padding: 12px 0;
-      background-color: rgb(48, 95, 184);;
-      color: #fff;
+      background-color: #fff;
+      color: rgb(48, 95, 184);
       border: none;
       border-radius: 20px;
       cursor: pointer;
-      transition: background-color 0.3s ease-in-out;
+      transition: background-color 0.4s ease-in-out;
 
       &:hover {
-        background-color: #197be4;
+        background-color: #EB8D2C;
+        color: #fff;
       }
     }
 }

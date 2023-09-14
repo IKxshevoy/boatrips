@@ -48,10 +48,10 @@ const Footer: React.FC = () => {
                 {title === "Connect"
                   ? (
                     <div className={styles.social}>
-                      <Link href={"/"} className={styles.socialLink}>
+                      <Link href={"https://www.facebook.com/boatrips.eu"} className={styles.socialLink}>
                         <FontAwesomeIcon icon={faFacebook} />
                       </Link>
-                      <Link href={"/"} className={styles.socialLink}>
+                      <Link href={"https://www.instagram.com/boatrips/?hl=ru"} className={styles.socialLink}>
                         <FontAwesomeIcon icon={faInstagram} />
                       </Link>
                       <Link href={"/"} className={styles.socialLink}>
