@@ -1,0 +1,70 @@
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 75%;
+  margin: 0 auto 100px;
+}
+
+.description {
+  width: 50%;
+}
+
+.blockquote {
+  width: 50%;
+}
+
+.text {
+  margin: 50px 0;
+  line-height: 28px;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: rgba(73, 38, 38, 0.679);
+}
+
+.cite {
+  display: block;
+  font-style: italic;
+  text-align: right;
+  margin-top: 30px;
+}
+
+.line {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2px;
+  width: 80px;
+  background-color: #EB8D2C;
+  margin-right: 10px;
+}
+
+.blockquote {
+  line-height: 28px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: rgb(42 34 34 / 88%);
+}
+
+.btn {
+  height: 50px;
+  color: #fff;
+  padding-inline: 30px;
+  border-radius: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: max-content;
+  transition: 250ms ease;
+
+  &.btnPrimary {
+    background-color: rgb(48, 95, 184);
+
+    &:hover,
+    &:focus-visible {
+      background-color: #0056b3;
+      box-shadow: 0 5px 10px hsla(249, 95%, 63%, 25%);
+    }
+  }
+}

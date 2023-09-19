@@ -1,0 +1,82 @@
+.container {
+    padding: 0 5%;
+    margin-bottom: 150px;
+  }
+
+  .title {
+    text-align: center;
+  }
+
+  .headingText {
+    margin-bottom: 2rem;
+    font-weight: 100;
+    text-align: center;
+  }
+  
+  .headingText span {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  
+  .imageGallery {
+    text-align: center;
+  }
+  
+  .imageGallery > li {
+    display: inline-block;
+    width: 350px;
+    margin: 0 5px 10px 5px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  @supports (display: flex) {
+    .imageGallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .imageGallery > li {
+      flex-basis: 350px; /*width: 350px;*/
+      margin: 0;
+    }
+  
+    .imageGallery::after {
+      content: "";
+      flex-basis: 350px;
+    }
+  }
+  
+  .imageGallery li img {
+    object-fit: cover;
+    max-width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    border-radius: 5px;
+  }
+  
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(57, 57, 57, 0.502);
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: all 0.2s 0.1s ease-in-out;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* hover */
+  .imageGallery li:hover .overlay {
+    transform: scale(1);
+  }
+  

@@ -1,0 +1,18 @@
+.gallery {
+  margin: 150px auto 110px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    .galleryList {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .galleryList {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
