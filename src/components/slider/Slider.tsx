@@ -52,8 +52,8 @@ const Slider = () => {
           key={index}
           src={slide.path}
           alt={`Slide ${index + 1}`}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{objectFit:"cover"}}
           className={`${styles.imageSlide} ${
             activeSlide === index ? styles.activeSlide : ""
           }`}
