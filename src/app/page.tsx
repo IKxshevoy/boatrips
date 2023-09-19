@@ -10,11 +10,11 @@ import DestinationCards from '@/components/destinationCards/DestinationCards';
 import Features from '@/components/features/Features';
 import { AboutUsMap } from '@/components/aboutUs/aboutUsMap/AboutUsMap';
 import Gallery from '@/components/gallery/Gallery';
+import RootLayout from './layout';
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
+    <RootLayout>
       <Slider/>
       <AboutUs />
       <Features/>
@@ -23,6 +23,6 @@ export default function Home() {
       <Questions/>
       <AboutUsMap />
       <Footer />
-    </>
+    </RootLayout>
   );
 }

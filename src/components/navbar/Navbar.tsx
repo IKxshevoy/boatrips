@@ -1,10 +1,8 @@
 "use client";
-
-import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const links = [
   {
@@ -34,21 +32,33 @@ const links = [
   },
 ];
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 1) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={styles.header}>
-      <Link className={styles.brand} href={"/"}>
+    <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
+      <a className={styles.brand} href={"/"}>
         Travel
-      </Link>
+      </a>
       {isMenuActive ? (
         <FontAwesomeIcon
-          icon={faX}
+          icon={faTimes}
           className={`${styles.menuBtn} ${styles.active}`}
           onClick={toggleMenu}
         />
@@ -64,13 +74,9 @@ const Navbar = () => {
       >
         <div className={styles.navigationItems}>
           {links.map((link) => (
-            <Link
-              key={link.title}
-              href={link.url}
-              className={styles.menuLink}
-            >
+            <a key={link.id} href={link.url} className={styles.menuLink}>
               {link.title}
-            </Link>
+            </a>
           ))}
         </div>
       </div>
