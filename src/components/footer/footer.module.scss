@@ -8,10 +8,9 @@
       .main {
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-around;
   
         .list {
-          width: 25%;
-  
           h4 {
             font-size: 21px;
             color: #fff;

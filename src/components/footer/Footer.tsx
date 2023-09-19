@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -41,7 +42,7 @@ const Footer: React.FC = () => {
     <section className={styles.contact}>
       <footer className={styles.footer}>
         <div className={styles.main}>
-          {["Quick links", "Support", "Contact info", "Connect"].map((title, index) => (
+          {["Quick links", "Support", "Contact info", "Connect", "Certificates"].map((title, index) => (
             <div key={index} className={styles.list}>
               <h4>{title}</h4>
               <ul>
@@ -65,11 +66,16 @@ const Footer: React.FC = () => {
                       <FooterLink key={itemIndex} label={item.label} href={item.href} />
                     ))
                   )
-                  : (
+                  : title === "Quick links" || title === "Support" ? (
                     linkItems.map((item, itemIndex) => (
                       <FooterLink key={itemIndex} label={item.label} href={item.href} />
                     ))
-                  )}
+                  ) : (
+                    <div>
+                      <Image src="/certificates/certificate1.png" alt="certificate1" width={100} height={100} className={styles.listItem}/>
+                      <Image src="/certificates/certificate2.png" alt="certificate2" width={100} height={100} className={styles.listItem}/>
+                    </div>
+                    )}
               </ul>
             </div>
           ))}
