@@ -1,25 +1,9 @@
 import { AboutUsSection } from "@/components/aboutUs/aboutUsSection/AboutUsSection";
-import VideoPlayer from "@/ui-kit/video/Video";
 import Image from "next/image";
 import { useLayoutEffect, useState } from "react";
-import { AboutUsMap } from "@/components/aboutUs/aboutUsMap/AboutUsMap";
 import styles from "./aboutUs.module.scss";
 
 export const AboutUs = () => {
-  const videoJsOptions = {
-    autoplay: true,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    sources: [
-      {
-        src: "intro2.mp4",
-        type: "video/mp4",
-      },
-    ],
-    poster: "aboutUs2.jpg",
-  };
-
   const [isFadeLoaded, setIsFadeLoaded] = useState(false);
 
   useLayoutEffect(() => {
@@ -61,7 +45,7 @@ export const AboutUs = () => {
               alt=""
               width={500}
               height={100}
-              layout="responsive"
+              style={{width: '100%'}}
             />
           </AboutUsSection>
           <AboutUsSection
@@ -90,7 +74,7 @@ export const AboutUs = () => {
               alt=""
               width={500}
               height={100}
-              layout="responsive"
+              style={{width: '100%'}}
             />
           </AboutUsSection>
         </>
