@@ -1,3 +1,6 @@
+import { Modal } from '@/ui-kit/modal/Modal';
+import VideoPlayer from '@/ui-kit/video/Video';
+import React, { useState } from 'react';
 import styles from "./features.module.scss";
 import Feature from "./feature/Feature";
 import {
@@ -47,10 +50,27 @@ const benefits = [
   },
 ];
 
+
+
 const Features = () => {
+  const [openModal, setModalOpen] = useState<boolean>(false);
+
+  const videoOptions = {
+    autoplay: true,
+    controls: true,
+    responsive: true,
+    fluid: true,
+    sources: [{
+      src: 'intro.mp4',
+      type: 'video/mp4'
+    }],
+    poster: 'aboutUs2.jpg'
+  };
+
   return (
-    <section className={styles.features} aria-label="features">
-      <ImageBanner />
+    <section className={`${styles.features} ${openModal ? styles.featuresModal : ''}`} aria-label="features">
+      <ImageBanner setModalOpen={setModalOpen}/>
+      <Modal isOpen={openModal} onClose={() => setModalOpen(false)}><div style={{width: '60vw'}}><VideoPlayer options={videoOptions}/></div></Modal>
       <div className={`${styles.section} ${styles.featuresContent}`}>
         <div className={styles.container}>
           <h2>Why you should go with us?</h2>
