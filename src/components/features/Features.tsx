@@ -50,8 +50,6 @@ const benefits = [
   },
 ];
 
-
-
 const Features = () => {
   const [openModal, setModalOpen] = useState<boolean>(false);
 
