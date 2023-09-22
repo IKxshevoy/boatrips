@@ -1,8 +1,12 @@
-import React from "react";
+import React from 'react';
 import Image from "next/image";
 import styles from "../features.module.scss";
 
-const ImageBanner = () => {
+interface ImageBannerProps {
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+const ImageBanner: React.FC<ImageBannerProps> = ({setModalOpen}) => {
   return (
     <div
       className={`${styles.featuresBanner} ${styles.hasBgImage} ${styles.hasAfter}`}
@@ -11,6 +15,7 @@ const ImageBanner = () => {
       <button
         className={styles.playBtn}
         aria-label="play video: Ponta de Piedade"
+        onClick={() => setModalOpen(true)}
       >
         <Image
           src="/play.svg"
