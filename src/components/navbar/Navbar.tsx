@@ -59,13 +59,13 @@ const Navbar: React.FC = () => {
       {isMenuActive ? (
         <FontAwesomeIcon
           icon={faTimes}
-          className={`${styles.menuBtn} ${styles.active}`}
+          className={`${styles.menuBtn} ${styles.active} ${isSticky ? styles.sticky : ""}`}
           onClick={toggleMenu}
         />
       ) : (
         <FontAwesomeIcon
           icon={faBars}
-          className={`${styles.menuBtn} ${styles.active}`}
+          className={`${styles.menuBtn} ${styles.active} ${isSticky ? styles.sticky : ""}`}
           onClick={toggleMenu}
         />
       )}
