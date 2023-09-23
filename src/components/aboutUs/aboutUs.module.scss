@@ -1,4 +1,4 @@
-.about{
+.about {
   padding: 5% 2%;
   display: flex;
   flex-direction: column;
@@ -10,19 +10,19 @@
     height: 100%;
   }
 
-  &__data{
+  &__data {
     max-width: 750px;
     visibility: visible;
     opacity: 1;
   }
 
-  &__container{
+  &__container {
     overflow: hidden;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     row-gap: 2.5rem;
     gap: 100px;
 
@@ -37,7 +37,7 @@
     }
   }
 
-  &__description{
+  &__description {
     margin-block: 30px 24px;
     line-height: 28px;
     font-weight: 400;
@@ -45,20 +45,80 @@
     color: rgb(39 35 35 / 85%);
   }
 
-  &__img{
-    width: 700px;
+  &__img {
+    max-width: 700px;
+    width: 100%;
 
-    &Overlay{
+    &Overlay {
       overflow: hidden;
       border-radius: 10px;
 
-      img{
-        transition: .3s;
+      img {
+        transition: 0.3s;
       }
 
-      img:hover{
+      img:hover {
         transform: scale(1.1);
       }
+    }
+  }
+
+  @media (max-width: 800px) {
+    &__data {
+      text-align: center;
+    }
+    &__description {
+      text-align: justify;
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    padding: 2%;
+    gap: 0;
+
+    &__container {
+      flex-direction: column;
+    }
+    &__data {
+      max-width: 100%;
+      padding: 5% 5% 0 5%;
+    }
+    &__container {
+      gap: 0;
+    }
+    &__img {
+      max-width: 100%;
+      padding: 5%;
+
+      img {
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  @media (min-width: 1251px) and (max-width: 1650px) {
+    gap: 50px;
+
+    &__container {
+      gap: 50px;
+    }
+    &__data {
+      max-width: 650px;
+    }
+    &__img {
+      max-width: 600px;
+      height: 100%;
+
+      img {
+        height: 80vh;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    &__description {
+      margin-block: 15px 38px;
     }
   }
 }
