@@ -41,7 +41,7 @@ export const AboutUs = () => {
             reverse={false}
           >
             <Image
-              src="/aboutUs1.jpg"
+              src="/aboutUsMobile.jpg"
               alt=""
               width={500}
               height={100}
@@ -74,7 +74,7 @@ export const AboutUs = () => {
               alt=""
               width={500}
               height={100}
-              style={{width: '100%'}}
+              style={{ width: "100%" }}
             />
           </AboutUsSection>
         </>
