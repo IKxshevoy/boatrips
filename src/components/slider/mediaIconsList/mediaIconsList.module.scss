@@ -1,14 +1,15 @@
 .mediaIcons {
-    z-index: 888;
-    position: absolute;
-    right: 30px;
-    display: flex;
-    flex-direction: column;
-    transition: 0.5s ease;
-}
+  z-index: 888;
+  position: absolute;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s ease;
 
-@media (max-width: 1040px) {
-    .mediaIcons {
-        right: 15px;
-    }
+  @media (max-width: 500px) {
+    display: none;
+  }
+  @media (max-width: 1040px) {
+    right: 15px;
+  }
 }
