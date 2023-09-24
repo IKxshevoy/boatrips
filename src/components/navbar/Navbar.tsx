@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
       {isMenuActive ? (
         <FontAwesomeIcon
           icon={faTimes}
-          className={`${styles.menuBtn} ${styles.active} ${isSticky ? styles.sticky : ""}`}
+          className={`${styles.menuBtn} ${styles.closeBtn} ${styles.active} ${isSticky ? styles.sticky : ""}`}
           onClick={toggleMenu}
         />
       ) : (
