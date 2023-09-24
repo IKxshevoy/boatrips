@@ -14,8 +14,9 @@ interface Slide {
 const slideContent: Slide[] = [
   {
     title: "Ponta de Piedade",
-    subTitle: "Boatrips",
-    content: "Lorem ipsum dolor sit amet consectetur adipisicing elit...",
+    subTitle: "",
+    content:
+      "Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.",
     path: "/slide1.jpg",
   },
   {
@@ -53,7 +54,7 @@ const Slider = () => {
           src={slide.path}
           alt={`Slide ${index + 1}`}
           fill
-          style={{objectFit:"cover"}}
+          style={{ objectFit: "cover" }}
           className={`${styles.imageSlide} ${
             activeSlide === index ? styles.activeSlide : ""
           }`}
@@ -76,7 +77,7 @@ const Slider = () => {
           Read More
         </Link>
       </div>
-      <MediaIconsList/>
+      <MediaIconsList />
       <div className={styles.sliderNavigation}>
         {slideContent.map((_, index) => (
           <div
