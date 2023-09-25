@@ -15,11 +15,11 @@ export const metadata: Metadata = {
 
 export default function App({Component, pageProps}: AppProps){
   const router = useRouter();
-
+  console.log(router.pathname)
   return (
     <div className={poppins.className}>
       <Navbar/>
-      <main style={{marginTop: router.pathname === '' ? 0 : 50 }}>{<Component {...pageProps} />}</main>
+      <main style={{marginTop: router.pathname === '/' ? 0 : 50 }}>{<Component {...pageProps} />}</main>
     </div>
   )
 }
