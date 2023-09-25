@@ -1,7 +1,6 @@
 .title {
   @supports (background-clip: text) or (-webkit-background-clip: text) {
-    background-image:
-            url("../../../public/bg_title.webp");
+    background-image: url("../../../public/bg_title.webp");
     background-size: 110% auto;
     background-position: center;
     color: transparent;
@@ -12,4 +11,14 @@
   font-weight: 700;
   line-height: 72px;
   padding: 10px 0;
+
+  @media (max-width: 576px) {
+    font-size: 2.5rem;
+  }
+  @media (min-width: 577px) and (max-width: 800px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 801px) and (max-width: 1650px) {
+    font-size: 3.5rem;
+  }
 }

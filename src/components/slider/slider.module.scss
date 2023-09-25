@@ -10,7 +10,7 @@
 
   &::before {
     z-index: 777;
-    content: '';
+    content: "";
     position: absolute;
     background: rgba(3, 96, 251, 0.2);
     width: 100%;
@@ -22,7 +22,7 @@
   .content {
     z-index: 888;
     color: #fff;
-    width: 70%;
+    width: 85%;
     margin-top: 50px;
 
     &Title {
@@ -41,6 +41,7 @@
 
     &Text {
       margin-bottom: 65px;
+      text-align: justify;
     }
   }
 
@@ -96,19 +97,77 @@
   .button {
     background: #fff;
     padding: 15px 35px;
-    color: #1680AC;
+    color: #1680ac;
     font-size: 1.1em;
     font-weight: 500;
     text-decoration: none;
     border-radius: 2px;
   }
 
-  @media (max-width: 1040px) {
-    .home {
-      padding: 100px 20px;
+  @media (max-width: 500px) {
+    padding: 100px 40px;
+    .content {
+      width: 100%;
+      margin-top: 40px;
 
-      .mediaIcons {
-        right: 15px;
+      &Title {
+        font-size: 2.5em;
+        line-height: 50px;
+      }
+
+      &Text {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  @media (min-width: 501px) and (max-width: 768px) {
+    padding: 100px 60px;
+    .content {
+      margin-top: 75px;
+
+      &Title {
+        font-size: 2.5em;
+        line-height: 50px;
+      }
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 900px) {
+    padding: 100px 80px;
+    .content {
+      margin-top: 75px;
+
+      &Title {
+        font-size: 3em;
+        line-height: 60px;
+      }
+    }
+  }
+  @media (min-width: 901px) and (max-width: 1150px) {
+    padding: 100px 120px;
+    .content {
+      margin-top: 75px;
+
+      &Title {
+        font-size: 3em;
+        line-height: 60px;
+      }
+    }
+  }
+  @media (min-width: 1151px) and (max-width: 1250px) {
+    padding: 100px 150px;
+    .content {
+      &Title {
+        font-size: 3em;
+        line-height: 60px;
+      }
+    }
+  }
+  @media (min-width: 1251px) and (max-width: 1366px) {
+    .content {
+      &Title {
+        font-size: 3.5em;
       }
     }
   }
