@@ -30,6 +30,60 @@ const cards: ITourCard[] = [
     rating: 4.6,
     reviews: 400,
   },
+  {
+    imgSrc: "/slide3.avif",
+    alt: "Benagil",
+    price: 40,
+    title: "Explore the Benagil caves",
+    address: "Algarve, Benagil",
+    rating: 4.6,
+    reviews: 400,
+  },
+  {
+    imgSrc: "/slide3.avif",
+    alt: "Benagil",
+    price: 40,
+    title: "Explore the Benagil caves",
+    address: "Algarve, Benagil",
+    rating: 4.6,
+    reviews: 400,
+  },
+  {
+    imgSrc: "/slide3.avif",
+    alt: "Benagil",
+    price: 40,
+    title: "Explore the Benagil caves",
+    address: "Algarve, Benagil",
+    rating: 4.6,
+    reviews: 400,
+  },
+  {
+    imgSrc: "/slide3.avif",
+    alt: "Benagil",
+    price: 40,
+    title: "Explore the Benagil caves",
+    address: "Algarve, Benagil",
+    rating: 4.6,
+    reviews: 400,
+  },{
+    imgSrc: "/slide3.avif",
+    alt: "Benagil",
+    price: 40,
+    title: "Explore the Benagil caves",
+    address: "Algarve, Benagil",
+    rating: 4.6,
+    reviews: 400,
+  },{
+    imgSrc: "/slide3.avif",
+    alt: "Benagil",
+    price: 40,
+    title: "Explore the Benagil caves",
+    address: "Algarve, Benagil",
+    rating: 4.6,
+    reviews: 400,
+  },
+
+
 ];
 
 const TourCardsList = () => {
