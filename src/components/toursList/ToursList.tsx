@@ -57,6 +57,7 @@ export const ToursList = () => {
         <div className={styles.selectedTour}>
           <span className={styles.title}>{selectedTour.title}</span>
           <span className={styles.price}>{selectedTour.price}$ / h</span>
+          <button className={styles.button}>View info</button>
         </div>
       </div>
       <div className={styles.tours}>

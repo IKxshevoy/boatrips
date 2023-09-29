@@ -6,16 +6,17 @@
 
   .tourSection {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     flex-basis: 70%;
 
     .selectedTour {
       display: flex;
       flex-direction: column;
-      position: absolute;
+      z-index: 10;
       color: white;
-      top: 30%;
-      left: 15%;
 
       .title {
         font-size: 4.5rem;
@@ -29,7 +30,7 @@
           font-size: 3rem;
         }
         @media (min-width: 801px) and (max-width: 1650px) {
-          font-size: 3.5rem;
+          font-size: 4rem;
         }
       }
 
@@ -38,6 +39,10 @@
         font-weight: 700;
         line-height: 72px;
       }
+.button {
+  margin-top: 50px;
+  z-index: 10;
+}
     }
   }
 
