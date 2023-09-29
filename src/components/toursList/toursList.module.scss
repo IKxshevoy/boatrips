@@ -1,0 +1,47 @@
+.toursList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .tourSection {
+    position: relative;
+    height: 100%;
+    flex-basis: 70%;
+
+    .selectedTour {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      color: white;
+      top: 30%;
+      left: 15%;
+
+      .title {
+        font-size: 4.5rem;
+        font-weight: 700;
+        line-height: 72px;
+
+        @media (max-width: 576px) {
+          font-size: 2.5rem;
+        }
+        @media (min-width: 577px) and (max-width: 800px) {
+          font-size: 3rem;
+        }
+        @media (min-width: 801px) and (max-width: 1650px) {
+          font-size: 3.5rem;
+        }
+      }
+
+      .price {
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 72px;
+      }
+    }
+  }
+
+  .tours {
+    flex-basis: 30%;
+  }
+}
