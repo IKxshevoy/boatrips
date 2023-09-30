@@ -1,6 +1,5 @@
 import { Tour } from '@/types/tours';
-import Image from 'next/image';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './toursList.module.scss';
 
 const tours = [
@@ -47,21 +46,32 @@ export const ToursList = () => {
 
   return (
     <div className={styles.toursList}>
-      <div className={styles.tourSection}>
-        <Image
-          src={selectedTour.imageUrl}
-          style={{ objectFit: "cover" }}
-          fill
-          alt={selectedTour.title}
-        />
+      <div
+        className={`${styles.tourSection} ${styles.hasBgImage} ${styles.hasAfter}`}
+        style={{ backgroundImage: `url('${selectedTour.imageUrl}')` }}
+        key={selectedTour.id}
+        onClick={() => setSelectedTour(selectedTour)}
+      >
         <div className={styles.selectedTour}>
           <span className={styles.title}>{selectedTour.title}</span>
           <span className={styles.price}>{selectedTour.price}$ / h</span>
-          <button className={styles.button}>View info</button>
+          <div className={styles.buttonWrapper}><button className={styles.button}>View info</button></div>
         </div>
       </div>
       <div className={styles.tours}>
-        tours
+        {tours.map((tour) => (
+          <div
+            className={`${styles.galleryCard} ${styles.hasBgImage}`}
+            style={{ backgroundImage: `url('${tour.imageUrl}')` }}
+            key={tour.id}
+            onClick={() => setSelectedTour(tour)}
+          >
+            <div className={styles.cardContent}>
+              <h3 className={`h3 ${styles.cardTitle}`}>{tour.title}</h3>
+            </div>
+          </div>
+
+        ))}
       </div>
     </div>
   )
