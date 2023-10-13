@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import Select from "react-select";
 
 const links = [
   {
@@ -32,12 +33,25 @@ const links = [
   },
 ];
 
+const languageOptions = [
+  { value: "en", label: "EN" },
+  { value: "fr", label: "FR" },
+  { value: "pt", label: "PT" },
+  { value: "de", label: "DE" },
+];
+
 const Navbar: React.FC = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
+  };
+
+  const handleLanguageChange = (selectedOption: any) => {
+    setSelectedLanguage(selectedOption);
+    // Implement your language change logic here
   };
 
   useEffect(() => {
@@ -59,13 +73,17 @@ const Navbar: React.FC = () => {
       {isMenuActive ? (
         <FontAwesomeIcon
           icon={faTimes}
-          className={`${styles.menuBtn} ${styles.closeBtn} ${styles.active} ${isSticky ? styles.sticky : ""}`}
+          className={`${styles.menuBtn} ${styles.closeBtn} ${styles.active} ${
+            isSticky ? styles.sticky : ""
+          }`}
           onClick={toggleMenu}
         />
       ) : (
         <FontAwesomeIcon
           icon={faBars}
-          className={`${styles.menuBtn} ${styles.active} ${isSticky ? styles.sticky : ""}`}
+          className={`${styles.menuBtn} ${styles.active} ${
+            isSticky ? styles.sticky : ""
+          }`}
           onClick={toggleMenu}
         />
       )}
@@ -78,6 +96,13 @@ const Navbar: React.FC = () => {
               {link.title}
             </a>
           ))}
+        </div>
+        <div className={styles.languageSelector}>
+          <Select
+            value={selectedLanguage}
+            options={languageOptions}
+            onChange={handleLanguageChange}
+          />
         </div>
       </div>
     </header>
