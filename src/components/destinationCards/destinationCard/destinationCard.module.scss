@@ -44,7 +44,8 @@
     transition: 0.5s ease-in-out;
   }
 
-  &:hover, &:focus-within {
+  &:hover,
+  &:focus-within {
     &::after {
       opacity: 0.3;
       background-color: rgb(45, 96, 172);
@@ -67,8 +68,9 @@
       gap: 8px;
       transition: 0.2s ease-in-out;
 
-      &:hover, &:focus-visible {
-        color: #EB8D2C;
+      &:hover,
+      &:focus-visible {
+        color: #eb8d2c;
 
         .span {
           transition: all 0.3s ease-in-out;
