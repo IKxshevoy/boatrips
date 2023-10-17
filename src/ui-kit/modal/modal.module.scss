@@ -30,7 +30,5 @@
 .modal {
   background-color: white;
   border-radius: 10px;
-  max-width: 80%;
-  max-height: 80%;
-  overflow: auto;
+  overflow: visible;
 }

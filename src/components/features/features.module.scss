@@ -1,10 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
 .section {
-  padding-block: 2rem;
+  padding-block: 20px;
 }
+
 
 .container {
   padding-inline: 16px;
 }
+
+
+.headline{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+  }
+}
+
+
 
 .hasBgImage {
   background: {
@@ -69,14 +88,16 @@
 }
 
 .features .sectionText {
-  margin-block: 30px;
+  margin: 15px 0px 20px 0px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }
 
 .featuresListCard {
   display: flex;
   align-items: center;
-  gap: 20px;
-  margin-block-end: 30px;
+  gap: 10px;
+  margin-block-end: 25px;
 
   .cardIcon {
     background-color: rgb(48, 95, 184);
@@ -89,6 +110,21 @@
 
   .cardTitle {
     margin-block-end: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .cardText{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+  }
+}
+
+
+
+@media (min-width: 320px) {
+  .modalDiv{
+    width: 96vw;
   }
 }
 
@@ -98,11 +134,17 @@
     width: 100%;
     margin-inline: auto;
   }
+  .modalDiv{
+    width: 80vw;
+  }
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 720px;
+  }
+  .modalDiv{
+    width: 75vw;
   }
 }
 
@@ -125,13 +167,19 @@
     }
 
     .featuresContent {
-      padding-inline: 80px;
+      padding-inline: 20px;
     }
+  }
+  .modalDiv{
+    width: 70vw;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
     max-width: 1250px;
+  }
+  .modalDiv{
+    width: 60vw;
   }
 }

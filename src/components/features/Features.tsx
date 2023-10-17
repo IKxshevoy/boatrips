@@ -68,10 +68,12 @@ const Features = () => {
   return (
     <section className={`${styles.features} ${openModal ? styles.featuresModal : ''}`} aria-label="features">
       <ImageBanner setModalOpen={setModalOpen}/>
-      <Modal isOpen={openModal} onClose={() => setModalOpen(false)}><div style={{width: '60vw'}}><VideoPlayer options={videoOptions}/></div></Modal>
+      <Modal isOpen={openModal} onClose={() => setModalOpen(false)}><div className={styles.modalDiv}><VideoPlayer options={videoOptions}/></div></Modal>
       <div className={`${styles.section} ${styles.featuresContent}`}>
         <div className={styles.container}>
+          <div className={styles.headline}>
           <h2>Why you should go with us?</h2>
+          </div>
           <p className={styles.sectionText}>
             Embark on an unforgettable journey with Boatrips and experience the
             natural beauty of Lagos like never before. Our boat tours offer a

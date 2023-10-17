@@ -20,7 +20,7 @@ const Feature = ({ title, description, icon }: IFeature) => {
       </div>
       <div>
         <h3 className={styles.cardTitle}>{title}</h3>
-        <p>{description}</p>
+        <p className={styles.cardText}>{description}</p>
       </div>
     </div>
   );

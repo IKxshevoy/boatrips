@@ -1,13 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
 .contactForm {
     height: 100%;
     flex: 1;
 
     &__title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
       margin-bottom: 25px;
       color: #fff;
     }
 
     &__text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
       color: #fff;
       margin-bottom: 35px;
     }
@@ -23,6 +31,7 @@
 
     input[type="email"],
     textarea {
+      outline: none; 
       margin-bottom: 20px;
       padding: 15px;
       border: none;
@@ -30,12 +39,18 @@
       background: rgb(240, 230, 229);
 
       &::placeholder {
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 2px;
+        font-weight: 500;
         color: #000;
         font-size: 1rem;
       }
     }
 
     button[type="submit"] {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 10px;
+      font-weight: 600;
       padding: 12px 0;
       background-color: #fff;
       color: rgb(48, 95, 184);
