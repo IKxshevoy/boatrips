@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
 .header {
   z-index: 999;
   position: absolute;
@@ -6,7 +8,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 15px 200px;
   transition: 0.5s ease;
 
@@ -37,6 +39,7 @@
   .navigation {
     position: relative;
     display: flex;
+    align-items: flex-start;
 
     .menuLink {
       position: relative;
@@ -60,6 +63,19 @@
 
       &:hover:before {
         width: 100%;
+      }
+    }
+    .languageSelector {
+      display: flex;
+      font-family: "Montserrat", sans-serif;
+      margin-left: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      .select {
+        cursor: pointer;
+        &:hover {
+          border-color: #007bff;
+        }
       }
     }
   }

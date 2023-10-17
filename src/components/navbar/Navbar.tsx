@@ -4,6 +4,11 @@ import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import Select from "react-select";
+import CustomSelect from "./customSelect/CustomSelect";
+import en from "../../../public/flag/en.png";
+import fr from "../../../public/flag/fr.png";
+import pt from "../../../public/flag/pt.jpg";
+import de from "../../../public/flag/de.png";
 
 const links = [
   {
@@ -34,10 +39,10 @@ const links = [
 ];
 
 const languageOptions = [
-  { value: "en", label: "EN" },
-  { value: "fr", label: "FR" },
-  { value: "pt", label: "PT" },
-  { value: "de", label: "DE" },
+  { value: "en", label: "EN", flag: en },
+  { value: "fr", label: "FR", flag: fr },
+  { value: "pt", label: "PT", flag: pt },
+  { value: "de", label: "DE", flag: de },
 ];
 
 const Navbar: React.FC = () => {
@@ -99,10 +104,12 @@ const Navbar: React.FC = () => {
         </div>
         <div className={styles.languageSelector}>
           <Select
+            className={styles.select}
             value={selectedLanguage}
             options={languageOptions}
             onChange={handleLanguageChange}
           />
+          <CustomSelect choice={languageOptions} />
         </div>
       </div>
     </header>
