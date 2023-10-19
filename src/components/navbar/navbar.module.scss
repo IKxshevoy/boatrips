@@ -46,6 +46,9 @@
       align-items: flex-start;
       .wrapperMenuLink {
         position: relative;
+        hr {
+          display: none;
+        }
         .listOfTours {
           display: none;
           background-color: #fff;
@@ -54,9 +57,7 @@
           top: 25px;
           left: 5px;
           padding: 7px 15px;
-          border: 1px solid #222;
-          border-bottom-left-radius: 20px;
-          border-bottom-right-radius: 20px;
+          border-left: #166daf 2px solid;
           .place {
             color: #222;
             font-size: 16px;
@@ -64,13 +65,10 @@
             text-decoration: none;
             transition: 0.3s ease;
             &:hover {
+              font-weight: 500;
+              text-decoration: 2px underline #166daf;
               color: #166daf;
               font-size: 18px;
-              &::before {
-                content: "•";
-                color: #166daf;
-                margin-right: 5px;
-              }
             }
           }
         }
@@ -138,7 +136,7 @@
           background: #fff;
           width: 300px;
           max-width: 600px;
-          padding: 40px;
+          padding: 50px 40px;
           display: flex;
           flex-direction: column;
           box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
@@ -152,13 +150,22 @@
             }
           }
           .menuLink {
+            position: relative;
             color: #166daf;
-            margin: 20px;
+            margin: 10px;
 
-            &:before {
-              background: #166daf;
-              height: 2px;
+            &:hover:before {
+              width: 0;
             }
+          }
+          hr {
+            top: 0;
+            left: -10px;
+            display: block;
+            position: absolute;
+            width: 190px;
+            height: 3px;
+            background-color: #166daf;
           }
         }
       }

@@ -24,9 +24,7 @@
       margin-top: 10px;
       padding: 2px 10px 5px 10px;
       background-color: #fff;
-      border: 1px solid #222;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
+      border-left: 2px solid #166daf;
     }
     button {
       display: flex;
@@ -78,7 +76,6 @@
       &.active {
         margin-top: 10px;
         padding: 6px 15px 10px 15px;
-        border: 1px solid #222;
       }
       button {
         margin: 20px 0px;

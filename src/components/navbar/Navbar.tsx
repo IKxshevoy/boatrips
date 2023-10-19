@@ -108,6 +108,7 @@ const Navbar: React.FC = () => {
               <a key={link.id} href={link.url} className={styles.menuLink}>
                 {link.title}
               </a>
+              <hr />
               {link.title === "Explore" ? (
                 <div className={styles.listOfTours}>
                   <ul>
