@@ -111,10 +111,10 @@ const Navbar: React.FC = () => {
               {link.title === "Explore" ? (
                 <div className={styles.listOfTours}>
                   <ul>
-                    {tours.map((place, index) => (
-                      <li key={index}>
-                        <a className={styles.place} href={place.name}>
-                          {place.name}
+                    {tours.map((tour) => (
+                      <li key={tour.name}>
+                        <a className={styles.tour} href={tour.name}>
+                          {tour.name}
                         </a>
                       </li>
                     ))}
