@@ -1,5 +1,5 @@
 import styles from "../customSelect/custom.module.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 interface Choice {
   value: string;
@@ -15,6 +15,23 @@ interface CustomSelectProps {
 const CustomSelect: React.FC<CustomSelectProps> = ({ choice }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      wrapperRef.current &&
+      !wrapperRef.current.contains(event.target as Node)
+    ) {
+      setIsMenuOpen(false);
+    }
+  };
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -26,7 +43,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ choice }) => {
   };
 
   return (
-    <div className={styles.customWrapper}>
+    <div ref={wrapperRef} className={styles.customWrapper}>
       <div
         className={`${styles.selectedLanguage} ${
           isMenuOpen ? styles.active : ""

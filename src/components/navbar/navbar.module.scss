@@ -19,11 +19,11 @@
     transition: background-color 0.5s ease-in-out;
 
     .brand,
-    .navigation .menuLink,
+    .navigation .navigationItems .wrapperMenuLink .menuLink,
     .menuBtn {
       color: #166daf;
     }
-    .navigation .menuLink:before {
+    .navigation .navigationItems .wrapperMenuLink .menuLink:before {
       background: #166daf;
     }
   }
@@ -41,40 +41,67 @@
     display: flex;
     align-items: flex-start;
 
-    .menuLink {
-      position: relative;
-      color: #fff;
-      font-size: 1em;
-      font-weight: 500;
-      text-decoration: none;
-      margin-left: 30px;
-      transition: 0.3s ease;
-
-      &:before {
-        content: "";
-        position: absolute;
-        background: #fff;
-        width: 0;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        transition: 0.3s ease;
-      }
-
-      &:hover:before {
-        width: 100%;
-      }
-    }
-    .languageSelector {
+    .navigationItems {
       display: flex;
-      font-family: "Montserrat", sans-serif;
-      margin-left: 20px;
-      font-size: 14px;
-      font-weight: 500;
-      .select {
-        cursor: pointer;
+      align-items: flex-start;
+      .wrapperMenuLink {
+        position: relative;
+        .listOfTours {
+          display: none;
+          background-color: #fff;
+          min-width: 110px;
+          position: absolute;
+          top: 25px;
+          left: 5px;
+          padding: 7px 15px;
+          border: 1px solid #222;
+          border-bottom-left-radius: 20px;
+          border-bottom-right-radius: 20px;
+          .place {
+            color: #222;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.3s ease;
+            &:hover {
+              color: #166daf;
+              font-size: 18px;
+              &::before {
+                content: "•";
+                color: #166daf;
+                margin-right: 5px;
+              }
+            }
+          }
+        }
         &:hover {
-          border-color: #007bff;
+          .listOfTours {
+            display: block;
+          }
+        }
+        .menuLink {
+          position: relative;
+          color: #fff;
+          font-size: 1em;
+          font-weight: 500;
+          text-decoration: none;
+          margin-left: 30px;
+          transition: 0.3s ease;
+
+          &:before {
+            content: "";
+            position: absolute;
+            background: #fff;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            transition: 0.3s ease;
+          }
+
+          &:hover:before {
+            width: 100%;
+          }
         }
       }
     }
@@ -105,8 +132,8 @@
         display: flex;
         justify-content: flex-end;
         background: rgba(1, 1, 1, 0.5);
-
         .navigationItems {
+          border: 2px solid #166daf;
           height: 100%;
           background: #fff;
           width: 300px;
@@ -114,18 +141,24 @@
           padding: 40px;
           display: flex;
           flex-direction: column;
-          align-items: center;
           box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
         }
+        .wrapperMenuLink {
+          margin: 0px 0px 30px 0px;
+          font-size: 30px;
+          &:hover {
+            .listOfTours {
+              display: none;
+            }
+          }
+          .menuLink {
+            color: #166daf;
+            margin: 20px;
 
-        .menuLink {
-          color: #222;
-          font-size: 1.2em;
-          margin: 20px;
-
-          &:before {
-            background: #166daf;
-            height: 2px;
+            &:before {
+              background: #166daf;
+              height: 2px;
+            }
           }
         }
       }

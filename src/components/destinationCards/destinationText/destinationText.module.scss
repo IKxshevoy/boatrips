@@ -26,7 +26,6 @@
       text-align: center;
     }
   }
-
 }
 
 .blockquote {
@@ -57,7 +56,7 @@
   vertical-align: middle;
   height: 2px;
   width: 80px;
-  background-color: #EB8D2C;
+  background-color: #eb8d2c;
   margin-right: 10px;
 }
 
@@ -69,6 +68,7 @@
 }
 
 .btn {
+  margin: 0 autof;
   height: 50px;
   color: #fff;
   padding-inline: 30px;

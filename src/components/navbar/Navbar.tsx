@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import Select from "react-select";
 import CustomSelect from "./customSelect/CustomSelect";
 import en from "../../../public/flag/en.png";
 import fr from "../../../public/flag/fr.png";
@@ -43,6 +42,14 @@ const languageOptions = [
   { value: "fr", label: "FR", flag: fr },
   { value: "pt", label: "PT", flag: pt },
   { value: "de", label: "DE", flag: de },
+];
+const tours = [
+  { name: "Place 1" },
+  { name: "Place 2" },
+  { name: "Place 3" },
+  { name: "Place 4" },
+  { name: "Place 5" },
+  { name: "Place 6" },
 ];
 
 const Navbar: React.FC = () => {
@@ -97,19 +104,28 @@ const Navbar: React.FC = () => {
       >
         <div className={styles.navigationItems}>
           {links.map((link) => (
-            <a key={link.id} href={link.url} className={styles.menuLink}>
-              {link.title}
-            </a>
+            <div className={styles.wrapperMenuLink}>
+              <a key={link.id} href={link.url} className={styles.menuLink}>
+                {link.title}
+              </a>
+              {link.title === "Explore" ? (
+                <div className={styles.listOfTours}>
+                  <ul>
+                    {tours.map((place) => (
+                      <li>
+                        <a className={styles.place} href={place.name}>
+                          {place.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           ))}
-        </div>
-        <div className={styles.languageSelector}>
-          <Select
-            className={styles.select}
-            value={selectedLanguage}
-            options={languageOptions}
-            onChange={handleLanguageChange}
-          />
-          <CustomSelect choice={languageOptions} />
+          <div className={styles.languageSelector}>
+            <CustomSelect choice={languageOptions} />
+          </div>
         </div>
       </div>
     </header>

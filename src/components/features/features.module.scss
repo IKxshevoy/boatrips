@@ -113,6 +113,9 @@
 }
 
 @media (min-width: 320px) {
+  .container {
+    padding-inline: 0px;
+  }
   .modalDiv {
     width: 96vw;
   }
@@ -180,5 +183,8 @@
 @media (min-width: 1440px) {
   .features .sectionText {
     display: block;
+  }
+  .container {
+    padding-inline: 16px;
   }
 }

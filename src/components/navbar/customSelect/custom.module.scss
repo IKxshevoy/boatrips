@@ -57,3 +57,43 @@
     }
   }
 }
+
+@media (max-width: 1040px) {
+  .customWrapper {
+    margin-left: 0px;
+    .selectedLanguage {
+      img {
+        width: 20px;
+        height: 15px;
+        margin-right: 4px;
+      }
+      p {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 500;
+        font-size: 25px;
+        color: #166daf;
+      }
+    }
+    .languageMenu {
+      &.active {
+        margin-top: 10px;
+        padding: 6px 15px 10px 15px;
+        border: 1px solid #222;
+      }
+      button {
+        margin: 20px 0px;
+        border-bottom: 2px solid #166daf;
+        img {
+          width: 20px;
+          height: 15px;
+          margin-right: 4px;
+        }
+        p {
+          color: #166daf;
+          font-weight: 700;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
