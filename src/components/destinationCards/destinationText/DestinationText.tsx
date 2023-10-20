@@ -7,13 +7,17 @@ const DestinationText = () => {
   return (
     <div className={styles.greeting}>
       <div className={styles.description}>
-        <Title title="OUR EXPIRIENCES" />
+        <div className={styles.title}>
+          <Title title="OUR EXPIRIENCES" />
+        </div>
         <p className={styles.text}>
           "Welcome aboard! Dive into a world of endless possibilities as you
           explore our extensive array of captivating boat tours below, promising
           unforgettable experiences along the stunning coast of Lagos."
         </p>
-        <Link href="#" className={`${styles.btn} ${styles.btnPrimary}`}>View All Destinations</Link>
+        <Link href="#" className={`${styles.btn} ${styles.btnPrimary}`}>
+          View All Destinations
+        </Link>
       </div>
       <blockquote className={styles.blockquote}>
         <p>

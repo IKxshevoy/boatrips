@@ -39,11 +39,11 @@
   .navigation {
     position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
     .navigationItems {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       .wrapperMenuLink {
         position: relative;
         .listOfTours {

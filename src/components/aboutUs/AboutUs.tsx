@@ -1,10 +1,8 @@
 import { AboutUsSection } from "@/components/aboutUs/aboutUsSection/AboutUsSection";
 import Image from "next/image";
-import { useState } from "react";
 import styles from "./aboutUs.module.scss";
 
 export const AboutUs = () => {
-  const [isFadeLoaded, setIsFadeLoaded] = useState(false);
 
   return (
     <section className={`${styles.about}`}>

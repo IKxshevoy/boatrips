@@ -24,6 +24,14 @@ const links = [
     id: 3,
     title: "Explore",
     url: "/explore",
+    subMenu: [
+      { name: "Place 1" },
+      { name: "Place 2" },
+      { name: "Place 3" },
+      { name: "Place 4" },
+      { name: "Place 5" },
+      { name: "Place 6" },
+    ],
   },
   {
     id: 4,
@@ -43,27 +51,13 @@ const languageOptions = [
   { value: "pt", label: "PT", flag: pt },
   { value: "de", label: "DE", flag: de },
 ];
-const tours = [
-  { name: "Place 1" },
-  { name: "Place 2" },
-  { name: "Place 3" },
-  { name: "Place 4" },
-  { name: "Place 5" },
-  { name: "Place 6" },
-];
 
 const Navbar: React.FC = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
-  };
-
-  const handleLanguageChange = (selectedOption: any) => {
-    setSelectedLanguage(selectedOption);
-    // Implement your language change logic here
   };
 
   useEffect(() => {
@@ -108,10 +102,10 @@ const Navbar: React.FC = () => {
               <a key={link.id} href={link.url} className={styles.menuLink}>
                 {link.title}
               </a>
-              {link.title === "Explore" ? (
+              {link.subMenu ? (
                 <div className={styles.listOfTours}>
                   <ul>
-                    {tours.map((tour) => (
+                    {link.subMenu.map((tour) => (
                       <li key={tour.name}>
                         <a className={styles.tour} href={tour.name}>
                           {tour.name}

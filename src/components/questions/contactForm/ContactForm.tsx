@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./contactForm.module.scss"
+import styles from "./contactForm.module.scss";
 
 const ContactForm = () => {
   return (
@@ -12,8 +12,15 @@ const ContactForm = () => {
         you as soon as possible
       </p>
       <form>
-        <input type="email" placeholder="Enter email address" />
-        <textarea placeholder="Enter question here"></textarea>
+        <input
+          type="email"
+          placeholder="youremail@example.com"
+          className={styles.input}
+        />
+        <textarea
+          placeholder="Enter your question here"
+          className={styles.textarea}
+        ></textarea>
         <button type="submit">Submit</button>
       </form>
     </div>
