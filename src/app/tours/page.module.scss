@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
 
   .tourSection {
@@ -9,6 +10,18 @@
     height: 100vh;
     display: flex;
     padding: 150px 200px;
+    @media (min-width: 300px) and (max-width: 600px) {
+      padding: 60px 20px;
+    }
+    @media (min-width: 601px) and (max-width: 800px) {
+      padding: 60px 80px;
+    }
+    @media (min-width: 801px) and (max-width: 1340px) {
+      padding: 80px 120px;
+    }
+    @media (min-width: 1340px) and (max-width: 1750px) {
+      padding: 120px 170px;
+    }
 
     &::after {
       top: 0;
@@ -37,8 +50,10 @@
         font-size: 4.5rem;
         font-weight: 700;
         line-height: 72px;
-
-        @media (max-width: 576px) {
+        @media (min-width: 320px) and (max-width: 409px) {
+          font-size: 1.8rem;
+        }
+        @media (min-width: 410px) and (max-width: 576px) {
           font-size: 2.5rem;
         }
         @media (min-width: 577px) and (max-width: 800px) {
@@ -60,6 +75,44 @@
         font-size: 1.2rem;
         margin: 60px 0;
         line-height: 1.7;
+        @media (min-width: 320px) and (max-width: 409px) {
+          margin: 10px 0;
+          max-width: 110%;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        @media (min-width: 410px) and (max-width: 600px) {
+          margin: 10px 0;
+          max-width: 110%;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 4;
+        }
+        @media (min-width: 601px) and (max-width: 800px) {
+          margin: 10px 0;
+          max-width: 110%;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 6;
+        }
+        @media (min-width: 801px) and (max-width: 939px) {
+          margin: 20px 0;
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 6;
+        }
+        @media (min-width: 940px) and (max-width: 1340px) {
+          margin: 30px 0;
+          max-width: 90%;
+        }
+        @media (min-width: 1340px) and (max-width: 1750px) {
+          margin: 45px 0;
+        }
       }
 
       .buttonWrapper {
@@ -102,7 +155,14 @@
     display: flex;
     gap: 20px;
     bottom: 20px;
-
+    @media (min-width: 320px) and (max-width: 380px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 381px) and (max-width: 940px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
     .hasBgImage {
       background-repeat: no-repeat;
       background-position: center;
@@ -134,6 +194,25 @@
       border: 6px solid white;
       border-radius: 10px;
       cursor: pointer;
+      @media (min-width: 320px) and (max-width: 380px) {
+        height: 15vh;
+        width: 40vw;
+      }
+      @media (min-width: 381px) and (max-width: 600px) {
+        height: 22vh;
+        width: 28vw;
+      }
+      @media (min-width: 601px) and (max-width: 800px) {
+        height: 18vh;
+        width: 28vw;
+      }
+      @media (min-width: 801px) and (max-width: 940px) {
+        height: 16vh;
+        width: 24vw;
+      }
+      @media (min-width: 940px) and (max-width: 1340px) {
+        width: 13vw;
+      }
 
       &::after {
         top: 0;

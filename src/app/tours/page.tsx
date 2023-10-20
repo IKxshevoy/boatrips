@@ -26,7 +26,7 @@ const tours = [
     id: 1,
     price: 80,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
   {
     title: "Benagil cave",
@@ -34,7 +34,7 @@ const tours = [
     id: 2,
     price: 20,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
   {
     title: "Sunset cruise",
@@ -42,7 +42,7 @@ const tours = [
     id: 3,
     price: 40,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
   {
     title: "Benagil cave",
@@ -50,7 +50,7 @@ const tours = [
     id: 4,
     price: 70,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
   {
     title: "Sunset cruise",
@@ -58,7 +58,7 @@ const tours = [
     id: 5,
     price: 30,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
 ];
 
