@@ -64,12 +64,18 @@ const tours = [
 
 const Tours = () => {
   const [selectedTour, setSelectedTour] = useState<Tour>(tours[0]);
-
   return (
-    <div className={styles.toursList}>
+    <div
+      className={styles.toursList}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${selectedTour.imageUrl}')`,
+        backgroundSize: "cover",
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <div
-        className={`${styles.tourSection} ${styles.hasBgImage} ${styles.hasAfter}`}
-        style={{ backgroundImage: `url('${selectedTour.imageUrl}')` }}
+        className={styles.tourSection}
         key={selectedTour.id}
         onClick={() => setSelectedTour(selectedTour)}
       >
