@@ -12,6 +12,10 @@
   padding: 15px 200px;
   transition: 0.5s ease;
 
+  .orangeWrapper {
+    color: #eb8d2c !important;
+  }
+
   &.sticky {
     position: fixed;
     background-color: #fff;
@@ -49,24 +53,26 @@
         .listOfTours {
           display: none;
           background-color: #fff;
-          min-width: 110px;
+          width: 220px;
           position: absolute;
           top: 25px;
           left: 5px;
           padding: 7px 15px;
           border-left: #166daf 2px solid;
+          .tourWrapper {
+            margin: 10px 0;
+            transition: 0.3s ease-in;
+            &:hover {
+              padding-left: 10px;
+              color: rgb(16, 70, 169);
+            }
+          }
           .tour {
-            color: #222;
+            color: #166daf;
             font-size: 16px;
             font-weight: 500;
             text-decoration: none;
-            transition: 0.3s ease;
-            &:hover {
-              font-weight: 500;
-              text-decoration: 2px underline #166daf;
-              color: #166daf;
-              font-size: 18px;
-            }
+            transition: 0.3s ease-in;
           }
         }
         &:hover {

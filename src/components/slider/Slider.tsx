@@ -13,10 +13,10 @@ interface Slide {
 
 const slideContent: Slide[] = [
   {
-    title: "Ponta de Piedade",
-    subTitle: "",
+    title: "Tour of",
+    subTitle: "Ponta de Piedade",
     content:
-      "Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.",
+      "Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros",
     path: "/slide1.jpg",
   },
   {

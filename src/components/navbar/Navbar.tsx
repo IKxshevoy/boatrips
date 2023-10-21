@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -22,15 +23,15 @@ const links = [
   },
   {
     id: 3,
-    title: "Explore",
-    url: "/explore",
+    title: "Tours",
+    url: "/tours",
     subMenu: [
-      { name: "Place 1" },
-      { name: "Place 2" },
-      { name: "Place 3" },
-      { name: "Place 4" },
-      { name: "Place 5" },
-      { name: "Place 6" },
+      { name: "Ponta de Piedade" },
+      { name: "Coastline Cruise" },
+      { name: "Benagil Cave" },
+      { name: "Sunset Tour" },
+      { name: "Private tour" },
+      { name: "Private sunset" },
     ],
   },
   {
@@ -55,26 +56,28 @@ const languageOptions = [
 const Navbar: React.FC = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
   };
 
   useEffect(() => {
+    setIsSticky(pathname === "/contact");
     const handleScroll = () => {
       if (window.scrollY > 1) {
         setIsSticky(true);
       } else {
-        setIsSticky(false);
+        pathname !== "/contact" && setIsSticky(false);
       }
     };
     window.addEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   return (
     <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
       <a className={styles.brand} href={"/"}>
-        Travel
+        BOA<span className={styles.orangeWrapper}>T</span>RIPS
       </a>
       {isMenuActive ? (
         <FontAwesomeIcon
@@ -106,7 +109,7 @@ const Navbar: React.FC = () => {
                 <div className={styles.listOfTours}>
                   <ul>
                     {link.subMenu.map((tour) => (
-                      <li key={tour.name}>
+                      <li key={tour.name} className={styles.tourWrapper}>
                         <a className={styles.tour} href={tour.name}>
                           {tour.name}
                         </a>

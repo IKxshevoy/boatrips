@@ -6,10 +6,6 @@
   justify-content: center;
   gap: 100px;
 
-  &__notFade {
-    height: 100%;
-  }
-
   &__data {
     max-width: 750px;
     visibility: visible;
@@ -46,6 +42,10 @@
 
   &__MapDescription {
     text-align: center !important;
+
+    .orangeWrapper {
+      color: #eb8d2c !important;
+    }
   }
 
   &__img {
