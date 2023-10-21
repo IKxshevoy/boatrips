@@ -38,6 +38,24 @@ const Gallery = () => {
             </div>
           </li>
           <li>
+            <img src="/gallery/5.jpg" alt="" />
+            <div className={styles.overlay}>
+              <span>Ponta de Piedade</span>
+            </div>
+          </li>
+          <li>
+            <img src="/gallery/6.jpg" alt="" />
+            <div className={styles.overlay}>
+              <span>Ponta de Piedade</span>
+            </div>
+          </li>
+          <li>
+            <img src="/gallery/7.jpg" alt="" />
+            <div className={styles.overlay}>
+              <span>Image title</span>
+            </div>
+          </li>
+          <li>
             <img src="/gallery/19.jpg" alt="" />
             <div className={styles.overlay}>
               <span>Image title</span>
