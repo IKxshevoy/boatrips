@@ -7,7 +7,7 @@ export const AboutUsMap = () => (
   >
       <div className={styles.about__data}>
         <Title title="How to find us ?" />
-        <p className={styles.about__description}>
+        <p className={`${styles.about__description} ${styles.about__MapDescription}`}>
           Look for a yellow stand with the name "Boatrips" in Marina de Lagos.
         </p>
       </div>

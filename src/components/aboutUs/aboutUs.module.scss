@@ -44,6 +44,10 @@
     color: rgb(39 35 35 / 85%);
   }
 
+  &__MapDescription {
+    text-align: center !important;
+  }
+
   &__img {
     max-width: 700px;
     width: 100%;
@@ -114,6 +118,9 @@
   @media (max-width: 800px) {
     &__data {
       text-align: center;
+      h2 {
+        font-size: 3.5rem;
+      }
     }
     &__description {
       text-align: justify;
@@ -124,6 +131,9 @@
   @media (max-width: 578px) {
     &__data {
       padding: 2% 2.5% 0 2.5%;
+      h2 {
+        font-size: 3rem;
+      }
     }
     &__img {
       padding: 2%;
@@ -137,6 +147,12 @@
     }
   }
   @media (max-width: 400px) {
+    &__data {
+      padding: 2% 2.5% 0 2.5%;
+      h2 {
+        font-size: 2.4rem;
+      }
+    }
     &__description {
       margin-block: 0 20px;
     }
