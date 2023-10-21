@@ -98,7 +98,7 @@ const Navbar: React.FC = () => {
       >
         <div className={styles.navigationItems}>
           {links.map((link) => (
-            <div className={styles.wrapperMenuLink}>
+            <div className={styles.wrapperMenuLink} key={link.title}>
               <a key={link.id} href={link.url} className={styles.menuLink}>
                 {link.title}
               </a>
