@@ -1,52 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
 .contactForm {
-    height: 100%;
-    flex: 1;
+  height: 100%;
+  flex: 1;
+
+  &__title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    color: #fff;
+  }
+
+  &__text {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 35px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  textarea {
+    height: 100px;
+    &::placeholder {
+      color: rgb(48, 95, 184);
+    }
+  }
+
+  input[type="email"],
+  textarea {
+    outline: none;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    background-color: #fff;
+
+    &::placeholder {
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 2px;
+      font-weight: 500;
+      color: rgb(48, 95, 184);
+      font-size: 1rem;
+    }
+  }
+
+  button[type="submit"] {
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding: 12px 0;
+    background-color: #fff;
+    color: rgb(48, 95, 184);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+
+    &:hover {
+      background-color: #eb8d2c;
+      color: #fff;
+    }
+  }
+  @media (max-width: 900px) {
+    text-align: center;
 
     &__title {
-      margin-bottom: 25px;
-      color: #fff;
+      font-size: 2.5rem;
     }
-
     &__text {
-      color: #fff;
-      margin-bottom: 35px;
+      font-size: 1.3rem;
     }
-
-    form {
-      display: flex;
-      flex-direction: column;
+  }
+  @media (max-width: 578px) {
+    &__title {
+      font-size: 2rem;
     }
-
-    textarea {
-      height: 100px;
+    &__text {
+      font-size: 1rem;
     }
-
-    input[type="email"],
-    textarea {
-      margin-bottom: 20px;
-      padding: 15px;
-      border: none;
-      border-radius: 15px;
-      background: rgb(240, 230, 229);
-
-      &::placeholder {
-        color: #000;
-        font-size: 1rem;
-      }
+  }
+  @media (max-width: 400px) {
+    &__title {
+      font-size: 1.7rem;
     }
-
-    button[type="submit"] {
-      padding: 12px 0;
-      background-color: #fff;
-      color: rgb(48, 95, 184);
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      transition: background-color 0.4s ease-in-out;
-
-      &:hover {
-        background-color: #EB8D2C;
-        color: #fff;
-      }
-    }
+  }
 }

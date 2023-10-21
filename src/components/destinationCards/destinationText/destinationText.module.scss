@@ -6,8 +6,11 @@
   width: 85%;
   margin: 0 auto 100px;
 
-  @media (max-width: 1382px) {
+  @media (max-width: 1380px) {
     width: 95%;
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 50px;
   }
 }
 
@@ -20,13 +23,25 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 75%;
+    width: 90%;
 
     p {
       text-align: center;
     }
   }
-
+  @media (max-width: 500px) {
+    .title h2 {
+      font-size: 2.5rem;
+    }
+    p {
+      text-align: justify;
+    }
+  }
+  @media (max-width: 380px) {
+    .title h2 {
+      font-size: 2.3rem;
+    }
+  }
 }
 
 .blockquote {
@@ -43,6 +58,10 @@
   font-weight: 400;
   font-size: 1.4rem;
   color: rgba(73, 38, 38, 0.679);
+
+  @media (max-width: 1280px) {
+    margin: 20px 0 40px;
+  }
 }
 
 .cite {
@@ -57,7 +76,7 @@
   vertical-align: middle;
   height: 2px;
   width: 80px;
-  background-color: #EB8D2C;
+  background-color: #eb8d2c;
   margin-right: 10px;
 }
 
@@ -69,6 +88,7 @@
 }
 
 .btn {
+  margin: 0 auto;
   height: 50px;
   color: #fff;
   padding-inline: 30px;

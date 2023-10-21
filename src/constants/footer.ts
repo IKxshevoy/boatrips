@@ -18,9 +18,6 @@ const contactItems: LinkItem[] = [
 
 export const footerBlocks = [
   {
-    'Quick Links': linkItems,
-  },
-  {
     'Support': linkItems,
   },
   {"Contact info": contactItems},

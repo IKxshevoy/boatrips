@@ -1,6 +1,6 @@
-import { Modal } from '@/ui-kit/modal/Modal';
-import VideoPlayer from '@/ui-kit/video/Video';
-import React, { useState } from 'react';
+import { Modal } from "@/ui-kit/modal/Modal";
+import VideoPlayer from "@/ui-kit/video/Video";
+import React, { useState } from "react";
 import styles from "./features.module.scss";
 import Feature from "./feature/Feature";
 import {
@@ -58,20 +58,29 @@ const Features = () => {
     controls: true,
     responsive: true,
     fluid: true,
-    sources: [{
-      src: 'intro.mp4',
-      type: 'video/mp4'
-    }],
-    poster: 'aboutUs2.jpg'
+    sources: [
+      {
+        src: "intro.mp4",
+        type: "video/mp4",
+      },
+    ],
+    poster: "aboutUs2.jpg",
   };
 
   return (
-    <section className={`${styles.features} ${openModal ? styles.featuresModal : ''}`} aria-label="features">
-      <ImageBanner setModalOpen={setModalOpen}/>
-      <Modal isOpen={openModal} onClose={() => setModalOpen(false)}><div style={{width: '60vw'}}><VideoPlayer options={videoOptions}/></div></Modal>
+    <section
+      className={`${styles.features} ${openModal ? styles.featuresModal : ""}`}
+      aria-label="features"
+    >
+      <ImageBanner setModalOpen={setModalOpen} />
+      <Modal isOpen={openModal} onClose={() => setModalOpen(false)}>
+        <div style={{ width: "60vw" }}>
+          <VideoPlayer options={videoOptions} />
+        </div>
+      </Modal>
       <div className={`${styles.section} ${styles.featuresContent}`}>
         <div className={styles.container}>
-          <h2>Why you should go with us?</h2>
+          <h2 className={styles.title}>Why you should go with us?</h2>
           <p className={styles.sectionText}>
             Embark on an unforgettable journey with Boatrips and experience the
             natural beauty of Lagos like never before. Our boat tours offer a

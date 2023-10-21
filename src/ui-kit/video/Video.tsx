@@ -34,7 +34,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ options }) => {
 
   return (
     <div data-vjs-player>
-      <video ref={videoRef} className="video-js vjs-theme-sea" controls preload="auto">
+      <video ref={videoRef} className='video-js vjs-theme-sea' controls preload="auto">
         <source src={options.sources[0].src} type={options.sources[0].type} />
       </video>
     </div>

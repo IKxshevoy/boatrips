@@ -3,7 +3,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import Select from "react-select";
+import CustomSelect from "./customSelect/CustomSelect";
+import en from "../../../public/flag/en.png";
+import fr from "../../../public/flag/fr.png";
+import pt from "../../../public/flag/pt.jpg";
+import de from "../../../public/flag/de.png";
 
 const links = [
   {
@@ -20,6 +24,14 @@ const links = [
     id: 3,
     title: "Explore",
     url: "/explore",
+    subMenu: [
+      { name: "Place 1" },
+      { name: "Place 2" },
+      { name: "Place 3" },
+      { name: "Place 4" },
+      { name: "Place 5" },
+      { name: "Place 6" },
+    ],
   },
   {
     id: 4,
@@ -34,24 +46,18 @@ const links = [
 ];
 
 const languageOptions = [
-  { value: "en", label: "EN" },
-  { value: "fr", label: "FR" },
-  { value: "pt", label: "PT" },
-  { value: "de", label: "DE" },
+  { value: "en", label: "EN", flag: en },
+  { value: "fr", label: "FR", flag: fr },
+  { value: "pt", label: "PT", flag: pt },
+  { value: "de", label: "DE", flag: de },
 ];
 
 const Navbar: React.FC = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0]);
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
-  };
-
-  const handleLanguageChange = (selectedOption: any) => {
-    setSelectedLanguage(selectedOption);
-    // Implement your language change logic here
   };
 
   useEffect(() => {
@@ -92,17 +98,28 @@ const Navbar: React.FC = () => {
       >
         <div className={styles.navigationItems}>
           {links.map((link) => (
-            <a key={link.id} href={link.url} className={styles.menuLink}>
-              {link.title}
-            </a>
+            <div className={styles.wrapperMenuLink}>
+              <a key={link.id} href={link.url} className={styles.menuLink}>
+                {link.title}
+              </a>
+              {link.subMenu ? (
+                <div className={styles.listOfTours}>
+                  <ul>
+                    {link.subMenu.map((tour) => (
+                      <li key={tour.name}>
+                        <a className={styles.tour} href={tour.name}>
+                          {tour.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           ))}
-        </div>
-        <div className={styles.languageSelector}>
-          <Select
-            value={selectedLanguage}
-            options={languageOptions}
-            onChange={handleLanguageChange}
-          />
+          <div className={styles.languageSelector}>
+            <CustomSelect choice={languageOptions} />
+          </div>
         </div>
       </div>
     </header>

@@ -1,9 +1,15 @@
 .section {
-  padding-block: 2rem;
+  padding-block: 1.5rem;
 }
 
 .container {
   padding-inline: 16px;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 .hasBgImage {
@@ -11,7 +17,7 @@
     repeat: no-repeat;
     position: center;
     size: cover;
-  };
+  }
 }
 
 .hasAfter {
@@ -26,7 +32,13 @@
 
 .features {
   background-color: rgb(48, 95, 184);
+  text-align: justify;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  &Content {
+    padding-inline: 10px;
+  }
 }
 
 .featuresModal {
@@ -35,6 +47,7 @@
 
 .featuresBanner {
   min-height: 520px;
+  order: 1;
 
   &::after {
     inset: 0;
@@ -59,7 +72,8 @@
 }
 
 @keyframes pulse {
-  0%, 75.1% {
+  0%,
+  75.1% {
     box-shadow: 0 0 0 0 rgb(48, 95, 184);
   }
 
@@ -69,6 +83,7 @@
 }
 
 .features .sectionText {
+  display: none;
   margin-block: 30px;
 }
 
@@ -92,7 +107,30 @@
   }
 }
 
-@media (min-width: 575px) {
+@media (max-width: 500px) {
+  .container {
+    padding-inline: 5px;
+  }
+  .features {
+    text-align: left;
+  }
+  .featuresListCard {
+    .cardIcon {
+      padding: 0;
+    }
+    .cardTitle {
+      margin-block-end: 12px;
+    }
+    .cardText {
+      text-align: justify;
+    }
+  }
+}
+
+@media (min-width: 501px) {
+  .title {
+    font-size: 2rem;
+  }
   .container {
     max-width: 540px;
     width: 100%;
@@ -101,20 +139,27 @@
 }
 
 @media (min-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
   .container {
     max-width: 720px;
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1100px) {
   .container {
     max-width: 950px;
   }
 
   .features {
     display: flex;
+    flex-direction: row;
     align-items: stretch;
 
+    .featuresBanner {
+      order: 0;
+    }
     .featuresBanner,
     .featuresContent {
       width: 50%;
@@ -123,15 +168,33 @@
     .featuresBanner {
       min-height: 100%;
     }
-
-    .featuresContent {
-      padding-inline: 80px;
-    }
   }
 }
 
 @media (min-width: 1200px) {
-  .container {
-    max-width: 1250px;
+  .features {
+    display: flex;
+    align-items: stretch;
+
+    .featuresContent {
+      padding-inline: 40px;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .section {
+    padding-block: 2rem;
+  }
+  .features .sectionText {
+    display: block;
+  }
+}
+
+@media (min-width: 1500px) {
+  .features {
+    .featuresContent {
+      padding-inline: 80px;
+    }
   }
 }
