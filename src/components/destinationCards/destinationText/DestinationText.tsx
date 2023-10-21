@@ -15,7 +15,7 @@ const DestinationText = () => {
           explore our extensive array of captivating boat tours below, promising
           unforgettable experiences along the stunning coast of Lagos."
         </p>
-        <Link href="#" className={`${styles.btn} ${styles.btnPrimary}`}>
+        <Link href="/tours" className={`${styles.btn} ${styles.btnPrimary}`}>
           View All Destinations
         </Link>
       </div>
