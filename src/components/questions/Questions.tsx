@@ -40,7 +40,7 @@ const Questions = () => {
   return (
     <>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>Popular questions</h2>
+        <h2 className={styles.title}>Popular <span className={styles.orangeWrapper}>questions</span></h2>
         <div className={styles.container}>
           <div className={styles.flexContainer}>
               <div className={styles.accordionContainer}>

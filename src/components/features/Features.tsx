@@ -80,7 +80,7 @@ const Features = () => {
       </Modal>
       <div className={`${styles.section} ${styles.featuresContent}`}>
         <div className={styles.container}>
-          <h2 className={styles.title}>Why you should go with us?</h2>
+          <h2 className={styles.title}>Why <span className={styles.orangeWrapper}>you</span> should go with <span className={styles.orangeWrapper}>us</span>?</h2>
           <p className={styles.sectionText}>
             Embark on an unforgettable journey with Boatrips and experience the
             natural beauty of Lagos like never before. Our boat tours offer a
