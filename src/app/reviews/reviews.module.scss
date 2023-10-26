@@ -1,0 +1,130 @@
+.reviewsList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 100px 100px;
+  width: 100%;
+  background-color: #222;
+  overflow: hidden;
+  @media (max-width: 1235px) {
+    padding: 100px 70px;
+  }
+  @media (max-width: 1035px) {
+    padding: 100px 20px;
+  }
+  @media (max-width: 919px) {
+    padding: 100px 10px;
+  }
+  @media (max-width: 819px) {
+    padding: 100px 40px;
+  }
+  @media (max-width: 630px) {
+    padding: 100px 30px;
+  }
+  @media (max-width: 450px) {
+    padding: 100px 10px;
+  }
+  .revWrapper {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 50vh;
+    min-height: 420px;
+    @media (max-width: 819px) {
+      flex-direction: column;
+      height: 100%;
+    }
+    .reviewCard {
+      min-width: 100px;
+      @media (max-width: 1235px) {
+        min-width: 80px;
+      }
+      @media (max-width: 919px) {
+        min-width: 60px;
+      }
+      @media (max-width: 919px) {
+        min-width: 60px;
+      }
+      @media (max-width: 819px) {
+        max-width: 700px;
+        min-height: 70px;
+      }
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-basis: auto;
+      flex: 1;
+      transition: all 0.9s ease;
+      overflow: hidden;
+      .name {
+        margin: auto 0;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #fff;
+        transform: rotate(-90deg);
+        white-space: nowrap;
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        @media (max-width: 819px) {
+          transform: rotate(0deg);
+          margin: auto auto;
+        }
+      }
+      &.active {
+        max-width: 700px;
+        flex: 6;
+        .name {
+          margin: 20px 40px;
+          transform: rotate(0deg);
+          @media (max-width: 1235px) {
+            margin: 10px 20px;
+          }
+          @media (max-width: 819px) {
+            margin: 20px 40px;
+          }
+          @media (max-width: 630px) {
+            margin: 12px 30px;
+          }
+        }
+      }
+      .review {
+        opacity: 0.8;
+        margin: 20px;
+        margin-top: 0;
+        color: #fff;
+        text-align: justify;
+      }
+      .place {
+        font-weight: 700;
+        font-size: 1.5rem;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        color: #fff;
+        @media (max-width: 1235px) {
+          font-size: 1.2rem;
+          padding: 10px 20px 20px 20px;
+        }
+        @media (max-width: 919px) {
+          font-size: 1rem;
+          padding: 10px 20px 20px 10px;
+        }
+        @media (max-width: 819px) {
+          font-size: 1.5rem;
+          padding: 20px;
+        }
+        @media (max-width: 630px) {
+          font-size: 1.2rem;
+          padding: 10px;
+        }
+        @media (max-width: 450px) {
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
