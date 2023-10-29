@@ -60,8 +60,23 @@ export const AboutUs = () => {
         reverse={false}
       >
         <div className={styles.sliderImgContainer}>
-          <img src={imgs[currentIndex].imageUrl} alt="slider photo" />
+          <img
+            width={500}
+            height={100}
+            style={{ width: "100%" }}
+            src={imgs[currentIndex].imageUrl}
+            alt="slider photo"
+          />
         </div>
+        {/* {imgs.map((i) => (
+          <img
+            width={500}
+            height={300}
+            style={{ width: "100%" }}
+            src={i.imageUrl}
+            alt=""
+          />
+        ))} */}
       </AboutUsSection>
       <AboutUsSection
         title="Our Background"
