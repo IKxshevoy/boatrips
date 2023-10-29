@@ -47,9 +47,22 @@
 
     .navigationItems {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       .wrapperMenuLink {
+        display: flex;
+        align-items: center;
         position: relative;
+        .arr {
+          width: 30px;
+          display: none;
+          margin-left: 30px;
+          color: #166daf;
+          font-weight: 600;
+          transform: rotate(-180deg);
+          &.active {
+            transform: rotate(-90deg);
+          }
+        }
         .listOfTours {
           display: none;
           background-color: #fff;
@@ -66,6 +79,11 @@
               padding-left: 10px;
               color: rgb(16, 70, 169);
             }
+          }
+          &.active {
+            z-index: 999;
+            top: 60px;
+            left: 0px;
           }
           .tour {
             color: #166daf;
@@ -147,9 +165,15 @@
         .wrapperMenuLink {
           margin: 0px 0px 30px 0px;
           font-size: 30px;
+          .arr {
+            display: block;
+          }
           &:hover {
             .listOfTours {
               display: none;
+              &.active {
+                display: block;
+              }
             }
           }
           .menuLink {
