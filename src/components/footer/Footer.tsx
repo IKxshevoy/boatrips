@@ -7,7 +7,6 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import lastimg1 from "../../../public/footericons/footerendicon/img1.png";
 import lastimg2 from "../../../public/footericons/footerendicon/img2.png";
-
 import {
   faFacebook,
   faInstagram,
