@@ -3,11 +3,11 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./aboutUs.module.scss";
 
-export interface Imgs {
+export interface Images {
   imageUrl: string;
 }
 
-const imgs: Imgs[] = [
+const images: Images[] = [
   {
     imageUrl: "/1.jpg",
   },
@@ -25,7 +25,7 @@ const imgs: Imgs[] = [
 export const AboutUs = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const nextImage = () => {
-    setCurrentIndex((currentIndex + 1) % imgs.length);
+    setCurrentIndex((currentIndex + 1) % images.length);
   };
   useEffect(() => {
     const timer = setInterval(() => {
@@ -60,7 +60,7 @@ export const AboutUs = () => {
         reverse={false}
       >
         <div className={styles.sliderImgContainer}>
-          <img src={imgs[currentIndex].imageUrl} alt="slider photo" />
+          <img src={images[currentIndex].imageUrl} alt="slider photo" />
         </div>
       </AboutUsSection>
       <AboutUsSection
