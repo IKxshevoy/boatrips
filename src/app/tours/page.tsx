@@ -1,8 +1,6 @@
 "use client";
-
 import React, { useState } from "react";
 import styles from "./page.module.scss";
-
 export interface Tour {
   id: number;
   title: string;
@@ -26,7 +24,7 @@ const tours = [
     id: 1,
     price: 80,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
   {
     title: "Benagil cave",
@@ -34,7 +32,7 @@ const tours = [
     id: 2,
     price: 20,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
   {
     title: "Sunset cruise",
@@ -42,7 +40,7 @@ const tours = [
     id: 3,
     price: 40,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
   {
     title: "Benagil cave",
@@ -50,7 +48,7 @@ const tours = [
     id: 4,
     price: 70,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
   {
     title: "Sunset cruise",
@@ -58,24 +56,35 @@ const tours = [
     id: 5,
     price: 30,
     description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque faucibus et augue id efficitur. Quisque nec ullamcorper nisl. Curabitur auctor eros id mi bibendum ultricies. Nunc ornare eros nulla, ac consequat mauris lacinia sed. Ut sit amet arcu ex. Duis vitae leo nec lacus aliquam iaculis vitae sed sem. Suspendisse eget tortor sit amet purus mollis vulputate ac venenatis elit. Fusce suscipit, libero nec efficitur mollis, eros lorem iaculis arcu, vel tempus leo tellus blandit ligula.",
   },
 ];
 
 const Tours = () => {
   const [selectedTour, setSelectedTour] = useState<Tour>(tours[0]);
-
   return (
-    <div className={styles.toursList}>
+    <div
+      className={styles.toursList}
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${selectedTour.imageUrl}')`,
+        backgroundSize: "cover",
+        width: "100%",
+        height: "100%",
+      }}
+    >
       <div
-        className={`${styles.tourSection} ${styles.hasBgImage} ${styles.hasAfter}`}
-        style={{ backgroundImage: `url('${selectedTour.imageUrl}')` }}
+        className={styles.tourSection}
         key={selectedTour.id}
         onClick={() => setSelectedTour(selectedTour)}
       >
         <div className={styles.selectedTour}>
-          <span className={styles.title}>{selectedTour.title}</span>
-          <span className={styles.price}>{selectedTour.price}$ / h</span>
+          <span className={styles.title}>
+            {selectedTour.title} <span className={styles.orangeWrapper}>.</span>
+          </span>
+          <span className={styles.price}>
+            {selectedTour.price}${" "}
+            <span className={styles.orangeWrapper}>/ </span>h
+          </span>
           <div className={styles.description}>{selectedTour.description}</div>
           <div className={styles.buttonWrapper}>
             <button className={styles.button}>View info</button>
