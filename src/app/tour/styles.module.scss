@@ -63,8 +63,8 @@
   }
   .descriptionBlock {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 50px;
     padding: 0 200px;
 
     .description {
@@ -80,6 +80,43 @@
     }
     .calendarFrame {
       flex-basis: 30%;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+
+      &__description {
+        .bookingBlock {
+          .calendarFrame__img {
+            max-width: 100%;
+          }
+          .calendarFrame__button {
+            background: #0b5085;
+            width: 100%;
+            padding: 15px 35px;
+            color: #fff;
+            font-size: 1.1em;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 2px;
+          }
+        }
+        .ages {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          padding: 5%;
+
+          &__wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            .text {
+              color: #08090e;
+            }
+            .price {
+              font-weight: 700;
+            }
+          }
+        }
+      }
     }
 
     .description__icons {
