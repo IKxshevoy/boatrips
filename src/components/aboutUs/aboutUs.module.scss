@@ -12,6 +12,7 @@
     overflow: hidden;
     position: relative;
     img {
+      height: 467px;
       width: 100%;
       transition: transform 0.3s;
     }
@@ -79,6 +80,11 @@
   @media (max-width: 1650px) {
     gap: 20px;
 
+    .sliderImgContainer {
+      img {
+        height: 80vh;
+      }
+    }
     &__container {
       gap: 50px;
     }
