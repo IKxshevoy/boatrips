@@ -56,10 +56,14 @@ const languageOptions = [
 const Navbar: React.FC = () => {
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [isSubMenuActive, setIsSubMenuActive] = useState(false);
   const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsMenuActive(!isMenuActive);
+  };
+  const toggleSubMenu = () => {
+    setIsSubMenuActive(!isSubMenuActive);
   };
 
   useEffect(() => {
@@ -73,6 +77,23 @@ const Navbar: React.FC = () => {
     };
     window.addEventListener("scroll", handleScroll);
   }, [pathname]);
+  useEffect(() => {
+    const closeSubMenu = (event: MouseEvent) => {
+      const submenu = document.querySelector(`.${styles.listOfTours}`);
+      if (submenu && !submenu.contains(event.target as Node)) {
+        setIsSubMenuActive(false);
+      }
+    };
+
+    if (isSubMenuActive) {
+      document.addEventListener("click", closeSubMenu);
+    } else {
+      document.removeEventListener("click", closeSubMenu);
+    }
+    return () => {
+      document.removeEventListener("click", closeSubMenu);
+    };
+  }, [isSubMenuActive]);
 
   return (
     <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
@@ -106,7 +127,21 @@ const Navbar: React.FC = () => {
                 {link.title}
               </a>
               {link.subMenu ? (
-                <div className={styles.listOfTours}>
+                <button
+                  onClick={toggleSubMenu}
+                  className={`${styles.arr} ${
+                    isSubMenuActive ? styles.active : ""
+                  }`}
+                >
+                  &lt;
+                </button>
+              ) : null}
+              {link.subMenu ? (
+                <div
+                  className={`${styles.listOfTours} ${
+                    isSubMenuActive ? styles.active : ""
+                  }`}
+                >
                   <ul>
                     {link.subMenu.map((tour) => (
                       <li key={tour.name} className={styles.tourWrapper}>
