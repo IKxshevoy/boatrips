@@ -1,8 +1,40 @@
 import { AboutUsSection } from "@/components/aboutUs/aboutUsSection/AboutUsSection";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import styles from "./aboutUs.module.scss";
 
+export interface Imgs {
+  imageUrl: string;
+}
+
+const imgs: Imgs[] = [
+  {
+    imageUrl: "/1.jpg",
+  },
+  {
+    imageUrl: "/4.jpg",
+  },
+  {
+    imageUrl: "/3.jpg",
+  },
+  {
+    imageUrl: "/slide2.jpg",
+  },
+];
+
 export const AboutUs = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const nextImage = () => {
+    setCurrentIndex((currentIndex + 1) % imgs.length);
+  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextImage();
+    }, 5000);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [currentIndex]);
 
   return (
     <section className={`${styles.about}`}>
@@ -27,13 +59,9 @@ export const AboutUs = () => {
         }
         reverse={false}
       >
-        <Image
-          src="/aboutUsMobile.jpg"
-          alt=""
-          width={500}
-          height={100}
-          style={{ width: "100%" }}
-        />
+        <div className={styles.sliderImgContainer}>
+          <img src={imgs[currentIndex].imageUrl} alt="slider photo" />
+        </div>
       </AboutUsSection>
       <AboutUsSection
         title="Our Background"
