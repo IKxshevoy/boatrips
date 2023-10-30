@@ -16,8 +16,7 @@ const slideContent: Slide[] = [
   {
     title: "Tour of",
     subTitle: "Ponta de Piedade",
-    content:
-      "Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu.",
+    content: "Etiam maximus nulla eros, id ultrices turpis tempor eu.",
     path: "/main.jpg",
   },
   {
