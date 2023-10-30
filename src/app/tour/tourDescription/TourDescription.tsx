@@ -29,8 +29,9 @@ const TourDescription = () => {
     <div className={styles.description}>
       <h2 className={styles.title}>
         Caves Of <span className={styles.orangeWrapper}>Ponta Da Piedade</span>{" "}
-        Boat Tour <br />- 75 Minutes
+        Boat Tour
       </h2>
+      <span className={styles.duration}>- 75 Minutes</span>
       <p className={styles.description__paragraph}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
         dignissimos nam corrupti voluptatem, repudiandae ex ipsum quod. Earum
