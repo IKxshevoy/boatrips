@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import MediaIconsList from "./mediaIconsList/MediaIconsList";
+import Button from "@/ui-kit/button/Button";
 
 interface Slide {
   title: string;
@@ -16,7 +17,7 @@ const slideContent: Slide[] = [
     title: "Tour of",
     subTitle: "Ponta de Piedade",
     content:
-      "Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros",
+      "Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu. Ut eu massa tempus, imperdiet mi sed, viverra ex.Etiam maximus nulla eros, id ultrices turpis tempor eu.",
     path: "/main.jpg",
   },
   {
@@ -73,9 +74,7 @@ const Slider = () => {
             </p>
           </>
         )}
-        <Link href={"#"} className={styles.button}>
-          Read More
-        </Link>
+        <Button text="Read More"></Button>
       </div>
       <MediaIconsList />
       <div className={styles.sliderNavigation}>

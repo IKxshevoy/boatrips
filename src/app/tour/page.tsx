@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import ReviewsSlider from "@/components/reviewsSlider/ReviewsSlider";
-import Button from "@/ui-kit/button/Button";
 import TourHeader from "./tourHeader/TourHeader";
 import TourDescription from "./tourDescription/TourDescription";
 import CalendarFrame from "./calendarFrame/CalendarFrame";
 import VirtualTour from "./virtualTour/VirtualTour";
 import TourInfo from "./tourInfo/TourInfo";
 import TourMap from "./tourMap/TourMap";
+import WavyButton from "@/ui-kit/wavyButton/WavyButton";
 
 const Tour = () => {
   return (
@@ -28,7 +28,7 @@ const Tour = () => {
         <h2 className={styles.promotion__title}>
           Want to go on a private tour ?
         </h2>
-        <Button text="Contact us"></Button>
+        <WavyButton text="Contact us"></WavyButton>
       </div>
     </section>
   );
