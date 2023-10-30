@@ -9,10 +9,7 @@ export interface Images {
 
 const images: Images[] = [
   {
-    imageUrl: "/1.jpg",
-  },
-  {
-    imageUrl: "/4.jpg",
+    imageUrl: "/aboutUs1.jpg",
   },
   {
     imageUrl: "/3.jpg",
@@ -59,9 +56,13 @@ export const AboutUs = () => {
         }
         reverse={false}
       >
-        <div className={styles.sliderImgContainer}>
-          <img src={images[currentIndex].imageUrl} alt="slider photo" />
-        </div>
+        <Image
+          width={500}
+          height={100}
+          style={{ width: "100%" }}
+          src={images[currentIndex].imageUrl}
+          alt="slider photo"
+        />
       </AboutUsSection>
       <AboutUsSection
         title="Our Background"
