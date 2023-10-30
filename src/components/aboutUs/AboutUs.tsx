@@ -34,7 +34,7 @@ export const AboutUs = () => {
   }, [currentIndex]);
 
   return (
-    <section className={`${styles.about}`}>
+    <section className={`${styles.about}`} id="about">
       <AboutUsSection
         title="Welcome to Boatrips"
         subtitle={

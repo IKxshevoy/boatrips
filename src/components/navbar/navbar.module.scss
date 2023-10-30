@@ -30,6 +30,8 @@
     .navigation .navigationItems .wrapperMenuLink .menuLink,
     .menuBtn {
       color: #166daf;
+      position: relative;
+      z-index: 999;
     }
     .navigation .navigationItems .wrapperMenuLink .menuLink:before {
       background: #166daf;
@@ -72,9 +74,9 @@
           background-color: #fff;
           width: 220px;
           position: absolute;
-          top: 25px;
-          left: 5px;
-          padding: 7px 15px;
+          top: 18px;
+          left: 15px;
+          padding: 15px 15px;
           border-left: #166daf 2px solid;
           .tourWrapper {
             margin: 10px 0;

@@ -6,11 +6,12 @@ import React from 'react'
 
 export interface IMediaIcon {
     icon: IconDefinition;
+    href: string;
 }
 
-const MediaIcon = ({ icon }: IMediaIcon) => {
+const MediaIcon = ({ icon, href }: IMediaIcon) => {
   return (
-    <Link href={"/"} className={styles.mediaIcon}>
+    <Link href={href} className={styles.mediaIcon}>
     <FontAwesomeIcon
       icon={icon}
       style={{ width: "35px", height: "35px" }}
