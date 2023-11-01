@@ -31,7 +31,6 @@
     .menuBtn {
       color: #166daf;
       position: relative;
-      z-index: 999;
     }
     .navigation .navigationItems .wrapperMenuLink .menuLink:before {
       background: #166daf;
@@ -183,6 +182,7 @@
             }
           }
           .menuLink {
+            z-index: 1;
             position: relative;
             color: #166daf;
             margin: 10px;
