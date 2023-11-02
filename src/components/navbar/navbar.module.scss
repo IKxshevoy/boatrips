@@ -63,10 +63,10 @@
         position: relative;
         .arr {
           font-size: 20px;
+          margin-left: 40px;
           width: 30px;
           display: none;
-          margin-left: 15px;
-          color: #166daf;
+          color: #858585;
           font-weight: 400;
           transform: rotate(-180deg);
           &.active {
@@ -162,7 +162,6 @@
         justify-content: flex-end;
         background: rgba(1, 1, 1, 0.5);
         .navigationItems {
-          border: 2px solid #166daf;
           height: 100%;
           background: #fff;
           width: 300px;
@@ -173,6 +172,8 @@
           box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
         }
         .wrapperMenuLink {
+          width: 100%;
+          justify-content: space-between;
           margin: 0px 0px 30px 0px;
           font-size: 30px;
           .arr {
@@ -184,13 +185,16 @@
               &.active {
                 display: block;
               }
+              .tour {
+                color: #858585;
+              }
             }
           }
           .menuLink {
             font-size: 20px;
             z-index: 1;
             position: relative;
-            color: #166daf;
+            color: #858585;
             margin: 5px;
 
             &:hover:before {
@@ -199,10 +203,10 @@
             &::before {
               content: "";
               position: absolute;
-              margin-left: -20px;
-              width: 240px;
+              margin-left: 0px;
+              width: 170px;
               height: 1px;
-              background-color: #166daf;
+              background-color: #ebebeb;
               top: 30px;
               left: 0;
               z-index: 0;
