@@ -18,6 +18,9 @@
 
   .languageSelector {
     margin: auto 0;
+    @media (max-width: 1040px) {
+      margin: 0;
+    }
   }
 
   &.sticky {
@@ -53,16 +56,18 @@
     .navigationItems {
       display: flex;
       align-items: flex-start;
+      overflow: hidden;
       .wrapperMenuLink {
         display: flex;
         align-items: center;
         position: relative;
         .arr {
+          font-size: 20px;
           width: 30px;
           display: none;
-          margin-left: 30px;
+          margin-left: 15px;
           color: #166daf;
-          font-weight: 600;
+          font-weight: 400;
           transform: rotate(-180deg);
           &.active {
             transform: rotate(-90deg);
@@ -182,13 +187,26 @@
             }
           }
           .menuLink {
+            font-size: 20px;
             z-index: 1;
             position: relative;
             color: #166daf;
-            margin: 10px;
+            margin: 5px;
 
             &:hover:before {
               width: 0;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              margin-left: -20px;
+              width: 240px;
+              height: 1px;
+              background-color: #166daf;
+              top: 30px;
+              left: 0;
+              z-index: 0;
+              pointer-events: none;
             }
           }
         }
