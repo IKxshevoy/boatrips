@@ -12,16 +12,20 @@ interface IMediaIconList extends IMediaIcon {
 }
 
 const mediaIconsList: IMediaIconList[] = [
-  { icon: faFacebook, id: 0 },
-  { icon: faInstagram, id: 1 },
-  { icon: faWhatsapp, id: 2 },
+  { icon: faFacebook, href: "https://www.facebook.com/boatrips.eu", id: 0 },
+  { icon: faInstagram, href: "https://www.instagram.com/boatrips/", id: 1 },
+  { icon: faWhatsapp, href: "", id: 2 },
 ];
 
 const MediaIconsList = () => {
   return (
     <div className={styles.mediaIcons}>
       {mediaIconsList.map((mediaIcon) => (
-        <MediaIcon icon={mediaIcon.icon} key={mediaIcon.id} />
+        <MediaIcon
+          icon={mediaIcon.icon}
+          href={mediaIcon.href}
+          key={mediaIcon.id}
+        />
       ))}
     </div>
   );

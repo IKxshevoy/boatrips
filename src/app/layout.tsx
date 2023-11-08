@@ -1,10 +1,10 @@
 import "./globals.scss";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Rubik } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 
-const poppins = Poppins({ weight: "400", subsets: ["devanagari"] });
+const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Boatrips",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={rubik.className}>
         <Navbar />
         {children}
         <Footer />

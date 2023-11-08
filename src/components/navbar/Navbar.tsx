@@ -9,6 +9,7 @@ import en from "../../../public/flag/en.png";
 import fr from "../../../public/flag/fr.png";
 import pt from "../../../public/flag/pt.jpg";
 import de from "../../../public/flag/de.png";
+import Link from "next/link";
 
 const links = [
   {
@@ -19,7 +20,7 @@ const links = [
   {
     id: 2,
     title: "About us",
-    url: "/about",
+    url: "#about",
   },
   {
     id: 3,
@@ -37,7 +38,7 @@ const links = [
   {
     id: 4,
     title: "Gallery",
-    url: "/gallery",
+    url: "#gallery",
   },
   {
     id: 5,
@@ -123,9 +124,20 @@ const Navbar: React.FC = () => {
         <div className={styles.navigationItems}>
           {links.map((link) => (
             <div className={styles.wrapperMenuLink} key={link.title}>
-              <a key={link.id} href={link.url} className={styles.menuLink}>
+              <Link key={link.id} href={link.url} className={styles.menuLink}>
                 {link.title}
-              </a>
+              </Link>
+              {link.subMenu ? (
+                <button
+                  onClick={toggleSubMenu}
+                  className={`${styles.arr} ${
+                    isSubMenuActive ? styles.active : ""
+                  }`}
+                >
+                  &lt;
+                </button>
+              ) : null}
+
               {link.subMenu ? (
                 <button
                   onClick={toggleSubMenu}
@@ -153,6 +165,7 @@ const Navbar: React.FC = () => {
                   </ul>
                 </div>
               ) : null}
+              <div className={styles.underline}></div>
             </div>
           ))}
           <div className={styles.languageSelector}>

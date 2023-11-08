@@ -5,7 +5,7 @@ import { Title } from "@/ui-kit/title/Title";
 const Gallery = () => {
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} id="gallery">
         <div className={styles.title}>
           <Title title="Image Gallery" />
         </div>

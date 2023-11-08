@@ -16,6 +16,13 @@
     color: #eb8d2c !important;
   }
 
+  .languageSelector {
+    margin: auto 0;
+    @media (max-width: 1040px) {
+      margin: 0;
+    }
+  }
+
   &.sticky {
     position: fixed;
     background-color: #fff;
@@ -26,6 +33,7 @@
     .navigation .navigationItems .wrapperMenuLink .menuLink,
     .menuBtn {
       color: #166daf;
+      position: relative;
     }
     .navigation .navigationItems .wrapperMenuLink .menuLink:before {
       background: #166daf;
@@ -48,16 +56,18 @@
     .navigationItems {
       display: flex;
       align-items: flex-start;
+      overflow: hidden;
       .wrapperMenuLink {
         display: flex;
         align-items: center;
         position: relative;
         .arr {
+          font-size: 20px;
+          margin-left: 40px;
           width: 30px;
           display: none;
-          margin-left: 30px;
-          color: #166daf;
-          font-weight: 600;
+          color: #858585;
+          font-weight: 400;
           transform: rotate(-180deg);
           &.active {
             transform: rotate(-90deg);
@@ -68,9 +78,9 @@
           background-color: #fff;
           width: 220px;
           position: absolute;
-          top: 25px;
-          left: 5px;
-          padding: 7px 15px;
+          top: 18px;
+          left: 15px;
+          padding: 15px 15px;
           border-left: #166daf 2px solid;
           .tourWrapper {
             margin: 10px 0;
@@ -152,7 +162,6 @@
         justify-content: flex-end;
         background: rgba(1, 1, 1, 0.5);
         .navigationItems {
-          border: 2px solid #166daf;
           height: 100%;
           background: #fff;
           width: 300px;
@@ -163,6 +172,8 @@
           box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
         }
         .wrapperMenuLink {
+          width: 100%;
+          justify-content: space-between;
           margin: 0px 0px 30px 0px;
           font-size: 30px;
           .arr {
@@ -174,15 +185,32 @@
               &.active {
                 display: block;
               }
+              .tour {
+                color: #858585;
+              }
             }
           }
           .menuLink {
+            font-size: 20px;
+            z-index: 1;
             position: relative;
-            color: #166daf;
-            margin: 10px;
+            color: #858585;
+            margin: 5px;
 
             &:hover:before {
               width: 0;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              margin-left: 0px;
+              width: 170px;
+              height: 1px;
+              background-color: #ebebeb;
+              top: 30px;
+              left: 0;
+              z-index: 0;
+              pointer-events: none;
             }
           }
         }
@@ -198,7 +226,7 @@
       color: rgb(255, 255, 255);
 
       &.active {
-        z-index: 999;
+        z-index: 998;
         transition: 0.3s ease;
       }
     }
