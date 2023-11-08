@@ -34,9 +34,15 @@
     .menuBtn {
       color: #166daf;
       position: relative;
+      @media (max-width: 1040px) {
+        color: #858585;
+      }
     }
     .navigation .navigationItems .wrapperMenuLink .linkAndBtn .menuLink:before {
       background: #166daf;
+      @media (max-width: 1040px) {
+        background: #858585;
+      }
     }
   }
 
