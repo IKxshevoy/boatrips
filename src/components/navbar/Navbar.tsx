@@ -137,6 +137,7 @@ const Navbar: React.FC = () => {
                   &lt;
                 </button>
               ) : null}
+
               {link.subMenu ? (
                 <div
                   className={`${styles.listOfTours} ${
@@ -154,6 +155,7 @@ const Navbar: React.FC = () => {
                   </ul>
                 </div>
               ) : null}
+              <div className={styles.underline}></div>
             </div>
           ))}
           <div className={styles.languageSelector}>
