@@ -139,6 +139,16 @@ const Navbar: React.FC = () => {
               ) : null}
 
               {link.subMenu ? (
+                <button
+                  onClick={toggleSubMenu}
+                  className={`${styles.arr} ${
+                    isSubMenuActive ? styles.active : ""
+                  }`}
+                >
+                  &lt;
+                </button>
+              ) : null}
+              {link.subMenu ? (
                 <div
                   className={`${styles.listOfTours} ${
                     isSubMenuActive ? styles.active : ""
