@@ -7,8 +7,16 @@ html {
 
 body {
   background-color: #fff;
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+  width: 3px;
 }
 
+body::-webkit-scrollbar-thumb {
+  background-color: #166daf;
+  border: 1px solid #166daf;
+}
 *,
 *::before,
 *::after {
@@ -17,7 +25,9 @@ body {
   box-sizing: border-box;
 }
 
-li { list-style: none; }
+li {
+  list-style: none;
+}
 
 a {
   color: inherit;
@@ -35,6 +45,10 @@ img {
   height: auto;
 }
 
-button { cursor: pointer; }
+button {
+  cursor: pointer;
+}
 
-address { font-style: normal; }
+address {
+  font-style: normal;
+}
