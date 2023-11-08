@@ -1,10 +1,28 @@
+.gallery {
+  @media (min-width: 768px) {
+    .galleryList {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 800px) {
+    .galleryList {
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
 .toursList {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100vh;
-
+  @media (max-width: 799px) {
+    display: none;
+  }
   .tourSection {
     width: 100%;
     display: flex;
@@ -17,8 +35,9 @@
     }
     @media (max-width: 1000px) {
       padding: 80px 90px 40px 90px;
+      display: flex;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 799px) {
       padding: 60px 70px 20px 70px;
     }
     @media (max-width: 600px) {

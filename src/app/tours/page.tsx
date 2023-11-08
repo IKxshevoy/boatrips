@@ -1,4 +1,6 @@
 "use client";
+import DestinationCard from "@/components/destinationCards/destinationCard/DestinationCard";
+import { destinations } from "@/components/destinationCards/DestinationCards";
 import React, { useState } from "react";
 import styles from "./page.module.scss";
 export interface Tour {
@@ -63,49 +65,61 @@ const tours = [
 const Tours = () => {
   const [selectedTour, setSelectedTour] = useState<Tour>(tours[0]);
   return (
-    <div
-      className={styles.toursList}
-      style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${selectedTour.imageUrl}')`,
-        backgroundSize: "cover",
-        width: "100%",
-        height: "100%",
-      }}
-    >
+    <>
+      <section className={styles.gallery}>
+        <ul className={styles.galleryList}>
+          {destinations.map(({ title, imageUrl, id }) => (
+            <li key={id}>
+              <DestinationCard title={title} imageUrl={imageUrl} />
+            </li>
+          ))}
+        </ul>
+      </section>
       <div
-        className={styles.tourSection}
-        key={selectedTour.id}
-        onClick={() => setSelectedTour(selectedTour)}
+        className={styles.toursList}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('${selectedTour.imageUrl}')`,
+          backgroundSize: "cover",
+          width: "100%",
+          height: "100%",
+        }}
       >
-        <div className={styles.selectedTour}>
-          <span className={styles.title}>
-            {selectedTour.title} <span className={styles.orangeWrapper}>.</span>
-          </span>
-          <span className={styles.price}>
-            {selectedTour.price}${" "}
-            <span className={styles.orangeWrapper}>/ </span>h
-          </span>
-          <div className={styles.description}>{selectedTour.description}</div>
-          <div className={styles.buttonWrapper}>
-            <button className={styles.button}>View info</button>
-          </div>
-        </div>
-      </div>
-      <div className={styles.tours}>
-        {tours.map((tour) => (
-          <div
-            className={`${styles.galleryCard} ${styles.hasBgImage} ${styles.hasAfter}`}
-            style={{ backgroundImage: `url('${tour.imageUrl}')` }}
-            key={tour.id}
-            onClick={() => setSelectedTour(tour)}
-          >
-            <div className={styles.cardContent}>
-              <h3 className={`h3 ${styles.cardTitle}`}>{tour.title}</h3>
+        <div
+          className={styles.tourSection}
+          key={selectedTour.id}
+          onClick={() => setSelectedTour(selectedTour)}
+        >
+          <div className={styles.selectedTour}>
+            <span className={styles.title}>
+              {selectedTour.title}{" "}
+              <span className={styles.orangeWrapper}>.</span>
+            </span>
+            <span className={styles.price}>
+              {selectedTour.price}${" "}
+              <span className={styles.orangeWrapper}>/ </span>h
+            </span>
+            <div className={styles.description}>{selectedTour.description}</div>
+            <div className={styles.buttonWrapper}>
+              <button className={styles.button}>View info</button>
             </div>
           </div>
-        ))}
+        </div>
+        <div className={styles.tours}>
+          {tours.map((tour) => (
+            <div
+              className={`${styles.galleryCard} ${styles.hasBgImage} ${styles.hasAfter}`}
+              style={{ backgroundImage: `url('${tour.imageUrl}')` }}
+              key={tour.id}
+              onClick={() => setSelectedTour(tour)}
+            >
+              <div className={styles.cardContent}>
+                <h3 className={`h3 ${styles.cardTitle}`}>{tour.title}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
