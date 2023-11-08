@@ -124,30 +124,21 @@ const Navbar: React.FC = () => {
         <div className={styles.navigationItems}>
           {links.map((link) => (
             <div className={styles.wrapperMenuLink} key={link.title}>
-              <Link key={link.id} href={link.url} className={styles.menuLink}>
-                {link.title}
-              </Link>
-              {link.subMenu ? (
-                <button
-                  onClick={toggleSubMenu}
-                  className={`${styles.arr} ${
-                    isSubMenuActive ? styles.active : ""
-                  }`}
-                >
-                  &lt;
-                </button>
-              ) : null}
-
-              {link.subMenu ? (
-                <button
-                  onClick={toggleSubMenu}
-                  className={`${styles.arr} ${
-                    isSubMenuActive ? styles.active : ""
-                  }`}
-                >
-                  &lt;
-                </button>
-              ) : null}
+              <div className={styles.linkAndBtn}>
+                <Link key={link.id} href={link.url} className={styles.menuLink}>
+                  {link.title}
+                </Link>
+                {link.subMenu ? (
+                  <button
+                    onClick={toggleSubMenu}
+                    className={`${styles.arr} ${
+                      isSubMenuActive ? styles.active : ""
+                    }`}
+                  >
+                    &lt;
+                  </button>
+                ) : null}
+              </div>
               {link.subMenu ? (
                 <div
                   className={`${styles.listOfTours} ${
