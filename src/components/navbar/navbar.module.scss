@@ -8,7 +8,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   padding: 15px 200px;
   transition: 0.5s ease;
 
@@ -34,15 +34,9 @@
     .menuBtn {
       color: #166daf;
       position: relative;
-      @media (max-width: 1040px) {
-        color: #858585;
-      }
     }
     .navigation .navigationItems .wrapperMenuLink .linkAndBtn .menuLink:before {
       background: #166daf;
-      @media (max-width: 1040px) {
-        background: #858585;
-      }
     }
   }
 
@@ -76,7 +70,6 @@
           align-items: center;
           .arr {
             font-size: 20px;
-            margin-left: 40px;
             width: 30px;
             display: none;
             color: #858585;
