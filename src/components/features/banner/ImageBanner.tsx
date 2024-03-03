@@ -14,7 +14,7 @@ const ImageBanner: React.FC<ImageBannerProps> = ({setModalOpen}) => {
     >
       <button
         className={styles.playBtn}
-        aria-label="play video: Ponta de Piedade"
+        aria-label="play video: Ponta da Piedade"
         onClick={() => setModalOpen(true)}
       >
         <Image

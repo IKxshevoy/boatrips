@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -9,39 +9,32 @@ import en from "../../../public/flag/en.png";
 import fr from "../../../public/flag/fr.png";
 import pt from "../../../public/flag/pt.jpg";
 import de from "../../../public/flag/de.png";
-import Link from "next/link";
+import Logo from "../../../public/Logo.png";
+import Image from "next/image";
+import { useLocale } from "next-intl";
+import { Locale } from "@/lib/locales";
 
 const links = [
   {
-    id: 1,
+    id: 0,
     title: "Home",
     url: "/",
   },
   {
-    id: 2,
-    title: "About us",
-    url: "#about",
-  },
-  {
-    id: 3,
+    id: 1,
     title: "Tours",
     url: "/tours",
     subMenu: [
-      { name: "Ponta de Piedade" },
-      { name: "Coastline Cruise" },
-      { name: "Benagil Cave" },
-      { name: "Sunset Tour" },
+      { name: "Ponta da Piedade", href: "ponta-da-piedade-caves-cruise" },
+      { name: "Coastline Cruise", href: "ponta-da-piedade-2-hours-cruise" },
+      { name: "Benagil Cave", href: "benagil-caves-speed-boat-tour" },
+      { name: "Sunset Tour", href: "sunset-cruise" },
       { name: "Private tour" },
       { name: "Private sunset" },
     ],
   },
   {
-    id: 4,
-    title: "Gallery",
-    url: "#gallery",
-  },
-  {
-    id: 5,
+    id: 2,
     title: "Contact us",
     url: "/contact",
   },
@@ -55,6 +48,8 @@ const languageOptions = [
 ];
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
+
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isSubMenuActive, setIsSubMenuActive] = useState(false);
@@ -69,7 +64,7 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    setIsSticky(pathname === "/contact");
+    setIsSticky(pathname.includes("/contact"));
     const handleScroll = () => {
       if (window.scrollY > 1) {
         setIsSticky(true);
@@ -99,7 +94,17 @@ const Navbar: React.FC = () => {
   return (
     <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
       <a className={styles.brand} href={"/"}>
-        BOA<span className={styles.orangeWrapper}>T</span>RIPS
+        {
+          <Image
+            src={Logo}
+            alt="logo"
+            style={{
+              width: "20%",
+              height: "20%",
+              maxWidth: "400px",
+            }}
+          />
+        }
       </a>
       {isMenuActive ? (
         <FontAwesomeIcon
@@ -125,9 +130,9 @@ const Navbar: React.FC = () => {
           {links.map((link) => (
             <div className={styles.wrapperMenuLink} key={link.title}>
               <div className={styles.linkAndBtn}>
-                <Link key={link.id} href={link.url} className={styles.menuLink}>
+                <a key={link.id} href={link.url} className={styles.menuLink}>
                   {link.title}
-                </Link>
+                </a>
                 {link.subMenu ? (
                   <button
                     onClick={toggleSubMenu}
@@ -148,7 +153,7 @@ const Navbar: React.FC = () => {
                   <ul>
                     {link.subMenu.map((tour) => (
                       <li key={tour.name} className={styles.tourWrapper}>
-                        <a className={styles.tour} href={tour.name}>
+                        <a className={styles.tour} href={tour.href}>
                           {tour.name}
                         </a>
                       </li>

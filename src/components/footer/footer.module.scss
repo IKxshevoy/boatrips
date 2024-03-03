@@ -118,8 +118,6 @@
         justify-content: center;
         img {
           margin: 10px;
-          width: 310px;
-          height: 42px;
         }
       }
     }
@@ -173,11 +171,6 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        img {
-          margin: 10px;
-          width: 310px;
-          height: 42px;
-        }
       }
     }
   }
@@ -189,10 +182,6 @@
       flex-direction: column;
       .endIcon {
         flex-direction: row;
-        img {
-          width: 330px;
-          height: 42px;
-        }
       }
     }
   }
@@ -215,8 +204,6 @@
           &:nth-child(1) {
             margin-right: 30px;
           }
-          width: 350px;
-          height: 45px;
         }
       }
     }
@@ -232,8 +219,6 @@
           &:nth-child(1) {
             margin-right: 20px;
           }
-          width: 400px;
-          height: 50px;
         }
       }
     }

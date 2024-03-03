@@ -45,6 +45,15 @@
       margin-bottom: 65px;
       text-align: justify;
       font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    &TextHidden {
+      margin-bottom: 65px;
+      text-align: justify;
+      font-size: 1.2rem;
+      font-weight: 700;
+      display: none;
       line-height: 1.7;
     }
   }
@@ -106,10 +115,19 @@
     font-weight: 500;
     text-decoration: none;
     border-radius: 2px;
+
+    @media (max-width: 500px) {
+      max-width: 120px;
+    }
   }
 
   @media (max-width: 500px) {
-    padding: 100px 40px;
+    padding: 100px 15px;
+
+    .readMoreBtn {
+      display: flex;
+      justify-content: center;
+    }
     .content {
       width: 100%;
       margin-top: 40px;
@@ -117,18 +135,33 @@
       &Title {
         font-size: 2.5em;
         line-height: 50px;
+        text-align: center;
       }
 
       &Text {
+        display: none;
         margin-bottom: 50px;
+      }
+      &TextHidden {
+        display: block;
+        text-align: center;
+        margin-bottom: 30px;
       }
     }
   }
 
   @media (min-width: 501px) and (max-width: 768px) {
-    padding: 100px 60px;
+    padding: 100px 60px 100px 20px;
     .content {
       margin-top: 75px;
+      width: 100%;
+
+      &Text {
+        display: none;
+      }
+      &TextHidden {
+        display: block;
+      }
 
       &Title {
         font-size: 2.5em;
@@ -141,6 +174,7 @@
     padding: 100px 80px;
     .content {
       margin-top: 75px;
+      width: 100%;
 
       &Title {
         font-size: 3em;

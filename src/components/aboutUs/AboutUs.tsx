@@ -2,6 +2,7 @@ import { AboutUsSection } from "@/components/aboutUs/aboutUsSection/AboutUsSecti
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./aboutUs.module.scss";
+import { useTranslations } from "next-intl";
 
 export interface Images {
   imageUrl: string;
@@ -20,6 +21,7 @@ const images: Images[] = [
 ];
 
 export const AboutUs = () => {
+  const t = useTranslations("about_us");
   const [currentIndex, setCurrentIndex] = useState(0);
   const nextImage = () => {
     setCurrentIndex((currentIndex + 1) % images.length);
@@ -36,24 +38,10 @@ export const AboutUs = () => {
   return (
     <section className={`${styles.about}`} id="about">
       <AboutUsSection
-        title="Welcome to Boatrips"
-        subtitle={
-          <>
-            We are genuinely delighted that you've chosen to explore the
-            boundless possibilities we offer!
-            <br />
-            <br />
-            Our team is here to ensure that your visit to the enchanting shores
-            of Lagos, Portugal, becomes an exceptional and unforgettable
-            experience.
-            <br />
-            <br />
-            Our commitment to excellence and passion for the sea have been our
-            guiding principles since our establishment. Your adventure begins
-            with us, and we can't wait to share the beauty and excitement of
-            Lagos with you. Let's embark on this exciting voyage together!
-          </>
-        }
+        title={t("welcome_to_boatrips")}
+        subtitle={t.rich("welcome_to_boatrips_description", {
+          br: () => <br />,
+        })}
         reverse={false}
       >
         <Image
@@ -65,23 +53,10 @@ export const AboutUs = () => {
         />
       </AboutUsSection>
       <AboutUsSection
-        title="Our Background"
-        subtitle={
-          <>
-            Boatrips, a trusted name since the year 2000, has been creating
-            unforgettable experiences in the picturesque coastal town of Lagos.
-            <br />
-            <br />
-            Located in the heart of this vibrant seaside destination, we pride
-            ourselves on crafting unique adventures that have left a lasting
-            impression on our guests.
-            <br />
-            <br />
-            Our commitment to excellence and our passion for the sea have been
-            the cornerstones of our journey, and we can't wait to share the
-            beauty and excitement of Lagos with you.
-          </>
-        }
+        title={t("our_background")}
+        subtitle={t.rich("our_background_description", {
+          br: () => <br />,
+        })}
         reverse={true}
       >
         <Image

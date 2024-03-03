@@ -1,14 +1,21 @@
 import { Title } from "@/ui-kit/title/Title";
 import styles from "@/components/aboutUs/aboutUs.module.scss";
+import { useTranslations } from "next-intl";
 
-export const AboutUsMap = () => (
-  <div
-    className={`${styles.about__container} ${styles.about__container__directionColumnMap}`}
-  >
+export const AboutUsMap = () => {
+  const t = useTranslations("about_us");
+  return (
+    <div
+      className={`${styles.about__container} ${styles.about__container__directionColumnMap}`}
+    >
       <div className={styles.about__data}>
-        <Title title="How to find us ?" />
-        <p className={`${styles.about__description} ${styles.about__MapDescription}`}>
-          Look for a yellow stand with the name "<span className={styles.orangeWrapper}>Boatrips</span>" in Marina de Lagos.
+        <Title title={t("how_to_find_us")} />
+        <p
+          className={`${styles.about__description} ${styles.about__MapDescription}`}
+        >
+          {t("address_beginning")}
+          <span className={styles.orangeWrapper}> {t("boatrips")} </span>{" "}
+          {t("address_finish")}
         </p>
       </div>
       <iframe
@@ -20,5 +27,6 @@ export const AboutUsMap = () => (
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-  </div>
-);
+    </div>
+  );
+};

@@ -1,16 +1,13 @@
 import React from "react";
 import styles from "./contactForm.module.scss";
+import { useTranslations } from "next-intl";
 
 const ContactForm = () => {
+  const t = useTranslations("questions");
   return (
     <div className={styles.contactForm}>
-      <h2 className={styles.contactForm__title}>
-        Do you have any specific question?
-      </h2>
-      <p className={styles.contactForm__text}>
-        Please fill the form below and our dedicated team will get intouch with
-        you as soon as possible
-      </p>
+      <h2 className={styles.contactForm__title}>{t("specific_questions")}</h2>
+      <p className={styles.contactForm__text}>{t("fill_form_text")}</p>
       <form>
         <input
           type="email"
@@ -18,10 +15,10 @@ const ContactForm = () => {
           className={styles.input}
         />
         <textarea
-          placeholder="Enter your question here"
+          placeholder={t("message_placeholder")}
           className={styles.textarea}
         ></textarea>
-        <button type="submit">Submit</button>
+        <button type="submit">{t("submit_button")}</button>
       </form>
     </div>
   );

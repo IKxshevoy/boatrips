@@ -5,8 +5,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import lastimg1 from "../../../public/footericons/footerendicon/img1.png";
-import lastimg2 from "../../../public/footericons/footerendicon/img2.png";
+import livro_reclamacoes from "../../../public/footericons/footerendicon/livro-reclamacoes.webp";
 import {
   faFacebook,
   faInstagram,
@@ -79,8 +78,7 @@ const Footer: React.FC = () => {
       <div className={styles.endText}>
         <p>Copyright 2023 All rights reserved </p>
         <div className={styles.endIcon}>
-          <img src={lastimg1.src} alt="Icon1" />
-          <img src={lastimg2.src} alt="Icon2" />
+          <img src={livro_reclamacoes.src} alt="Icon1" />
         </div>
       </div>
     </section>

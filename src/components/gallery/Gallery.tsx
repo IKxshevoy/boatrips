@@ -16,19 +16,19 @@ const Gallery = () => {
           <li>
             <img src="/gallery/4.jpg" alt="" />
             <div className={styles.overlay}>
-              <span>Ponta de Piedade</span>
+              <span>Ponta da Piedade</span>
             </div>
           </li>
           <li>
             <img src="/gallery/5.jpg" alt="" />
             <div className={styles.overlay}>
-              <span>Ponta de Piedade</span>
+              <span>Ponta da Piedade</span>
             </div>
           </li>
           <li>
             <img src="/gallery/6.jpg" alt="" />
             <div className={styles.overlay}>
-              <span>Ponta de Piedade</span>
+              <span>Ponta da Piedade</span>
             </div>
           </li>
           <li>
@@ -40,13 +40,13 @@ const Gallery = () => {
           <li>
             <img src="/gallery/5.jpg" alt="" />
             <div className={styles.overlay}>
-              <span>Ponta de Piedade</span>
+              <span>Ponta da Piedade</span>
             </div>
           </li>
           <li>
             <img src="/gallery/6.jpg" alt="" />
             <div className={styles.overlay}>
-              <span>Ponta de Piedade</span>
+              <span>Ponta da Piedade</span>
             </div>
           </li>
           <li>

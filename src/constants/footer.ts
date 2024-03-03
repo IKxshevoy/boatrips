@@ -11,7 +11,7 @@ const linkItems: LinkItem[] = [
 const contactItems: LinkItem[] = [
   { label: "Passeio dos Descobrimentos", href: "/" },
   { label: "8600-315 Lagos", href: "/" },
-  { label: "+999 9999 999 999", href: "/" },
+  { label: "+351 969 184 712", href: "/" },
   { label: "boatripseu@gmail.com", href: "/" },
 ];
 
