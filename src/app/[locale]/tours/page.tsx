@@ -17,37 +17,31 @@ const tours_info = [
     imageUrl: "/1.jpg",
     id: 0,
     price: 20,
-    href: "ponta-da-piedade-caves-cruise",
+    href: "/ponta-da-piedade-caves-cruise",
   },
   {
     imageUrl: "/4.jpg",
     id: 1,
     price: 30,
-    href: "ponta-da-piedade-2-hours-cruise",
+    href: "/ponta-da-piedade-2-hours-cruise",
   },
   {
     imageUrl: "/3.jpg",
     id: 2,
     price: 40,
-    href: "benagil-caves-speed-boat-tour",
+    href: "/benagil-caves-speed-boat-tour",
   },
   {
     imageUrl: "/slide2.jpg",
     id: 3,
-    price: 40,
-    href: "sunset-cruise",
+    price: 35,
+    href: "/sunset-cruise",
   },
   {
-    imageUrl: "/3.jpg",
+    imageUrl: "/yacht/4.png",
     id: 4,
-    price: 150,
-    href: "sunset-cruise",
-  },
-  {
-    imageUrl: "/slide2.jpg",
-    id: 5,
-    price: 250,
-    href: "sunset-cruise",
+    price: 80,
+    href: "/yacht-cruise",
   },
 ];
 
@@ -56,8 +50,7 @@ const keys = [
   "coastline_tour",
   "benagil_cave",
   "sunset_cruise",
-  "private_ponta_da_piedade",
-  "private_sunset_cruise",
+  "yacht_cruise",
 ] as const;
 
 const Tours = () => {

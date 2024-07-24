@@ -24,7 +24,17 @@ const slideContent: Slide[] = [
     contentHidden:
       "Sail the seas of the Algarve in true Portuguese style on a boat cruise in a traditional Portuguese boat. Visit to the rugged sea caves and get up close to the dramatic Ponta da Piedade rock formation.",
     path: "/main.jpg",
-    href: "ponta-da-piedade-caves-cruise",
+    href: "/ponta-da-piedade-caves-cruise",
+  },
+  {
+    title: "Yacht",
+    subTitle: "Cruise",
+    content:
+      "Hop aboard our yacht cruise to Ponta da Piedade and Luz! Check out the lighthouse, stroll along Porto de Mós beach, and soak in those epic sandstone cliffs.Once you step off, brace yourself for those unreal cliffs and stunning turquoise waters. Ready to dive in? No sweat, dip your toes or get wild with some snorkeling. Grab a mask and fins, and dive into those caves.",
+    contentHidden:
+      "Explore the underwater world, where you'll meet marine life. Keep your eyes peeled for octopuses, dolphins, squids, cuttlefish, and all the cool creatures the ocean's got. Remember, respect the sea and it'll show you its secrets",
+    path: "/yacht/1.png",
+    href: "/yacht-cruise",
   },
   {
     title: "Sunset",
@@ -34,7 +44,7 @@ const slideContent: Slide[] = [
     contentHidden:
       "Discover one of the most beautiful spots on the coast of the Algarve on a romantic boat cruise to Ponta da Piedade. Climb aboard at Lagos Harbor and set sail to see amazing rock formations, sea caves and golden beaches from the water.",
     path: "/slide2.jpg",
-    href: "sunset-cruise",
+    href: "/sunset-cruise",
   },
   {
     title: "Benagil",
@@ -44,7 +54,7 @@ const slideContent: Slide[] = [
     contentHidden:
       "Hop onboard one of our specifically designed speed boats for a unique adventure to Benagil. Despite the distance of 12 nautical miles from Lagos to the coast of Carvoeiro and Benagil.",
     path: "/slide3.avif",
-    href: "benagil-caves-speed-boat-tour",
+    href: "/benagil-caves-speed-boat-tour",
   },
   // Add more slide content objects as needed
 ];
@@ -63,56 +73,65 @@ const Slider = () => {
   };
 
   return (
-    <section className={styles.home}>
-      {slideContent.map((slide, index) => (
-        <Image
-          key={index}
-          src={slide.path}
-          alt={`Slide ${index + 1}`}
-          fill
-          style={{ objectFit: "cover" }}
-          className={`${styles.imageSlide} ${
-            activeSlide === index ? styles.activeSlide : ""
-          }`}
-        />
-      ))}
-      <div className={styles.content}>
-        {activeSlide !== null && (
-          <>
-            <h1 className={styles.contentTitle}>
-              {slideContent[activeSlide].title}
-              <br />
-              <span>{slideContent[activeSlide].subTitle}</span>
-            </h1>
-            <p className={styles.contentText}>
-              {slideContent[activeSlide].content}
-              {slideContent[activeSlide].contentHidden}
-            </p>
-            <p className={styles.contentTextHidden}>
-              {slideContent[activeSlide].contentHidden}
-            </p>
-          </>
-        )}
-        <div
-          className={styles.readMoreBtn}
-          onClick={() => router.push(slideContent[activeSlide!].href)}
-        >
-          <Button text="Read More"></Button>
-        </div>
-      </div>
-      <MediaIconsList />
-      <div className={styles.sliderNavigation}>
-        {slideContent.map((_, index) => (
-          <div
+    <>
+      <section className={styles.home}>
+        {slideContent.map((slide, index) => (
+          <Image
             key={index}
-            className={`${styles.navBtn} ${
-              activeSlide === index ? styles.active : ""
+            src={slide.path}
+            alt={`Slide ${index + 1}`}
+            fill
+            style={{ objectFit: "cover" }}
+            className={`${styles.imageSlide} ${
+              activeSlide === index ? styles.activeSlide : ""
             }`}
-            onClick={() => sliderNav(index)}
-          ></div>
+          />
         ))}
-      </div>
-    </section>
+        <div className={styles.content}>
+          {activeSlide !== null && (
+            <>
+              <h1 className={styles.contentTitle}>
+                {slideContent[activeSlide].title}
+                <br />
+                <span>{slideContent[activeSlide].subTitle}</span>
+              </h1>
+              <p className={styles.contentText}>
+                {slideContent[activeSlide].content}
+                {slideContent[activeSlide].contentHidden}
+              </p>
+              <p className={styles.contentTextHidden}>
+                {slideContent[activeSlide].contentHidden}
+              </p>
+            </>
+          )}
+          <Link
+            className={styles.readMoreBtn}
+            href={slideContent[activeSlide!].href}
+          >
+            <Button text="Read More" />
+          </Link>
+        </div>
+        <MediaIconsList />
+        <div className={styles.sliderNavigation}>
+          {slideContent.map((_, index) => (
+            <div
+              key={index}
+              className={`${styles.navBtn} ${
+                activeSlide === index ? styles.active : ""
+              }`}
+              onClick={() => sliderNav(index)}
+            ></div>
+          ))}
+        </div>
+      </section>
+      <section className={styles.promo}>
+        <h1>
+          Enjoy a <span className={styles.discount}>10% discount</span> in all
+          tours with the promo code{" "}
+          <span className={styles.discount}>TRIP2024.</span> Book now!
+        </h1>
+      </section>
+    </>
   );
 };
 

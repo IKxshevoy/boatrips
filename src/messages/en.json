@@ -52,6 +52,7 @@
     "ponta_da_piedade": "Ponta da Piedade",
     "coastline_tour": "Coastline tour",
     "benagil_cave": "Benagil cave",
+    "yacht_cruise": "Yacht cruise",
     "sunset_cruise": "Sunset cruise"
   },
   "questions": {
@@ -106,6 +107,10 @@
     "private_sunset_cruise": {
       "title": "Private Sunset cruise",
       "description": "Discover one of the most beautiful spots on the coast of the Algarve on a romantic boat cruise to Ponta da Piedade. Visit the rugged sea caves and get up close to the rock formation. Learn more about the area from your local skipper. Get an amazing perspective of famous beaches such as Dona Ana Beach, Camilo Beach, and Nudist Beach, as well as sandstone cliffs. At your request, stop for a swim break. Every journey will be different and a true adventure depending on the tides and sea conditions. This is a must-do trip and is enjoyable for the whole family. Complete your evening in paradise as you watch the sun set over the horizon."
+    },
+    "yacht_cruise": {
+      "title": "Yacht cruise",
+      "description": "Hop aboard our yacht cruise to Ponta da Piedade and Luz! Check out the lighthouse, stroll along Porto de Mós beach, and soak in those epic sandstone cliffs. Once you step off, brace yourself for those unreal cliffs and stunning turquoise waters.Ready to dive in? No sweat, dip your toes or get wild with some snorkeling. Grab a mask and fins, and dive into those caves."
     }
   },
   "ponta-da-piedade-caves-cruise": {
@@ -155,7 +160,8 @@
     "cant_find": "In case you can't find the place, please contact us +351969184712",
     "reviews": "Reviews from our Clients",
     "private_tour": "Want to go on a private tour ?",
-    "contact_us": "Contact us"
+    "contact_us": "Contact us",
+    "book_it": "Book it!"
   },
   "ponta-da-piedade-2-hours-cruise": {
     "title": "Ponta da Piedade Cave and Coastal",
@@ -217,7 +223,7 @@
     "time_duration": "Time duration",
     "caves_of": "Caves Of",
     "boat_tour": "Speed Boat Tour",
-    "tour_duration": "105 Minutes",
+    "tour_duration": "1H 45M",
     "tour_description": "Hop onboard one of our specifically designed speed boats for a unique adventure to Benagil. Despite the distance of 12 nautical miles from Lagos to the coast of Carvoeiro and Benagil.<br></br><br></br>Enter the various caves in the area that are not accessible from larger vessels. Listen as the guide tells stories about the Algarve region along the way. Visit amazing caves and hidden grottos from the inside, and see natural wonders that can't be reached in any other way. <br></br><br></br> Keep a lookout, as dolphins can often be seen navigating the waters here, and if they are spotted and are less than 3 miles away, the boat will head in their direction so you can get a closer look at these playful animals.",
     "watch_a_virtual_tour": "Watch a virtual tour",
     "highlights": "HIGHLIGHTS",
@@ -258,6 +264,7 @@
     "contact_us": "Contact us"
   },
   "sunset-cruise": {
+    "book_it": "Book it!",
     "ponta_da_piedade": "Ponta da Piedade",
     "sunset_cruise": "Sunset Cruise",
     "discount": "10% discount",
@@ -304,5 +311,13 @@
     "reviews": "Reviews from our Clients",
     "private_tour": "Want to go on a private tour ?",
     "contact_us": "Contact us"
+  },
+  "yacht-cruise": {
+    "price": "Price",
+    "duration": "Duration",
+    "sunrise_desc": "Experience a magical morning with our sunrise yacht cruise in Lagos! Sail along the Algarve coast on our luxurious yacht as the sun rises. Enjoy the peaceful atmosphere, complimentary refreshments, and stunning views.<br></br><br></br> Our friendly crew will ensure you have an unforgettable experience. Perfect for nature lovers and those looking to start their day in style! Enjoy breaks at scenic locales to swim in pristine waters or lounge on deck amidst stunning vistas.<br></br><br></br> Stay alert for encounters with local marine creatures, including the friendly dolphins often seen nearby.Explore idyllic layovers for a dip in the clear waters or unwind onboard with sweeping views. Keep your eyes peeled for the local marine life, including the dolphins frequently spotted alongside our journey.",
+    "sunset_desc": "Sitting aboard a modern sailing yacht, wine glass in hand, as you witness a mesmerizing sunset. Sounds dreamy? We make it happen. Join us on our spacious yacht, perfect for groups up to 6, in Lagos (Algarve).<br></br><br></br> Our warm, experienced crew will take you on a delightful 2-hour sunset cruise along the Algarve coast. Enjoy spectacular views, relax, and cherish the moment with a welcome drink.<br></br><br></br> Don’t miss out! This sunset cruise is the ideal way to explore the Algarve coastline during the golden hour. Bring along friends and family to share this unforgettable moment. See Meia Praia, Prainha, and Vau beaches from a new perspective. Weather and sea conditions permitting, we can stop for an ocean swim (safety first).",
+    "golden_hour_desc": "Hop aboard our yacht cruise to Ponta da Piedade and Luz! Check out the lighthouse, stroll along Porto de Mós beach, and soak in those epic sandstone cliffs.Once you step off, brace yourself for those unreal cliffs and stunning turquoise waters.<br></br><br></br>Ready to dive in? No sweat, dip your toes or get wild with some snorkeling. Grab a mask and fins, and dive into those caves. <br></br><br></br>Explore the underwater world, where you'll meet marine life. Keep your eyes peeled for octopuses, dolphins, squids, cuttlefish, and all the cool creatures the ocean's got. Remember, respect the sea and it'll show you its secrets",
+    "full_day": "Hey adventurers! Ready for the most epic 7-hour sail-yacht cruise along the stunning Algarve coastline? We set sail from the beautiful Marina of Lagos, where our super friendly crew will welcome you aboard. They’re here to make sure your day is absolutely unforgettable.<br></br><br></br>Sailing across the pristine waters, prepare to be mesmerized by the stunning cliffs, secluded beaches, and captivating rock formations that define this legendary coastline. <br></br><br></br>We'll stop at optimal locations, ideal for a revitalizing swim or simply relaxing on deck while enjoying the breathtaking scenery. Don't forget to stay alert for dolphins, as these playful marine companions often accompany us on our adventure."
   }
 }

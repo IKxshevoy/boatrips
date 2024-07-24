@@ -1,0 +1,10 @@
+.video {
+    flex-basis: 70%;
+    height: 70vh;
+    margin-top: 40px;
+
+    @media (max-width: 1050px) {
+      flex-basis: auto;
+      width: 100%;
+    }
+  }

@@ -1,20 +1,22 @@
-import { useRef, useEffect } from 'react';
-import videojs from 'video.js';
-import 'video.js/dist/video-js.css';
-import '@videojs/themes/dist/sea/index.css';
+"use client";
+import { useRef, useEffect } from "react";
+import videojs from "video.js";
+import "video.js/dist/video-js.css";
+import "@videojs/themes/dist/sea/index.css";
+import "videojs-youtube";
 
 interface VideoPlayerProps {
   options: {
-    autoplay: boolean
-    controls: boolean,
-    responsive: boolean,
-    fluid: boolean,
+    autoplay: boolean;
+    controls: boolean;
+    responsive: boolean;
+    fluid: boolean;
     sources: {
       src: string;
       type: string;
-    }[],
-    poster?: string
-  },
+    }[];
+    poster?: string;
+  };
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ options }) => {
@@ -23,18 +25,23 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({ options }) => {
   useEffect(() => {
     if (videoRef.current) {
       const player = videojs(videoRef.current, options, () => {
-        console.log('Player is ready');
+        console.log("Player is ready");
       });
 
       return () => {
         player.dispose();
       };
     }
-  }, []);
+  }, [options]);
 
   return (
     <div data-vjs-player>
-      <video ref={videoRef} className='video-js vjs-theme-sea' controls preload="auto">
+      <video
+        ref={videoRef}
+        className="video-js vjs-theme-sea"
+        controls
+        preload="auto"
+      >
         <source src={options.sources[0].src} type={options.sources[0].type} />
       </video>
     </div>

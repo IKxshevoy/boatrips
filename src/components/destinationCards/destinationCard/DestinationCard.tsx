@@ -8,11 +8,17 @@ import { useRouter } from "next/navigation";
 
 interface IDestinationCard {
   title: string;
+  price: string;
   imageUrl: string;
   href: string;
 }
 
-const DestinationCard = ({ title, imageUrl, href }: IDestinationCard) => {
+const DestinationCard = ({
+  title,
+  imageUrl,
+  href,
+  price,
+}: IDestinationCard) => {
   const t = useTranslations("expiriences");
   const router = useRouter();
 
@@ -26,7 +32,11 @@ const DestinationCard = ({ title, imageUrl, href }: IDestinationCard) => {
       onClick={handleCardClick}
     >
       <div className={styles.cardContent}>
-        <h3 className={`h3 ${styles.cardTitle}`}>{title}</h3>
+        <h3 className={`h3 ${styles.cardTitle}`}>
+          {title}
+          <br />
+          <span className={styles.price}>{price}</span>
+        </h3>
         <a href="#" className={styles.btnLink}>
           <span onClick={handleCardClick} className={styles.span}>
             {t("view_tour_button")}

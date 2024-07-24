@@ -25,12 +25,16 @@ const links = [
     title: "Tours",
     url: "/tours",
     subMenu: [
-      { name: "Ponta da Piedade", href: "ponta-da-piedade-caves-cruise" },
-      { name: "Coastline Cruise", href: "ponta-da-piedade-2-hours-cruise" },
-      { name: "Benagil Cave", href: "benagil-caves-speed-boat-tour" },
-      { name: "Sunset Tour", href: "sunset-cruise" },
-      { name: "Private tour" },
-      { name: "Private sunset" },
+      { name: "Ponta da Piedade", href: "/ponta-da-piedade-caves-cruise" },
+      { name: "Yacht Cruise", href: "/yacht-cruise" },
+      { name: "Coastline Cruise", href: "/ponta-da-piedade-2-hours-cruise" },
+      { name: "Benagil Cave", href: "/benagil-caves-speed-boat-tour" },
+      { name: "Sunset Tour", href: "/sunset-cruise" },
+      {
+        name: "Private Ponta da Piedade",
+        href: "/ponta-da-piedade-caves-cruise#private-classic",
+      },
+      { name: "Private sunset", href: "/sunset-cruise#private-sunset" },
     ],
   },
   {
@@ -48,8 +52,6 @@ const languageOptions = [
 ];
 
 const Navbar: React.FC = () => {
-  const router = useRouter();
-
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isSubMenuActive, setIsSubMenuActive] = useState(false);
@@ -64,15 +66,7 @@ const Navbar: React.FC = () => {
   };
 
   useEffect(() => {
-    setIsSticky(pathname.includes("/contact"));
-    const handleScroll = () => {
-      if (window.scrollY > 1) {
-        setIsSticky(true);
-      } else {
-        pathname !== "/contact" && setIsSticky(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
+    setIsSticky(true);
   }, [pathname]);
   useEffect(() => {
     const closeSubMenu = (event: MouseEvent) => {

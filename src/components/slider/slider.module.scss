@@ -210,3 +210,28 @@
     }
   }
 }
+
+.promo {
+  width: 100%;
+  font-size: 1.6em;
+  padding: 3px 20px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 15vh;
+  background: #1c3869;
+  color: #fff;
+
+  @media (max-width: 760px) {
+    height: 25vh;
+  }
+  @media (max-width: 550px) {
+    font-size: 1em;
+    height: 17vh;
+  }
+}
+
+.discount {
+  color: #ff9200;
+}

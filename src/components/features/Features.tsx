@@ -55,18 +55,18 @@ const Features = () => {
   }));
   const [openModal, setModalOpen] = useState<boolean>(false);
 
-  const videoOptions = {
-    autoplay: true,
+  const videoJsOptions = {
+    autoplay: false,
     controls: true,
     responsive: true,
     fluid: true,
     sources: [
       {
-        src: "intro.mp4",
-        type: "video/mp4",
+        src: "https://www.youtube.com/watch?v=DE5Ii0DnYo8",
+        type: "video/youtube",
       },
     ],
-    poster: "aboutUs2.jpg",
+    poster: "/classic/1.jpg",
   };
 
   return (
@@ -77,7 +77,7 @@ const Features = () => {
       <ImageBanner setModalOpen={setModalOpen} />
       <Modal isOpen={openModal} onClose={() => setModalOpen(false)}>
         <div style={{ width: "60vw" }}>
-          <VideoPlayer options={videoOptions} />
+          <VideoPlayer options={videoJsOptions} />
         </div>
       </Modal>
       <div className={`${styles.section} ${styles.featuresContent}`}>

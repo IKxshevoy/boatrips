@@ -1,0 +1,66 @@
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #fff;
+  overflow: hidden;
+  transition: all ease 0.5s;
+}
+.button:hover {
+  background-color: rgb(48, 95, 184);
+}
+.button:hover .wave {
+  top: 100%;
+}
+.button:hover span {
+  color: #fff;
+}
+.button span {
+  position: relative;
+  z-index: 1;
+  transition: 1s;
+  font-size: 1.4rem;
+  color: rgb(48, 95, 184);
+}
+.button .wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all ease 0.5s;
+}
+.button .wave::before {
+  content: "";
+  position: absolute;
+  top: 50px;
+  left: -110px;
+  width: 240px;
+  height: 200px;
+  background-color: rgb(48, 95, 184);
+  border-radius: 40%;
+  animation: rotate 15s linear infinite;
+}
+.button .wave::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: -80px;
+  width: 200px;
+  height: 200px;
+  background-color: rgb(48, 95, 184);
+  border-radius: 45%;
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

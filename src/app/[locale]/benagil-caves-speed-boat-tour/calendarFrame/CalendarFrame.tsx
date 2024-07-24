@@ -12,12 +12,12 @@ const CalendarFrame = () => {
         <div className={styles.calendarFrame__description}>
           <div className={styles.bookingBlock}>
             <img
-              src="/aboutUs1.jpg"
+              src="/benagil/bg.jpg"
               className={styles.calendarFrame__img}
               alt="Booking image"
             />
             <a
-              href="https://fareharbor.com/embeds/book/boatrips/items/292229/?full-items=yes&flow=536599"
+              href="https://fareharbor.com/embeds/book/boatrips/items/375985/?full-items=yes&flow=536599"
               className={styles.calendarFrame__button}
             >
               {t("book_online")}
@@ -30,7 +30,7 @@ const CalendarFrame = () => {
                 <br />
                 {t("adult_age")}
               </span>
-              <span className={styles.price}>20€</span>
+              <span className={styles.price}>40€</span>
             </div>
             <div className={styles.ages__wrapper}>
               <span className={styles.text}>
@@ -38,7 +38,7 @@ const CalendarFrame = () => {
                 <br />
                 {t("child_age")}
               </span>
-              <span className={styles.price}>10€</span>
+              <span className={styles.price}>25€</span>
             </div>
           </div>
         </div>

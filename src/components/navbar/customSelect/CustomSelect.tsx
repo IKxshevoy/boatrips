@@ -1,5 +1,14 @@
+"use client";
 import styles from "../customSelect/custom.module.scss";
 import React, { useState, useEffect, useRef } from "react";
+import { usePathname, useRouter } from "@/i18n";
+import { useLocale, useTranslations } from "next-intl";
+import en from "../../../../public/flag/en.png";
+import fr from "../../../../public/flag/fr.png";
+import pt from "../../../../public/flag/pt.jpg";
+import de from "../../../../public/flag/de.png";
+
+const flags = { en, fr, pt, de };
 
 interface Choice {
   value: string;
@@ -13,8 +22,20 @@ interface CustomSelectProps {
 }
 
 const CustomSelect: React.FC<CustomSelectProps> = ({ choice }) => {
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleChangeLocale = (locale: string) => {
+    router.replace(pathname, { locale });
+  };
+
+  // Determine initial selected index based on current locale
+  const initialIndex = choice.findIndex((c) => c.value === locale);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState(
+    initialIndex !== -1 ? initialIndex : 0
+  );
   const wrapperRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -23,6 +44,10 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ choice }) => {
       document.removeEventListener("click", handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    console.log("Selected index changed:", selectedIndex);
+  }, [selectedIndex]);
 
   const handleClickOutside = (event: MouseEvent) => {
     if (
@@ -40,6 +65,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ choice }) => {
   const handleLanguageClick = (index: number) => {
     setSelectedIndex(index);
     setIsMenuOpen(false);
+    handleChangeLocale(choice[index].value);
   };
 
   return (

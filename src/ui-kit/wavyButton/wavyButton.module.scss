@@ -16,7 +16,10 @@
     position: relative;
     z-index: 1;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    @media (max-width: 450px) {
+      font-size: 1.4rem;
+    }
   }
 
   .wave {
@@ -57,6 +60,9 @@
   }
   @media (max-width: 750px) {
     padding: 10px 20px;
+  }
+  @media (max-width: 450px) {
+    padding: 10px 15px;
   }
 }
 

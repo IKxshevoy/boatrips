@@ -1,0 +1,57 @@
+.title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 72px;
+  padding: 10px 0;
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .title {
+    background-image: url("../../../public/bg_title.webp");
+    background-size: 110% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+@media (max-width: 1650px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 800px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 576px) {
+  .title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 500px) {
+  .title {
+    white-space: nowrap;
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 450px) {
+  .title {
+    font-size: 2.1rem;
+  }
+}
+@media (max-width: 390px) {
+  .title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 370px) {
+  .title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 350px) {
+  .title {
+    font-size: 1.7rem;
+  }
+}
