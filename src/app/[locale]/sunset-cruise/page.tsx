@@ -17,12 +17,14 @@ import {
   Captions,
   Download,
   Fullscreen,
+  Slideshow,
   Thumbnails,
   Zoom,
 } from "yet-another-react-lightbox/plugins";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { slides } from "./gallery/data";
+import AlternativeButton from "@/ui-kit/alternative-button/Button";
 
 const Tour = () => {
   const t = useTranslations("sunset-cruise");
@@ -42,14 +44,12 @@ const Tour = () => {
       />
 
       <Lightbox
-        plugins={[Captions, Download, Fullscreen, Zoom, Thumbnails]}
+        plugins={[Captions, Download, Fullscreen, Zoom, Thumbnails, Slideshow]}
+        slideshow={{ autoplay: true, delay: 5000 }}
         captions={{
           showToggle: true,
           descriptionTextAlign: "end",
         }}
-        // open={open}
-        // close={() => setOpen(false)}
-
         index={index}
         open={index >= 0}
         close={() => setIndex(-1)}
@@ -64,9 +64,10 @@ const Tour = () => {
         <h2 className={styles.promotion__title} id="private-sunset">
           {t("private_tour")}
         </h2>
-        <a href="https://fareharbor.com/embeds/book/boatrips/items/478706/?full-items=yes&flow=536599">
-          <WavyButton text={t("book_it")}></WavyButton>
-        </a>
+        <AlternativeButton
+          url="https://fareharbor.com/embeds/book/boatrips/items/478706/?full-items=yes&flow=536599"
+          text={t("book_it")}
+        />
       </div>
     </section>
   );

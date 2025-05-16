@@ -9,9 +9,9 @@ import { locales, type Locale } from "@/lib/locales";
 
 const messageImports = {
   en: () => import("./messages/en.json"),
+  de: () => import("./messages/de.json"),
   fr: () => import("./messages/fr.json"),
   pt: () => import("./messages/pt.json"),
-  de: () => import("./messages/de.json")
 } as const satisfies Record<
   Locale,
   () => Promise<{ default: AbstractIntlMessages }>

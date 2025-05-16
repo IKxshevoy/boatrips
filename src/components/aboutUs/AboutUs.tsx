@@ -39,6 +39,7 @@ export const AboutUs = () => {
     <section className={`${styles.about}`} id="about">
       <AboutUsSection
         title={t("welcome_to_boatrips")}
+        isVideo={true}
         subtitle={t.rich("welcome_to_boatrips_description", {
           br: () => <br />,
         })}

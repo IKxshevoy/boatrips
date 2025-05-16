@@ -4,8 +4,10 @@ import React from "react";
 import styles from "./page.module.scss";
 import Image from "next/image";
 import ContactForm from "./contactForm/ContactForm";
+import { useTranslations } from "next-intl";
 
 const Contact = () => {
+  const t = useTranslations("contact");
   return (
     <section className={styles.contact}>
       <div className={styles.container}>
@@ -13,10 +15,10 @@ const Contact = () => {
           <div className={styles.formWrapper}>
             <div className={styles.contactHeading}>
               <h1>
-                Let's work together <span>.</span>
+                {t("work_together")} <span>.</span>
               </h1>
               <p className={styles.text}>
-                Or reach us via :{" "}
+                {t("reach_us")}{" "}
                 <a href="mailto:boatripseu@gmail.com">boatripseu@gmail.com</a>
               </p>
             </div>

@@ -4,6 +4,20 @@
   margin-bottom: 150px;
 }
 
+.mobileImageWrapper {
+  text-align: center;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.mobileThumbnail {
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 .title {
   text-align: center;
 }

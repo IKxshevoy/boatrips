@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Button from "@/ui-kit/button/Button";
 import WavyButton from "@/ui-kit/wavyButton/WavyButton";
+import AlternativeButton from "@/ui-kit/alternative-button/Button";
 
 export interface Images {
   imageUrl: string;
@@ -117,7 +118,8 @@ const TourDescription: React.FC<ITourDescription> = ({ isReversed }) => {
       >
         <div className={styles.description}>
           <h2 className={styles.title}>
-            <span className={styles.orangeWrapper}>Sunrise </span> tour
+            <span className={styles.orangeWrapper}>{t("sunrise")} </span>{" "}
+            {t("tour")}
           </h2>
           <p className={styles.description__paragraph}>
             {t.rich("sunrise_desc", {
@@ -134,24 +136,27 @@ const TourDescription: React.FC<ITourDescription> = ({ isReversed }) => {
                 </div>
               </div>
             ))}
-            <button className={styles.button}>
-              <a href="https://fareharbor.com/embeds/book/boatrips/items/559013/?full-items=yes&flow=536599">
-                Book now
-              </a>
-            </button>
+            <AlternativeButton
+              text={t("book_now")}
+              url="https://fareharbor.com/embeds/book/boatrips/items/559013/?full-items=yes&flow=536599"
+            />
           </div>
         </div>
         <div className={styles.descImgWrapper}>
           <Image
-            width={500}
-            height={100}
-            className={styles.descImg}
-            style={{ borderRadius: "20px" }}
             src={sunrise_images[currentIndex].imageUrl}
             alt="slider photo"
+            className={styles.descImg}
+            fill
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              borderRadius: "20px",
+            }}
           />
         </div>
       </div>
+
       <div
         className={`${styles.description__wrapper} ${
           isReversed ? styles.reversed : ""
@@ -159,17 +164,22 @@ const TourDescription: React.FC<ITourDescription> = ({ isReversed }) => {
       >
         <div className={styles.descImgWrapper}>
           <Image
-            width={500}
-            height={100}
-            className={styles.descImg}
-            style={{ borderRadius: "20px" }}
             src={sunset_images[currentIndex].imageUrl}
             alt="slider photo"
+            className={styles.descImg}
+            fill
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              borderRadius: "20px",
+            }}
           />
         </div>
+
         <div className={styles.description}>
           <h2 className={styles.title}>
-            <span className={styles.orangeWrapper}>Yacht Sunset </span> tour
+            <span className={styles.orangeWrapper}>{t("sunset")} </span>{" "}
+            {t("tour")}
           </h2>
           <p className={styles.description__paragraph}>
             {t.rich("sunset_desc", {
@@ -186,11 +196,11 @@ const TourDescription: React.FC<ITourDescription> = ({ isReversed }) => {
                 </div>
               </div>
             ))}
-            <button className={styles.button}>
-              <a href="https://fareharbor.com/embeds/book/boatrips/items/560665/?full-items=yes&flow=536599">
-                Book now
-              </a>
-            </button>
+
+            <AlternativeButton
+              text={t("book_now")}
+              url="https://fareharbor.com/embeds/book/boatrips/items/560665/?full-items=yes&flow=536599"
+            />
           </div>
         </div>
       </div>

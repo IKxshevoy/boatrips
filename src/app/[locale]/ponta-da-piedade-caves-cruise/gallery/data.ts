@@ -30,7 +30,7 @@ export const slides = [
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/classic/7.jpg",
+    src: "/classic/12.jpg",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
@@ -46,31 +46,6 @@ export const slides = [
   },
   {
     src: "/classic/10.jpg",
-    title: "Slide Title One",
-    description: "Slide Description One\n\nthis is new line",
-  },
-  {
-    src: "/classic/11.jpg",
-    title: "Slide Title One",
-    description: "Slide Description One\n\nthis is new line",
-  },
-  {
-    src: "/classic/12.jpg",
-    title: "Slide Title One",
-    description: "Slide Description One\n\nthis is new line",
-  },
-  {
-    src: "/classic/13.jpg",
-    title: "Slide Title One",
-    description: "Slide Description One\n\nthis is new line",
-  },
-  {
-    src: "/classic/14.jpg",
-    title: "Slide Title One",
-    description: "Slide Description One\n\nthis is new line",
-  },
-  {
-    src: "/classic/15.jpg",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },

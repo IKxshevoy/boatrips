@@ -1,30 +1,51 @@
-import React from 'react';
+import React, { useState } from "react";
 import Image from "next/image";
 import styles from "../features.module.scss";
 
-interface ImageBannerProps {
-  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
+const ImageBanner: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
 
-const ImageBanner: React.FC<ImageBannerProps> = ({setModalOpen}) => {
   return (
     <div
-      className={`${styles.featuresBanner} ${styles.hasBgImage} ${styles.hasAfter}`}
-      style={{ backgroundImage: `url('/slide1.jpg')` }}
+      className={`${styles.featuresBanner} ${!isPlaying ? styles.hasBgImage : ""}`}
+      style={{
+        backgroundImage: !isPlaying ? `url('/slide1.jpg')` : "none",
+        position: "relative",
+      }}
     >
-      <button
-        className={styles.playBtn}
-        aria-label="play video: Ponta da Piedade"
-        onClick={() => setModalOpen(true)}
-      >
-        <Image
-          src="/play.svg"
-          width={60}
-          height={60}
-          loading="lazy"
-          alt="play icon"
-        />
-      </button>
+      {!isPlaying ? (
+        <button
+          className={styles.playBtn}
+          aria-label="play video: Ponta da Piedade"
+          onClick={() => setIsPlaying(true)}
+        >
+          <Image
+            src="/play.svg"
+            width={60}
+            height={60}
+            loading="lazy"
+            alt="play icon"
+          />
+        </button>
+      ) : (
+        <div style={{ position: "relative", width: "100%", height: "100%" }}>
+          <iframe
+            src="https://www.youtube.com/embed/NBvS3qXCZpA?si=RaeMbjTh-yvc6LxY&autoplay=1"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              border: "none",
+            }}
+          ></iframe>
+        </div>
+      )}
     </div>
   );
 };

@@ -14,7 +14,7 @@ interface IMediaIconList extends IMediaIcon {
 const mediaIconsList: IMediaIconList[] = [
   { icon: faFacebook, href: "https://www.facebook.com/boatrips.eu", id: 0 },
   { icon: faInstagram, href: "https://www.instagram.com/boatrips/", id: 1 },
-  { icon: faWhatsapp, href: "", id: 2 },
+  { icon: faWhatsapp, href: "https://wa.me/351969184712", id: 2 },
 ];
 
 const MediaIconsList = () => {
@@ -25,6 +25,8 @@ const MediaIconsList = () => {
           icon={mediaIcon.icon}
           href={mediaIcon.href}
           key={mediaIcon.id}
+          target="_blank"
+          rel="noopener noreferrer"
         />
       ))}
     </div>

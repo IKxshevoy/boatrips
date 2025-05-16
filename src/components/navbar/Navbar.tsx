@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
@@ -11,38 +11,7 @@ import pt from "../../../public/flag/pt.jpg";
 import de from "../../../public/flag/de.png";
 import Logo from "../../../public/Logo.png";
 import Image from "next/image";
-import { useLocale } from "next-intl";
-import { Locale } from "@/lib/locales";
-
-const links = [
-  {
-    id: 0,
-    title: "Home",
-    url: "/",
-  },
-  {
-    id: 1,
-    title: "Tours",
-    url: "/tours",
-    subMenu: [
-      { name: "Ponta da Piedade", href: "/ponta-da-piedade-caves-cruise" },
-      { name: "Yacht Cruise", href: "/yacht-cruise" },
-      { name: "Coastline Cruise", href: "/ponta-da-piedade-2-hours-cruise" },
-      { name: "Benagil Cave", href: "/benagil-caves-speed-boat-tour" },
-      { name: "Sunset Tour", href: "/sunset-cruise" },
-      {
-        name: "Private Ponta da Piedade",
-        href: "/ponta-da-piedade-caves-cruise#private-classic",
-      },
-      { name: "Private sunset", href: "/sunset-cruise#private-sunset" },
-    ],
-  },
-  {
-    id: 2,
-    title: "Contact us",
-    url: "/contact",
-  },
-];
+import { useTranslations } from "next-intl";
 
 const languageOptions = [
   { value: "en", label: "EN", flag: en },
@@ -52,22 +21,50 @@ const languageOptions = [
 ];
 
 const Navbar: React.FC = () => {
+  const t = useTranslations("navbar");
   const [isMenuActive, setIsMenuActive] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isSubMenuActive, setIsSubMenuActive] = useState(false);
   const pathname = usePathname();
 
-  const toggleMenu = () => {
-    setIsMenuActive(!isMenuActive);
-  };
-
-  const toggleSubMenu = () => {
-    setIsSubMenuActive(!isSubMenuActive);
-  };
+  // Define links inside the component to use translations
+  const links = [
+    {
+      id: 0,
+      title: t("home"),
+      url: "/",
+    },
+    {
+      id: 1,
+      title: t("tours"),
+      url: "/tours",
+      subMenu: [
+        { name: t("ponta_da_piedade"), href: "/ponta-da-piedade-caves-cruise" },
+        { name: t("yacht_cruise"), href: "/yacht-cruise" },
+        {
+          name: t("coastline_cruise"),
+          href: "/ponta-da-piedade-2-hours-cruise",
+        },
+        { name: t("benagil_cave"), href: "/benagil-caves-speed-boat-tour" },
+        { name: t("sunset_tour"), href: "/sunset-cruise" },
+        {
+          name: t("private_ponta_da_piedade"),
+          href: "/ponta-da-piedade-caves-cruise#private-classic",
+        },
+        { name: t("private_sunset"), href: "/sunset-cruise#private-sunset" },
+      ],
+    },
+    {
+      id: 2,
+      title: t("contact_us"),
+      url: "/contact",
+    },
+  ];
 
   useEffect(() => {
     setIsSticky(true);
   }, [pathname]);
+
   useEffect(() => {
     const closeSubMenu = (event: MouseEvent) => {
       const submenu = document.querySelector(`.${styles.listOfTours}`);
@@ -85,20 +82,22 @@ const Navbar: React.FC = () => {
     };
   }, [isSubMenuActive]);
 
+  const toggleMenu = () => {
+    setIsMenuActive(!isMenuActive);
+  };
+
+  const toggleSubMenu = () => {
+    setIsSubMenuActive(!isSubMenuActive);
+  };
+
   return (
     <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
       <a className={styles.brand} href={"/"}>
-        {
-          <Image
-            src={Logo}
-            alt="logo"
-            style={{
-              width: "20%",
-              height: "20%",
-              maxWidth: "400px",
-            }}
-          />
-        }
+        <Image
+          src={Logo}
+          alt="logo"
+          style={{ width: "20%", height: "20%", maxWidth: "400px" }}
+        />
       </a>
       {isMenuActive ? (
         <FontAwesomeIcon

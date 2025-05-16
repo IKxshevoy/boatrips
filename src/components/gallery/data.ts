@@ -25,9 +25,9 @@ export const slides = [
     description: "Slide Description Five",
   },
   {
-    src: "/coastline/3.jpg",
-    title: "Slide Title Six",
-    description: "Slide Description Six",
+    src: "/sunset/2.jpg",
+    title: "Slide Title Nine",
+    description: "Slide Description Nine",
   },
   {
     src: "/yacht/6.jpg",
@@ -40,33 +40,13 @@ export const slides = [
     description: "Slide Description Eight",
   },
   {
-    src: "/sunset/1.jpg",
-    title: "Slide Title Nine",
-    description: "Slide Description Nine",
-  },
-  {
-    src: "/benagil/1.jpg",
-    title: "Slide Title Ten",
-    description: "Slide Description Ten",
-  },
-  {
-    src: "/benagil/2.jpg",
-    title: "Slide Title Ten",
-    description: "Slide Description Ten",
-  },
-  {
     src: "/yacht/sunrise/1.jpg",
     title: "Slide Title Ten",
     description: "Slide Description Ten",
   },
   {
-    src: "/sunset/2.jpg",
-    title: "Slide Title Nine",
-    description: "Slide Description Nine",
-  },
-  {
-    src: "/sunset/3.jpg",
-    title: "Slide Title Nine",
-    description: "Slide Description Nine",
+    src: "/benagil/1.jpg",
+    title: "Slide Title Ten",
+    description: "Slide Description Ten",
   },
 ];

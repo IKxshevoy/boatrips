@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import Button from "@/ui-kit/button/Button";
 import WavyButton from "@/ui-kit/wavyButton/WavyButton";
+import AlternativeButton from "@/ui-kit/alternative-button/Button";
 
 export interface Images {
   imageUrl: string;
@@ -117,7 +118,8 @@ const ToursBottom: React.FC<ITourDescription> = ({ isReversed }) => {
       >
         <div className={styles.description}>
           <h2 className={styles.title}>
-            <span className={styles.orangeWrapper}>Golden </span> Hour
+            <span className={styles.orangeWrapper}>{t("golden")} </span>{" "}
+            {t("hour")}
           </h2>
           <p className={styles.description__paragraph}>
             {t.rich("golden_hour_desc", {
@@ -134,21 +136,24 @@ const ToursBottom: React.FC<ITourDescription> = ({ isReversed }) => {
                 </div>
               </div>
             ))}
-            <button className={styles.button}>
-              <a href="https://fareharbor.com/embeds/book/boatrips/items/560967/?full-items=yes&flow=536599">
-                Book now
-              </a>
-            </button>
+
+            <AlternativeButton
+              text={t("book_now")}
+              url="https://fareharbor.com/embeds/book/boatrips/items/560967/?full-items=yes&flow=536599"
+            />
           </div>
         </div>
         <div className={styles.descImgWrapper}>
           <Image
-            width={500}
-            height={100}
-            className={styles.descImg}
-            style={{ borderRadius: "20px" }}
             src={sunrise_images[currentIndex].imageUrl}
             alt="slider photo"
+            className={styles.descImg}
+            fill
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              borderRadius: "20px",
+            }}
           />
         </div>
       </div>
@@ -159,17 +164,21 @@ const ToursBottom: React.FC<ITourDescription> = ({ isReversed }) => {
       >
         <div className={styles.descImgWrapper}>
           <Image
-            width={500}
-            height={100}
-            className={styles.descImg}
-            style={{ borderRadius: "20px" }}
-            src={sunrise_images[currentIndex].imageUrl}
+            src={sunset_images[currentIndex].imageUrl}
             alt="slider photo"
+            className={styles.descImg}
+            fill
+            style={{
+              objectFit: "cover",
+              objectPosition: "center",
+              borderRadius: "20px",
+            }}
           />
         </div>
         <div className={styles.description}>
           <h2 className={styles.title}>
-            <span className={styles.orangeWrapper}>Private </span> Full Day
+            <span className={styles.orangeWrapper}>{t("private")} </span>{" "}
+            {t("full_Day")}
           </h2>
           <p className={styles.description__paragraph}>
             {t.rich("full_day", {
@@ -186,11 +195,10 @@ const ToursBottom: React.FC<ITourDescription> = ({ isReversed }) => {
                 </div>
               </div>
             ))}
-            <button className={styles.button}>
-              <a href="https://fareharbor.com/embeds/book/boatrips/items/560962/?full-items=yes&flow=536599">
-                Book now
-              </a>
-            </button>
+            <AlternativeButton
+              text={t("book_now")}
+              url="https://fareharbor.com/embeds/book/boatrips/items/560962/?full-items=yes&flow=536599"
+            />
           </div>
         </div>
       </div>

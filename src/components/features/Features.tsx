@@ -53,33 +53,10 @@ const Features = () => {
     icon: benefits_icons[index].icon,
     id: benefits_icons[index].id,
   }));
-  const [openModal, setModalOpen] = useState<boolean>(false);
-
-  const videoJsOptions = {
-    autoplay: false,
-    controls: true,
-    responsive: true,
-    fluid: true,
-    sources: [
-      {
-        src: "https://www.youtube.com/watch?v=DE5Ii0DnYo8",
-        type: "video/youtube",
-      },
-    ],
-    poster: "/classic/1.jpg",
-  };
 
   return (
-    <section
-      className={`${styles.features} ${openModal ? styles.featuresModal : ""}`}
-      aria-label="features"
-    >
-      <ImageBanner setModalOpen={setModalOpen} />
-      <Modal isOpen={openModal} onClose={() => setModalOpen(false)}>
-        <div style={{ width: "60vw" }}>
-          <VideoPlayer options={videoJsOptions} />
-        </div>
-      </Modal>
+    <section className={`${styles.features}`} aria-label="features">
+      <ImageBanner />
       <div className={`${styles.section} ${styles.featuresContent}`}>
         <div className={styles.container}>
           <h2 className={styles.title}>

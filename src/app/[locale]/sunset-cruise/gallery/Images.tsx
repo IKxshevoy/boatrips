@@ -1,6 +1,9 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import "./index.css";
 import { Title } from "@/ui-kit/title/Title";
+import useIsMobile from "@/components/gallery/isMobile";
+import styles from "../styles.module.scss";
+import { useTranslations } from "next-intl";
 
 interface ImagesProps {
   data: {
@@ -11,26 +14,47 @@ interface ImagesProps {
   onClick: (index: number) => void;
 }
 
-const Images: FC<ImagesProps> = (props) => {
-  const { data, onClick } = props;
+const Images: FC<ImagesProps> = ({ data, onClick }) => {
+  const t = useTranslations("gallery");
+  const isMobile = useIsMobile();
+  const [thumbnailIndex, setThumbnailIndex] = useState(0);
 
-  const handleClickImage = (index: number) => {
-    onClick(index);
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setThumbnailIndex((prev) => (prev + 1) % data.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isMobile, data.length]);
+
+  const handleClickImage = () => {
+    onClick(thumbnailIndex);
   };
 
   return (
     <div className="images-wrapper">
-      <Title title="Image Gallery" bgPicture="/bg_title.webp"></Title>
+      {isMobile ? (
+        <h2 className={styles.title}>{t("image_gallery")}</h2>
+      ) : (
+        <Title title={t("image_gallery")} bgPicture="/bg_title.webp" />
+      )}
       <div className="images-container">
-        {data.map((slide, index) => (
-          <div
-            onClick={() => handleClickImage(index)}
-            key={index}
-            className="image"
-          >
-            <img src={slide.src} alt={slide.description} />
+        {isMobile ? (
+          <div className="image" onClick={handleClickImage}>
+            <img
+              src={data[thumbnailIndex].src}
+              alt={data[thumbnailIndex].description}
+            />
           </div>
-        ))}
+        ) : (
+          data.map((slide, index) => (
+            <div onClick={() => onClick(index)} key={index} className="image">
+              <img src={slide.src} alt={slide.description} />
+            </div>
+          ))
+        )}
       </div>
     </div>
   );

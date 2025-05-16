@@ -1,0 +1,39 @@
+.btn {
+  background: #fff;
+  padding: 15px 35px;
+  text-decoration: none;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.text {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #1680ac;
+  z-index: 1;
+  position: relative;
+}
+.wave {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background: url("/wave.png");
+  background-size: 200% 100%;
+  top: 100%;
+  left: 0;
+  animation: wave 2s linear infinite;
+  transition: 0.5s;
+}
+@keyframes wave {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: 200%;
+  }
+}
+.btn .wave {
+  top: 50%;
+}

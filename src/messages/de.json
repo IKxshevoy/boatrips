@@ -5,6 +5,35 @@
       "description": "Werden Sie Teil der nächsten großen Sache in Pharma"
     }
   },
+
+  "slider": {
+    "slide_0_title": "Tour von",
+    "slide_0_subTitle": "Ponta de Piedade",
+    "slide_0_content": "Segle im echten portugiesischen Stil auf einer Bootsfahrt an der Algarve mit einem traditionellen portugiesischen Boot. Besuche die zerklüfteten Meeresgrotten und komm der dramatischen Felsformation Ponta da Piedade ganz nah. Erfahre mehr über die Gegend von deinem lokalen Kapitän. Für ein unvergessliches Erlebnis gehst du an Bord eines einzigartigen Bootes im traditionellen portugiesischen Design. Diese speziellen Boote sind dafür gemacht, auch die kleinsten Grotten zu erreichen.",
+    "slide_0_contentHidden": "Segle im echten portugiesischen Stil auf einer Bootsfahrt an der Algarve mit einem traditionellen portugiesischen Boot. Besuche die zerklüfteten Meeresgrotten und komm der dramatischen Felsformation Ponta da Piedade ganz nah.",
+
+    "slide_1_title": "Yacht",
+    "slide_1_subTitle": "Kreuzfahrt",
+    "slide_1_content": "Steig ein zu unserer Yachtkreuzfahrt nach Ponta da Piedade und Luz! Sieh dir den Leuchtturm an, spaziere am Strand von Porto de Mós entlang und genieße die beeindruckenden Sandsteinklippen. Wenn du von Bord gehst, erwarten dich atemberaubende Klippen und türkisfarbenes Wasser. Bereit für ein Bad? Kein Problem – tauch deine Zehen ein oder geh schnorcheln! Schnapp dir Maske und Flossen und erkunde die Höhlen.",
+    "slide_1_contentHidden": "Entdecke die Unterwasserwelt, in der du Meereslebewesen triffst. Halte Ausschau nach Oktopussen, Delfinen, Tintenfischen, Sepien und all den faszinierenden Kreaturen des Ozeans. Denk daran: Respektiere das Meer und es wird dir seine Geheimnisse zeigen.",
+
+    "slide_2_title": "Sonnenuntergangs-",
+    "slide_2_subTitle": "Abenteuer",
+    "slide_2_content": "Entdecke einen der schönsten Orte an der Küste der Algarve bei einer romantischen Bootsfahrt nach Ponta da Piedade. Geh im Hafen von Lagos an Bord und setz die Segel, um beeindruckende Felsformationen, Meeresgrotten und goldene Strände vom Wasser aus zu sehen. Anker an den idyllischen Felsen von Ponta da Piedade und bestaune den Kontrast zwischen den braun-roten Felsen und dem grün-blauen Wasser des Atlantiks. Auf Wunsch kannst du auch einen Badestopp einlegen. Beende deinen Abend im Paradies mit einem Sonnenuntergang über dem Horizont.",
+    "slide_2_contentHidden": "Entdecke einen der schönsten Orte an der Küste der Algarve bei einer romantischen Bootsfahrt nach Ponta da Piedade. Geh im Hafen von Lagos an Bord und setz die Segel, um beeindruckende Felsformationen, Meeresgrotten und goldene Strände vom Wasser aus zu sehen.",
+
+    "slide_3_title": "Benagil-",
+    "slide_3_subTitle": "Abenteuer",
+    "slide_3_content": "Steig in eines unserer speziell entwickelten Schnellboote für ein einzigartiges Abenteuer nach Benagil. Trotz der Entfernung von 12 Seemeilen von Lagos zur Küste von Carvoeiro und Benagil erreichst du damit beeindruckende Höhlen, die größere Boote nicht befahren können. Lausche spannenden Geschichten über die Algarve-Region, die dein Guide erzählt. Besuche erstaunliche Höhlen und versteckte Grotten von innen und entdecke Naturwunder, die auf anderem Weg nicht zugänglich sind.",
+    "slide_3_contentHidden": "Steig in eines unserer speziell entwickelten Schnellboote für ein einzigartiges Abenteuer nach Benagil. Trotz der Entfernung von 12 Seemeilen von Lagos zur Küste von Carvoeiro und Benagil.",
+
+    "read_more": "Mehr erfahren",
+    "enjoy": "Genieße",
+    "discount": "10 % Rabatt",
+    "with_promo": "auf alle Touren mit dem Aktionscode",
+    "book_now": "Jetzt buchen!"
+  },
+
   "about_us": {
     "boatrips": "Boatrips",
     "welcome_to_boatrips": "Willkommen bei Boatrips",
@@ -40,6 +69,25 @@
     "fifth_feature": {
       "title": "Tierfreundlich",
       "description": "Wir heißen Ihre Haustiere an Bord willkommen. Kontaktieren Sie uns im Voraus, um den Platz Ihres pelzigen Begleiters auf der Reise zu vereinbaren."
+    }
+  },
+  "gallery": {
+    "image_gallery": "Bildergalerie"
+  },
+
+  "contact_form": {
+    "first_name": "Vorname",
+    "last_name": "Nachname",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send_message": "Nachricht senden",
+    "message_success": "Wir haben deine Nachricht erhalten und werden so schnell wie möglich per E-Mail antworten!",
+    "validation": {
+      "first_name_required": "Vorname ist erforderlich.",
+      "last_name_required": "Nachname ist erforderlich.",
+      "email_invalid": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "message_too_short": "Die Nachricht muss mindestens 10 Zeichen lang sein.",
+      "message_too_long": "Die Nachricht darf 1000 Zeichen nicht überschreiten."
     }
   },
   "expiriences": {
@@ -83,6 +131,7 @@
     }
   },
   "tours": {
+    "read_more": "Mehr erfahren",
     "ponta_da_piedade": {
       "title": "Ponta da Piedade",
       "description": "Pour une expérience inoubliable, vous monterez à bord de votre bateau unique, doté d'un design portugais traditionnel. Ces bateaux spéciaux sont conçus pour vous permettre de naviguer jusqu'à la plus petite grotte. Ce bateau vous emmènera dans un voyage mémorable le long de la côte à couper le souffle, pénétrant brièvement dans deux grottes étonnantes et révélant les grottes cachées de l'intérieur. Les grottes sont situées autour de la formation rocheuse de Ponta. Situé autour de la formation rocheuse de Ponta da Piedade, obtenez une perspective étonnante des plages célèbres telles que Dona Ana Beach, Camila Beach, et Nudist Beach, ainsi que des falaises de grès."
@@ -106,7 +155,15 @@
     "private_sunset_cruise": {
       "title": "Croisière privée au coucher du soleil à Ponta da Piedade",
       "description": "Découvrez l'un des plus beaux sites de la côte de l'Algarve lors d'une croisière romantique à Ponta da Piedade. Visitez les grottes marines accidentées et approchez-vous des formations rocheuses. Apprenez-en plus sur la région grâce à votre skipper local. Vous aurez une vue imprenable sur des plages célèbres telles que Dona Ana Beach, Camilo Beach et Nudist Beach, ainsi que sur des falaises de grès. À votre demande, arrêtez-vous pour une pause baignade. Chaque voyage sera différent et constituera une véritable aventure en fonction des marées et de l'état de la mer. Il s'agit d'une excursion à ne pas manquer, qui plaira à toute la famille. Terminez votre soirée au paradis en regardant le soleil se coucher à l'horizon."
+    },
+    "yacht_cruise": {
+      "title": "Yachtkreuzfahrt",
+      "description": "Steig ein zu unserer Yachtkreuzfahrt nach Ponta da Piedade und Luz! Sieh dir den Leuchtturm an, spaziere am Strand von Porto de Mós entlang und genieße die beeindruckenden Sandsteinklippen. Sobald du von Bord gehst, erwarten dich atemberaubende Klippen und türkisfarbenes Wasser. Bereit für ein Bad? Kein Problem – tauch einfach deine Zehen ins Wasser oder geh schnorcheln! Schnapp dir Maske und Flossen und erkunde die Höhlen."
     }
+  },
+  "contact": {
+    "work_together": "Lass uns zusammenarbeiten",
+    "reach_us": "Oder kontaktiere uns über:"
   },
   "ponta-da-piedade-caves-cruise": {
     "ponta_da_piedade": "Ponta da Piedade",
@@ -155,7 +212,8 @@
     "cant_find": "Falls Sie den Ort nicht finden können, kontaktieren Sie uns bitte unter +351969184712",
     "reviews": "Bewertungen unserer Kunden",
     "private_tour": "Möchten Sie eine private Tour machen?",
-    "contact_us": "Kontaktiere uns"
+    "contact_us": "Kontaktiere uns",
+    "book_it": "Jetzt buchen!"
   },
   "ponta-da-piedade-2-hours-cruise": {
     "title": "Ponta da Piedade Höhle und Küste",
@@ -257,6 +315,7 @@
     "contact_us": "Kontaktiere uns"
   },
   "sunset-cruise": {
+    "book_it": "Jetzt buchen!",
     "ponta_da_piedade": "Ponta da Piedade",
     "sunset_cruise": "Sonnenuntergangskreuzfahrt",
     "discount": "10% Rabatt",
@@ -303,5 +362,57 @@
     "reviews": "Bewertungen unserer Kunden",
     "private_tour": "Möchten Sie eine private Tour machen?",
     "contact_us": "Kontaktiere uns"
+  },
+  "yacht-cruise": {
+    "price": "Preis",
+    "duration": "Dauer",
+    "sunrise_desc": "Erlebe einen magischen Morgen mit unserer Sonnenaufgangs-Yachtfahrt in Lagos! Segle entlang der Algarve-Küste auf unserer luxuriösen Yacht, während die Sonne aufgeht. Genieße die ruhige Atmosphäre, kostenlose Erfrischungen und atemberaubende Ausblicke.<br></br><br></br>Unsere freundliche Crew sorgt für ein unvergessliches Erlebnis. Perfekt für Naturliebhaber und alle, die stilvoll in den Tag starten möchten! Pausen an malerischen Orten zum Schwimmen in klarem Wasser oder zum Entspannen an Deck mit traumhaften Aussichten.<br></br><br></br>Halte Ausschau nach Meeresbewohnern wie den oft in der Nähe schwimmenden Delfinen. Erkunde idyllische Stopps zum Baden oder entspanne an Bord mit weitem Blick. Achte auf die lokale Unterwasserwelt, inklusive Delfinen entlang unserer Route.",
+    "sunset_desc": "Lehn dich zurück auf einer modernen Segelyacht, ein Weinglas in der Hand, und genieße einen faszinierenden Sonnenuntergang. Klingt traumhaft? Wir machen es möglich. Komm an Bord unserer geräumigen Yacht, ideal für Gruppen bis 6 Personen, in Lagos (Algarve).<br></br><br></br>Unsere erfahrene Crew nimmt dich mit auf eine 2-stündige Sonnenuntergangsfahrt entlang der Algarve-Küste. Genieße spektakuläre Ausblicke, entspanne und genieße den Moment mit einem Willkommensgetränk.<br></br><br></br>Verpasse es nicht! Diese Sonnenuntergangstour ist die perfekte Art, die Algarve-Küste in der goldenen Stunde zu erleben. Bring Familie und Freunde mit, um diesen unvergesslichen Moment zu teilen. Sieh Meia Praia, Prainha und Vau aus neuer Perspektive. Wetter- und Seebedingungen vorausgesetzt, halten wir für ein Bad im Meer an (Sicherheit zuerst).",
+    "golden_hour_desc": "Steig ein zu unserer Yachtfahrt nach Ponta da Piedade und Luz! Schau dir den Leuchtturm an, spaziere am Strand von Porto de Mós und genieße die spektakulären Sandsteinfelsen. Nach dem Aussteigen erwarten dich beeindruckende Klippen und türkisfarbenes Wasser.<br></br><br></br>Bereit zum Eintauchen? Kein Problem, tauche mit den Zehen ein oder schnorchel wild drauf los. Schnapp dir Maske und Flossen und erkunde die Höhlen.<br></br><br></br>Entdecke die Unterwasserwelt mit Tintenfischen, Delfinen, Kalmaren, Sepien und vielen weiteren faszinierenden Meeresbewohnern. Denk daran: Respektiere das Meer, und es zeigt dir seine Geheimnisse.",
+    "full_day": "Abenteuerlustige aufgepasst! Bereit für eine epische 7-stündige Segel-Yachtfahrt entlang der atemberaubenden Algarve-Küste? Wir starten im schönen Hafen von Lagos, wo unsere super freundliche Crew dich herzlich begrüßt. Sie sorgen dafür, dass dein Tag unvergesslich wird.<br></br><br></br>Segle über kristallklares Wasser, bewundere beeindruckende Klippen, versteckte Strände und faszinierende Felsformationen, die diese legendäre Küste prägen.<br></br><br></br>Wir stoppen an den besten Stellen für eine erfrischende Schwimm- oder Relaxpause an Deck mit spektakulärer Aussicht. Vergiss nicht, Ausschau nach Delfinen zu halten – diese verspielten Meeresfreunde begleiten uns oft.",
+    "private_tour": "Private Tour gewünscht?",
+    "contact_us": "Kontaktieren Sie uns",
+    "four_variations": "Vier Varianten!",
+    "explore": "Entdecke",
+    "beauty": "Lagos’ Schönheit",
+    "on_unforgettable": "Unvergessliche",
+    "yacht_cruise": "Yachtfahrt",
+    "explore_btn": "Entdecken",
+    "book_now": "Jetzt buchen",
+    "sunrise": "Sonnenaufgang",
+    "sunset": "Sonnenuntergang",
+    "tour": "Tour",
+    "golden": "Goldene",
+    "hour": "Stunde",
+    "private": "Privat",
+    "full_Day": "Ganztägig"
+  },
+  "navbar": {
+    "home": "Startseite",
+    "tours": "Touren",
+    "contact_us": "Kontakt",
+    "ponta_da_piedade": "Ponta da Piedade",
+    "yacht_cruise": "Yacht Kreuzfahrt",
+    "coastline_cruise": "Küstenkreuzfahrt",
+    "benagil_cave": "Benagil Höhle",
+    "sunset_tour": "Sonnenuntergangstour",
+    "private_ponta_da_piedade": "Private Ponta da Piedade",
+    "private_sunset": "Private Sonnenuntergang"
+  },
+  "footer": {
+    "support": "Unterstützung",
+    "contact_info": "Kontaktinformationen",
+    "connect": "Verbinden",
+    "certificates": "Zertifikate",
+    "about_us": "Über uns",
+    "terms_conditions": "Geschäftsbedingungen",
+    "privacy_policy": "Datenschutzrichtlinie",
+    "help": "Hilfe",
+    "tours": "Touren",
+    "address": "Passeio dos Descobrimentos",
+    "postal_code": "8600-315 Lagos",
+    "phone": "+351 969 184 712",
+    "email": "boatripseu@gmail.com",
+    "copyright": "Copyright 2025 Alle Rechte vorbehalten"
   }
 }

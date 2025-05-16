@@ -1,33 +1,52 @@
+"use client";
+import React from "react";
+import { useTranslations } from "next-intl";
 import { FooterLink } from "@/components/footer/footerLink/FooterLink";
 import { ListWrapper } from "@/components/footer/ListWrapper";
-import { footerBlocks } from "@/constants/footer";
 import Image from "next/image";
-import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import livro_reclamacoes from "../../../public/footericons/footerendicon/livro-reclamacoes.webp";
 import {
   faFacebook,
   faInstagram,
   faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 import styles from "./footer.module.scss";
-
-export interface LinkItem {
-  label: string;
-  href: string;
-}
+import livro_reclamacoes from "../../../public/footericons/footerendicon/livro-reclamacoes.webp";
 
 const Footer: React.FC = () => {
+  const t = useTranslations("footer");
+
+  // Map your original linkItems and contactItems to translated labels here
+  const translatedLinkItems = [
+    { label: t("about_us"), href: "/" },
+    { label: t("terms_conditions"), href: "/" },
+    { label: t("privacy_policy"), href: "/" },
+    { label: t("help"), href: "/" },
+    { label: t("tours"), href: "/" },
+  ];
+
+  const translatedContactItems = [
+    { label: t("address"), href: "#" },
+    { label: t("postal_code"), href: "#" },
+    { label: t("phone"), href: "https://wa.me/351969184712" },
+    { label: t("email"), href: "mailto:boatripseu@gmail.com" },
+  ];
+
+  const translatedFooterBlocks = [
+    { [t("support")]: translatedLinkItems },
+    { [t("contact_info")]: translatedContactItems },
+  ];
+
   return (
     <section className={styles.contact}>
       <footer className={styles.footer}>
         <div className={styles.main}>
-          {footerBlocks.map((item) =>
+          {translatedFooterBlocks.map((item) =>
             Object.entries(item).map(([title, linkItems], index) => (
               <ListWrapper title={title} key={index}>
                 <ul>
-                  {linkItems.map((item: LinkItem, itemIndex: number) => (
+                  {linkItems.map((item, itemIndex) => (
                     <FooterLink
                       key={itemIndex}
                       label={item.label}
@@ -38,7 +57,7 @@ const Footer: React.FC = () => {
               </ListWrapper>
             ))
           )}
-          <ListWrapper title="Connect">
+          <ListWrapper title={t("connect")}>
             <div className={styles.social}>
               <Link
                 href={"https://www.facebook.com/boatrips.eu"}
@@ -52,12 +71,17 @@ const Footer: React.FC = () => {
               >
                 <FontAwesomeIcon icon={faInstagram} />
               </Link>
-              <Link href={"/"} className={styles.socialLink}>
+              <Link
+                href={"https://wa.me/351969184712"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+              >
                 <FontAwesomeIcon icon={faWhatsapp} />
               </Link>
             </div>
           </ListWrapper>
-          <ListWrapper title="Certificates">
+          <ListWrapper title={t("certificates")}>
             <div className={styles.certificates}>
               <Image
                 src="/certificates/certificate1.png"
@@ -76,7 +100,7 @@ const Footer: React.FC = () => {
         </div>
       </footer>
       <div className={styles.endText}>
-        <p>Copyright 2023 All rights reserved </p>
+        <p>{t("copyright")}</p>
         <div className={styles.endIcon}>
           <img src={livro_reclamacoes.src} alt="Icon1" />
         </div>

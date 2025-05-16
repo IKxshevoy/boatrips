@@ -3,75 +3,24 @@
   padding: 20px 30px;
   position: relative;
   display: block;
+  color: #fff;
   text-decoration: none;
+  background: #1a3d6c;
+  letter-spacing: 4px;
+  font-weight: 600;
+  font-size: 18px;
   overflow: hidden;
+  transition: all 0.5s ease-in-out;
 
   &:hover {
-    .wave {
-      top: -100px;
-    }
+    background: #fff;
+    color: #1a3d6c;
   }
 
-  span {
-    position: relative;
-    z-index: 1;
-    color: white;
-    font-size: 1.6rem;
-    @media (max-width: 450px) {
-      font-size: 1.4rem;
-    }
-  }
-
-  .wave {
-    width: 200px;
-    height: 200px;
-    background-color: #2a4cc8;
-    box-shadow: inset 0 0 50px rgba(13, 121, 179, 0.5);
-    position: absolute;
-    left: 0;
-    top: -80px;
-    transition: 0.4s;
-
-    &::before,
-    &::after {
-      width: 200%;
-      height: 200%;
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translate(-50%, -75%);
-
-      @media (max-width: 850px) {
-        top: -20%;
-      }
-    }
-
-    &::before {
-      border-radius: 45%;
-      background-color: rgb(48, 95, 184);
-      animation: wave 5s linear infinite;
-    }
-
-    &::after {
-      border-radius: 40%;
-      animation: wave 10s linear infinite;
-    }
-  }
   @media (max-width: 750px) {
     padding: 10px 20px;
   }
   @media (max-width: 450px) {
     padding: 10px 15px;
-  }
-}
-
-@keyframes wave {
-  0% {
-    transform: translate(-50%, -65%) rotate(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -65%) rotate(360deg);
   }
 }

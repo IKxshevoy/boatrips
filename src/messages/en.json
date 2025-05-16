@@ -2,8 +2,35 @@
   "root": {
     "metadata": {
       "title": "Boatrips",
-      "description": "Werden Sie Teil der nächsten großen Sache in Pharma"
+      "description": ""
     }
+  },
+  "slider": {
+    "slide_0_title": "Tour of",
+    "slide_0_subTitle": "Ponta de Piedade",
+    "slide_0_content": "Sail the seas of the Algarve in true Portuguese style on a boat cruise in a traditional Portuguese boat. Visit to the rugged sea caves and get up close to the dramatic Ponta da Piedade rock formation. Learn more about the area from your local skipper. For an unforgettable experience, you will board your unique vessel complete with a traditional Portuguese design. These special boats are designed to get you to sail to the smallest grotto.",
+    "slide_0_contentHidden": "Sail the seas of the Algarve in true Portuguese style on a boat cruise in a traditional Portuguese boat. Visit to the rugged sea caves and get up close to the dramatic Ponta da Piedade rock formation.",
+
+    "slide_1_title": "Yacht",
+    "slide_1_subTitle": "Cruise",
+    "slide_1_content": "Hop aboard our yacht cruise to Ponta da Piedade and Luz! Check out the lighthouse, stroll along Porto de Mós beach, and soak in those epic sandstone cliffs.Once you step off, brace yourself for those unreal cliffs and stunning turquoise waters. Ready to dive in? No sweat, dip your toes or get wild with some snorkeling. Grab a mask and fins, and dive into those caves.",
+    "slide_1_contentHidden": "Explore the underwater world, where you'll meet marine life. Keep your eyes peeled for octopuses, dolphins, squids, cuttlefish, and all the cool creatures the ocean's got. Remember, respect the sea and it'll show you its secrets",
+
+    "slide_2_title": "Sunset",
+    "slide_2_subTitle": "Adventure",
+    "slide_2_content": "Discover one of the most beautiful spots on the coast of the Algarve on a romantic boat cruise to Ponta da Piedade. Climb aboard at Lagos Harbor and set sail to see amazing rock formations, sea caves and golden beaches from the water. Drop anchor at the idyllic rock formations of Ponta da Piedade, and marvel at the contrast between the brown-red rocks and the green-blues waters of the Atlantic Ocean. At your request, stop for a swim break. Complete your evening in paradise as you watch the sun set over the horizon.",
+    "slide_2_contentHidden": "Discover one of the most beautiful spots on the coast of the Algarve on a romantic boat cruise to Ponta da Piedade. Climb aboard at Lagos Harbor and set sail to see amazing rock formations, sea caves and golden beaches from the water.",
+
+    "slide_3_title": "Benagil",
+    "slide_3_subTitle": "Adventure",
+    "slide_3_content": "Hop onboard one of our specifically designed speed boats for a unique adventure to Benagil. Despite the distance of 12 nautical miles from Lagos to the coast of Carvoeiro and Benagil. Enter the various caves in the area that are not accessible from larger vessels. Listen as the guide tells stories about the Algarve region along the way. Visit amazing caves and hidden grottos from the inside, and see natural wonders that can't be reached in any other way.",
+    "slide_3_contentHidden": "Hop onboard one of our specifically designed speed boats for a unique adventure to Benagil. Despite the distance of 12 nautical miles from Lagos to the coast of Carvoeiro and Benagil.",
+
+    "read_more": "Read More",
+    "enjoy": "Enjoy a",
+    "discount": "10% discount",
+    "with_promo": "in all tours with the promo code",
+    "book_now": "Book now!"
   },
   "about_us": {
     "boatrips": "Boatrips",
@@ -42,6 +69,26 @@
       "description": "We welcome your pets onboard. Contact us in advance to arrange your furry companion's spot on the trip."
     }
   },
+  "gallery": {
+    "image_gallery": "Image Gallery"
+  },
+
+  "contact_form": {
+    "first_name": "First Name",
+    "last_name": "Last Name",
+    "email": "Email",
+    "message": "Message",
+    "send_message": "Send message",
+    "message_success": "We have received your message and will respond to your email as soon as possible!",
+    "validation": {
+      "first_name_required": "First name is required.",
+      "last_name_required": "Last name is required.",
+      "email_invalid": "Please enter a valid email address.",
+      "message_too_short": "Message must be at least 10 characters.",
+      "message_too_long": "Message cannot exceed 1000 characters."
+    }
+  },
+
   "expiriences": {
     "title": "OUR EXPIRIENCES",
     "description": "Welcome aboard! Dive into a world of endless possibilities as you explore our extensive array of captivating boat tours below, promising unforgettable experiences along the stunning coast of Lagos.",
@@ -55,6 +102,7 @@
     "yacht_cruise": "Yacht cruise",
     "sunset_cruise": "Sunset cruise"
   },
+
   "questions": {
     "popular": "Popular",
     "questions": "questions",
@@ -62,6 +110,14 @@
     "fill_form_text": "Please fill the form below and our dedicated team will get intouch with you as soon as possible",
     "message_placeholder": "Enter your question here",
     "submit_button": "Submit",
+    "message_sent_success": "We have received your message and will respond to your email as soon as possible!",
+
+    "validation": {
+      "email_invalid": "Please enter a valid email address.",
+      "message_too_short": "Message must be at least 10 characters long.",
+      "message_too_long": "Message cannot exceed 1000 characters."
+    },
+
     "first_question": {
       "title": "What should I bring on a boat trip?",
       "content": "You should bring essentials like sunscreen, a hat, sunglasses, a swimsuit, a towel, a reusable water bottle, and any personal medications. Don't forget your identification, such as a driver's license or passport, and cash for expenses."
@@ -84,6 +140,7 @@
     }
   },
   "tours": {
+    "read_more": "Read More",
     "ponta_da_piedade": {
       "title": "Ponta da Piedade",
       "description": "Sail the seas of the Algarve in true Portuguese style on a boat cruise in a traditional Portuguese boat. Visit to the rugged sea caves and get up close to the dramatic Ponta da Piedade rock formation. Learn more about the area from your local skipper. For an unforgettable experience, you will board your unique vessel complete with a traditional Portuguese design. These special boats are designed to get you to sail to the smallest grotto."
@@ -112,6 +169,10 @@
       "title": "Yacht cruise",
       "description": "Hop aboard our yacht cruise to Ponta da Piedade and Luz! Check out the lighthouse, stroll along Porto de Mós beach, and soak in those epic sandstone cliffs. Once you step off, brace yourself for those unreal cliffs and stunning turquoise waters.Ready to dive in? No sweat, dip your toes or get wild with some snorkeling. Grab a mask and fins, and dive into those caves."
     }
+  },
+  "contact": {
+    "work_together": "Let's work together",
+    "reach_us": "Or reach us via :"
   },
   "ponta-da-piedade-caves-cruise": {
     "ponta_da_piedade": "Ponta da Piedade",
@@ -315,9 +376,54 @@
   "yacht-cruise": {
     "price": "Price",
     "duration": "Duration",
-    "sunrise_desc": "Experience a magical morning with our sunrise yacht cruise in Lagos! Sail along the Algarve coast on our luxurious yacht as the sun rises. Enjoy the peaceful atmosphere, complimentary refreshments, and stunning views.<br></br><br></br> Our friendly crew will ensure you have an unforgettable experience. Perfect for nature lovers and those looking to start their day in style! Enjoy breaks at scenic locales to swim in pristine waters or lounge on deck amidst stunning vistas.<br></br><br></br> Stay alert for encounters with local marine creatures, including the friendly dolphins often seen nearby.Explore idyllic layovers for a dip in the clear waters or unwind onboard with sweeping views. Keep your eyes peeled for the local marine life, including the dolphins frequently spotted alongside our journey.",
-    "sunset_desc": "Sitting aboard a modern sailing yacht, wine glass in hand, as you witness a mesmerizing sunset. Sounds dreamy? We make it happen. Join us on our spacious yacht, perfect for groups up to 6, in Lagos (Algarve).<br></br><br></br> Our warm, experienced crew will take you on a delightful 2-hour sunset cruise along the Algarve coast. Enjoy spectacular views, relax, and cherish the moment with a welcome drink.<br></br><br></br> Don’t miss out! This sunset cruise is the ideal way to explore the Algarve coastline during the golden hour. Bring along friends and family to share this unforgettable moment. See Meia Praia, Prainha, and Vau beaches from a new perspective. Weather and sea conditions permitting, we can stop for an ocean swim (safety first).",
-    "golden_hour_desc": "Hop aboard our yacht cruise to Ponta da Piedade and Luz! Check out the lighthouse, stroll along Porto de Mós beach, and soak in those epic sandstone cliffs.Once you step off, brace yourself for those unreal cliffs and stunning turquoise waters.<br></br><br></br>Ready to dive in? No sweat, dip your toes or get wild with some snorkeling. Grab a mask and fins, and dive into those caves. <br></br><br></br>Explore the underwater world, where you'll meet marine life. Keep your eyes peeled for octopuses, dolphins, squids, cuttlefish, and all the cool creatures the ocean's got. Remember, respect the sea and it'll show you its secrets",
-    "full_day": "Hey adventurers! Ready for the most epic 7-hour sail-yacht cruise along the stunning Algarve coastline? We set sail from the beautiful Marina of Lagos, where our super friendly crew will welcome you aboard. They’re here to make sure your day is absolutely unforgettable.<br></br><br></br>Sailing across the pristine waters, prepare to be mesmerized by the stunning cliffs, secluded beaches, and captivating rock formations that define this legendary coastline. <br></br><br></br>We'll stop at optimal locations, ideal for a revitalizing swim or simply relaxing on deck while enjoying the breathtaking scenery. Don't forget to stay alert for dolphins, as these playful marine companions often accompany us on our adventure."
+    "sunrise_desc": "Experience a magical morning with our sunrise yacht cruise in Lagos! Sail along the Algarve coast on our luxurious yacht as the sun rises. Enjoy the peaceful atmosphere, complimentary refreshments, and stunning views.<br></br><br></br>Our friendly crew will ensure you have an unforgettable experience. Perfect for nature lovers and those looking to start their day in style! Enjoy breaks at scenic locales to swim in pristine waters or lounge on deck amidst stunning vistas.<br></br><br></br>Stay alert for encounters with local marine creatures, including the friendly dolphins often seen nearby. Explore idyllic layovers for a dip in the clear waters or unwind onboard with sweeping views. Keep your eyes peeled for the local marine life, including the dolphins frequently spotted alongside our journey.",
+    "sunset_desc": "Sitting aboard a modern sailing yacht, wine glass in hand, as you witness a mesmerizing sunset. Sounds dreamy? We make it happen. Join us on our spacious yacht, perfect for groups up to 6, in Lagos (Algarve).<br></br><br></br>Our warm, experienced crew will take you on a delightful 2-hour sunset cruise along the Algarve coast. Enjoy spectacular views, relax, and cherish the moment with a welcome drink.<br></br><br></br>Don’t miss out! This sunset cruise is the ideal way to explore the Algarve coastline during the golden hour. Bring along friends and family to share this unforgettable moment. See Meia Praia, Prainha, and Vau beaches from a new perspective. Weather and sea conditions permitting, we can stop for an ocean swim (safety first).",
+    "golden_hour_desc": "Hop aboard our yacht cruise to Ponta da Piedade and Luz! Check out the lighthouse, stroll along Porto de Mós beach, and soak in those epic sandstone cliffs. Once you step off, brace yourself for those unreal cliffs and stunning turquoise waters.<br></br><br></br>Ready to dive in? No sweat, dip your toes or get wild with some snorkeling. Grab a mask and fins, and dive into those caves.<br></br><br></br>Explore the underwater world, where you'll meet marine life. Keep your eyes peeled for octopuses, dolphins, squids, cuttlefish, and all the cool creatures the ocean's got. Remember, respect the sea and it'll show you its secrets.",
+    "full_day": "Hey adventurers! Ready for the most epic 7-hour sail-yacht cruise along the stunning Algarve coastline? We set sail from the beautiful Marina of Lagos, where our super friendly crew will welcome you aboard. They’re here to make sure your day is absolutely unforgettable.<br></br><br></br>Sailing across the pristine waters, prepare to be mesmerized by the stunning cliffs, secluded beaches, and captivating rock formations that define this legendary coastline.<br></br><br></br>We'll stop at optimal locations, ideal for a revitalizing swim or simply relaxing on deck while enjoying the breathtaking scenery. Don't forget to stay alert for dolphins, as these playful marine companions often accompany us on our adventure.",
+    "private_tour": "Want to go on a private tour?",
+    "contact_us": "Contact us",
+    "four_variations": "Four different variations!",
+    "explore": "Explore The",
+    "beauty": "Beauty of Lagos",
+    "on_unforgettable": "On unforgettable",
+    "yacht_cruise": "Yacht Cruise",
+    "explore_btn": "Explore",
+    "book_now": "Book now",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset",
+    "tour": "tour",
+    "golden": "Golden",
+    "hour": "Hour",
+    "private": "Private",
+    "full_Day": "Full Day"
+  },
+  "navbar": {
+    "home": "Home",
+    "tours": "Tours",
+    "ponta_da_piedade": "Ponta da Piedade",
+    "yacht_cruise": "Yacht Cruise",
+    "coastline_cruise": "Coastline Cruise",
+    "benagil_cave": "Benagil Cave",
+    "sunset_tour": "Sunset Tour",
+    "private_ponta_da_piedade": "Private Ponta da Piedade",
+    "private_sunset": "Private sunset",
+    "contact_us": "Contact us",
+    "language": "Language"
+  },
+  "footer": {
+    "support": "Support",
+    "contact_info": "Contact info",
+    "connect": "Connect",
+    "certificates": "Certificates",
+    "about_us": "About Us",
+    "terms_conditions": "Terms & Conditions",
+    "privacy_policy": "Privacy Policy",
+    "help": "Help",
+    "tours": "Tours",
+    "address": "Passeio dos Descobrimentos",
+    "postal_code": "8600-315 Lagos",
+    "phone": "+351 969 184 712",
+    "email": "boatripseu@gmail.com",
+    "copyright": "Copyright 2025 All rights reserved"
   }
 }

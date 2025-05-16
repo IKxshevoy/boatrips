@@ -25,6 +25,17 @@
     flex-direction: column;
   }
 
+  &__success {
+    margin-top: 1rem;
+    font-size: 24px;
+    color: #eb8d2c;
+    font-weight: bold;
+
+    @media (max-width: 500px) {
+      font-size: 18px;
+    }
+  }
+
   textarea {
     height: 100px;
     &::placeholder {

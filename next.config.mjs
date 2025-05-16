@@ -7,6 +7,9 @@ const config = {
   images: {
     remotePatterns: [],
   },
+  experimental: {
+    serverActions: true,
+  },
 };
 
 export default nextIntlConfig(config);

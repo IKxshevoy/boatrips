@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import styles from "./page.module.scss";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
+import WavyButton from "@/ui-kit/wavyButton-2/WavyButton";
+import Button from "@/ui-kit/button/Button";
 export interface Tour {
   id: number;
   title: string;
@@ -96,9 +98,7 @@ const Tours = () => {
           </span>
           <div className={styles.description}>{selectedTour.description}</div>
           <div className={styles.buttonWrapper}>
-            <button className={styles.button} onClick={handleButtonClick}>
-              View info
-            </button>
+            <Button text={t("read_more")} />
           </div>
         </div>
       </div>

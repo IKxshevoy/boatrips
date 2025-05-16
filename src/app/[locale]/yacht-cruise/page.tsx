@@ -17,6 +17,7 @@ import {
   Captions,
   Download,
   Fullscreen,
+  Slideshow,
   Thumbnails,
   Zoom,
 } from "yet-another-react-lightbox/plugins";
@@ -25,9 +26,11 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import { slides } from "./gallery/data";
 import { Title } from "@/ui-kit/title/Title";
 import ToursBottom from "./tourDescription/SingleTour";
+import Button from "@/ui-kit/button/Button";
+import AlternativeButton from "@/ui-kit/alternative-button/Button";
 
 const Tour = () => {
-  const t = useTranslations("benagil-caves");
+  const t = useTranslations("yacht-cruise");
   const [index, setIndex] = useState<number>(-1);
   return (
     <section className={styles.tourSection}>
@@ -41,7 +44,7 @@ const Tour = () => {
       <TourInfo />
 
       <div className={styles.descriptionBlock}>
-        <ToursBottom></ToursBottom>
+        <ToursBottom />
       </div>
 
       <Images
@@ -50,14 +53,12 @@ const Tour = () => {
       />
 
       <Lightbox
-        plugins={[Captions, Download, Fullscreen, Zoom, Thumbnails]}
+        plugins={[Captions, Download, Fullscreen, Zoom, Thumbnails, Slideshow]}
+        slideshow={{ autoplay: true, delay: 5000 }}
         captions={{
           showToggle: true,
           descriptionTextAlign: "end",
         }}
-        // open={open}
-        // close={() => setOpen(false)}
-
         index={index}
         open={index >= 0}
         close={() => setIndex(-1)}
@@ -66,7 +67,7 @@ const Tour = () => {
       <TourMap />
       <div className={styles.promotion}>
         <h2 className={styles.promotion__title}>{t("private_tour")}</h2>
-        <WavyButton text={t("contact_us")}></WavyButton>
+        <AlternativeButton text={t("contact_us")} />
       </div>
     </section>
   );

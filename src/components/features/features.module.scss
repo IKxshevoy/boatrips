@@ -40,6 +40,7 @@
   color: #fff;
   display: flex;
   flex-direction: column;
+
   &Content {
     padding-inline: 10px;
   }
@@ -51,12 +52,29 @@
 
 .featuresBanner {
   min-height: 520px;
-  order: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  video {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover;
+  }
 
   &::after {
     inset: 0;
     background-color: rgb(0 0 0);
     opacity: 0.35;
+    z-index: 0;
+    pointer-events: none; // Allow interaction with content below
+  }
+
+  // Only show overlay when image is visible
+  &.hasBgImage::after {
+    content: "";
+    position: absolute;
   }
 
   .playBtn {
@@ -68,7 +86,7 @@
     padding: 24px;
     border-radius: 50%;
     animation: pulse 2.5s ease-out infinite;
-    z-index: 1;
+    z-index: 2; // above overlay
     border: none;
     cursor: pointer;
     display: block;

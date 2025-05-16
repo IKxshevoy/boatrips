@@ -175,6 +175,9 @@
         @media (max-width: 1366px) {
           display: block;
         }
+        @media (max-width: 500px) {
+          margin-top: 40px;
+        }
       }
 
       &__description {
@@ -238,7 +241,7 @@
         flex-direction: column;
       }
       @media (max-width: 460px) {
-        margin: 30px 0;
+        margin: 0;
       }
     }
 
@@ -306,6 +309,7 @@
     }
     @media (max-width: 570px) {
       gap: 20px;
+      padding: 0 20px;
     }
   }
 
@@ -378,6 +382,9 @@
     @media (max-width: 670px) {
       padding: 20px 30px;
     }
+    @media (max-width: 500px) {
+      padding: 40px 20px;
+    }
   }
   .info {
     padding: 0 200px 60px;
@@ -421,8 +428,10 @@
       padding: 0 50px 60px;
     }
     @media (max-width: 670px) {
-      padding: 0 30px;
-      gap: 40px;
+      padding: 0 20px;
+    }
+    @media (max-width: 500px) {
+      padding: 40px 20px;
     }
   }
   .reviewsBlock {
