@@ -1,51 +1,51 @@
 export const slides = [
   {
-    src: "/sunset/1.jpg",
+    src: "/sunset/1.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/2.jpg",
+    src: "/benagil/2.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/3.jpg",
+    src: "/benagil/3.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/4.jpg",
+    src: "/benagil/4.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/5.jpg",
+    src: "/benagil/5.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/6.jpg",
+    src: "/benagil/6.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/7.jpg",
+    src: "/benagil/7.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/8.jpg",
+    src: "/benagil/8.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/9.jpg",
+    src: "/benagil/9.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/benagil/10.jpg",
+    src: "/benagil/10.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },

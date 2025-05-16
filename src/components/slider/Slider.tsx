@@ -14,7 +14,7 @@ interface SlideMeta {
 
 const slideContent: SlideMeta[] = [
   { path: "/main.jpg", href: "/ponta-da-piedade-caves-cruise" },
-  { path: "/yacht/1.png", href: "/yacht-cruise" },
+  { path: "/yacht/1.webp", href: "/yacht-cruise" },
   { path: "/slide2.jpg", href: "/sunset-cruise" },
   { path: "/slide3.avif", href: "/benagil-caves-speed-boat-tour" },
 ];

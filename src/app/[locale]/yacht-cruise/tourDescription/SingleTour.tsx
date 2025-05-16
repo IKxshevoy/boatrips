@@ -15,37 +15,37 @@ export interface Images {
 
 const sunrise_images: Images[] = [
   {
-    imageUrl: "/yacht/sunrise/1.jpg",
+    imageUrl: "/yacht/sunrise/1.webp",
   },
   {
-    imageUrl: "/yacht/sunrise/2.jpg",
+    imageUrl: "/yacht/sunrise/2.webp",
   },
   {
-    imageUrl: "/yacht/sunrise/3.jpg",
+    imageUrl: "/yacht/sunrise/3.webp",
   },
   {
-    imageUrl: "/yacht/sunrise/4.jpg",
+    imageUrl: "/yacht/sunrise/4.webp",
   },
   {
-    imageUrl: "/yacht/sunrise/5.jpg",
+    imageUrl: "/yacht/sunrise/5.webp",
   },
 ];
 
 const sunset_images: Images[] = [
   {
-    imageUrl: "/yacht/sunset/1.jpg",
+    imageUrl: "/yacht/sunset/1.webp",
   },
   {
-    imageUrl: "/yacht/sunset/2.png",
+    imageUrl: "/yacht/sunset/2.webp",
   },
   {
-    imageUrl: "/yacht/sunset/3.png",
+    imageUrl: "/yacht/sunset/3.webp",
   },
   {
-    imageUrl: "/yacht/sunset/4.png",
+    imageUrl: "/yacht/sunset/4.webp",
   },
   {
-    imageUrl: "/yacht/sunset/5.png",
+    imageUrl: "/yacht/sunset/5.webp",
   },
 ];
 
@@ -53,7 +53,7 @@ const descriptionSunrise = [
   {
     id: 1,
     icon: faCreditCard,
-    value: "80 €",
+    value: "150 €",
   },
   {
     id: 3,

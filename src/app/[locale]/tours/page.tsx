@@ -40,7 +40,7 @@ const tours_info = [
     href: "/sunset-cruise",
   },
   {
-    imageUrl: "/yacht/4.png",
+    imageUrl: "/yacht/4.webp",
     id: 4,
     price: 80,
     href: "/yacht-cruise",

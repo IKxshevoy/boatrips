@@ -12,7 +12,7 @@ const CalendarFrame = () => {
         <div className={styles.calendarFrame__description}>
           <div className={styles.bookingBlock}>
             <img
-              src="/benagil/bg.jpg"
+              src="/benagil/bg.webp"
               className={styles.calendarFrame__img}
               alt="Booking image"
             />

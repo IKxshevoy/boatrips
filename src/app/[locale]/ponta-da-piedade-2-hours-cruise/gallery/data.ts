@@ -1,66 +1,51 @@
 export const slides = [
   {
-    src: "/coastline/1.jpg",
+    src: "/coastline/1.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/2.jpg",
+    src: "/coastline/2.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/3.jpg",
+    src: "/coastline/3.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/4.jpg",
+    src: "/coastline/4.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/5.jpg",
+    src: "/coastline/5.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/6.jpg",
+    src: "/coastline/6.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/7.jpg",
+    src: "/coastline/7.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/8.jpg",
+    src: "/coastline/8.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/9.jpg",
+    src: "/coastline/9.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },
   {
-    src: "/coastline/10.jpg",
-    title: "Slide Title One",
-    description: "Slide Description One\n\nthis is new line",
-  },
-  {
-    src: "/coastline/11.jpg",
-    title: "Slide Title One",
-    description: "Slide Description One\n\nthis is new line",
-  },
-  {
-    src: "/coastline/12.jpg",
-    title: "Slide Title One",
-    description: "Slide Description One\n\nthis is new line",
-  },
-  {
-    src: "/coastline/13.jpg",
+    src: "/coastline/10.webp",
     title: "Slide Title One",
     description: "Slide Description One\n\nthis is new line",
   },

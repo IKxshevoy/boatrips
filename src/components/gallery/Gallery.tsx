@@ -34,7 +34,7 @@ const Gallery = () => {
     return () => clearInterval(interval);
   }, [isMobile]);
 
-  const handleClick = () => setIndex(0); // always start at first image
+  const handleClick = () => setIndex(0);
 
   return (
     <>

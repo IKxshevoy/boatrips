@@ -24,8 +24,8 @@ const destinations_images = [
     id: 2,
   },
   {
-    imageUrl: "/yacht/sunrise/1.jpg",
-    price: "80€",
+    imageUrl: "/yacht/sunrise/1.webp",
+    price: "150€",
     href: "/yacht-cruise",
     id: 3,
   },
