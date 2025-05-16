@@ -3,7 +3,7 @@ import styles from "../styles.module.scss";
 import Video from "./video/Video";
 import { useTranslations } from "next-intl";
 
-const keys = ["english", "portuguese", "spanish", "french", "russian"] as const;
+const keys = ["english", "portuguese", "spanish", "french"] as const;
 
 const VirtualTour = () => {
   const t = useTranslations("sunset-cruise");

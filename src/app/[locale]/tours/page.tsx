@@ -98,7 +98,7 @@ const Tours = () => {
           </span>
           <div className={styles.description}>{selectedTour.description}</div>
           <div className={styles.buttonWrapper}>
-            <Button text={t("read_more")} />
+            <Button text={t("read_more")} onClick={handleButtonClick} />
           </div>
         </div>
       </div>
