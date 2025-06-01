@@ -12,7 +12,7 @@ const CalendarFrame = () => {
         <div className={styles.calendarFrame__description}>
           <div className={styles.bookingBlock}>
             <img
-              src="/aboutUs1.jpg"
+              src="/classic/1.webp"
               className={styles.calendarFrame__img}
               alt="Booking image"
             />

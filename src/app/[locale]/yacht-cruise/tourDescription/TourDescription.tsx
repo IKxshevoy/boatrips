@@ -33,19 +33,19 @@ const sunrise_images: Images[] = [
 
 const sunset_images: Images[] = [
   {
-    imageUrl: "/yacht/sunset/1.webp",
+    imageUrl: "/yacht/sunset/8.webp",
   },
   {
     imageUrl: "/yacht/sunset/2.webp",
   },
   {
-    imageUrl: "/yacht/sunset/3.webp",
+    imageUrl: "/yacht/sunset/7.webp",
   },
   {
-    imageUrl: "/yacht/sunset/4.webp",
+    imageUrl: "/yacht/sunset/8.webp",
   },
   {
-    imageUrl: "/yacht/sunset/5.webp",
+    imageUrl: "/yacht/sunset/9.webp",
   },
 ];
 

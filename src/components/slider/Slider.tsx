@@ -13,9 +13,9 @@ interface SlideMeta {
 }
 
 const slideContent: SlideMeta[] = [
-  { path: "/main.jpg", href: "/ponta-da-piedade-caves-cruise" },
+  { path: "/main.webp", href: "/ponta-da-piedade-caves-cruise" },
   { path: "/yacht/1.webp", href: "/yacht-cruise" },
-  { path: "/slide2.jpg", href: "/sunset-cruise" },
+  { path: "/sunset/6.webp", href: "/sunset-cruise" },
   { path: "/slide3.avif", href: "/benagil-caves-speed-boat-tour" },
 ];
 
@@ -55,7 +55,9 @@ const Slider = () => {
                 <span>{t(`slide_${activeSlide}_subTitle`)}</span>
               </h1>
               <p className={styles.contentText}>
-                {t(`slide_${activeSlide}_content`)}
+                {t.rich(`slide_${activeSlide}_content`, {
+                  br: () => <br />,
+                })}
               </p>
               <p className={styles.contentTextHidden}>
                 {t(`slide_${activeSlide}_contentHidden`)}
@@ -85,7 +87,7 @@ const Slider = () => {
       <section className={styles.promo}>
         <h1>
           {t("enjoy")} <span className={styles.discount}>{t("discount")}</span>{" "}
-          {t("with_promo")} <span className={styles.discount}>TRIP2024.</span>{" "}
+          {t("with_promo")} <span className={styles.discount}>SEADAY</span>.{" "}
           {t("book_now")}
         </h1>
       </section>

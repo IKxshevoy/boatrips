@@ -1,6 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCreditCard, faClock } from "@fortawesome/free-regular-svg-icons";
+import {
+  faGlassCheers,
+  faMartiniGlassEmpty,
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "../styles.module.scss";
 import { useTranslations } from "next-intl";
 
@@ -20,9 +24,19 @@ const descriptionItems_info = [
     icon: faClock,
     value: "1H 30 M",
   },
+  {
+    id: 4,
+    icon: faMartiniGlassEmpty,
+    value: "Different types",
+  },
 ];
 
-const keys = ["adult_price", "child_price", "time_duration"] as const;
+const keys = [
+  "adult_price",
+  "child_price",
+  "time_duration",
+  "free_drinks",
+] as const;
 
 const TourDescription = () => {
   const t = useTranslations("sunset-cruise");

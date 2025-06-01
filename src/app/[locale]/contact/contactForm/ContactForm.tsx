@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useState, useRef } from "react";
 import styles from "../page.module.scss";
 import {
   faAddressCard,
@@ -6,13 +8,15 @@ import {
   faInbox,
 } from "@fortawesome/free-solid-svg-icons";
 import CustomInput from "../formInput/Input";
-import { sendEmail } from "../../../../../lib/resend";
 import { useTranslations } from "next-intl";
+import emailjs from "@emailjs/browser";
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const ContactForm = () => {
   const t = useTranslations("contact_form");
+  const formRef = useRef<HTMLFormElement>(null);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -62,14 +66,17 @@ const ContactForm = () => {
     e.preventDefault();
 
     if (!validateForm()) return;
+    if (!formRef.current) return;
 
     try {
-      await sendEmail({
-        firstName: formData.firstName,
-        lastName: formData.lastName,
-        email: formData.email,
-        message: formData.message,
-      });
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+        }
+      );
 
       setMessageSent(true);
       setFormData({ firstName: "", lastName: "", email: "", message: "" });
@@ -86,12 +93,13 @@ const ContactForm = () => {
         method="post"
         className={styles.contactForm}
         onSubmit={handleSubmit}
+        ref={formRef}
         noValidate
       >
         <CustomInput
           id="firstName"
           label={t("first_name")}
-          name="firstName"
+          name="name"
           type="text"
           icon={faAddressCard}
           value={formData.firstName}

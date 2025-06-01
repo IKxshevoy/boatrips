@@ -8,32 +8,8 @@ export interface Images {
   imageUrl: string;
 }
 
-const images: Images[] = [
-  {
-    imageUrl: "/aboutUs1.jpg",
-  },
-  {
-    imageUrl: "/3.jpg",
-  },
-  {
-    imageUrl: "/slide2.jpg",
-  },
-];
-
 export const AboutUs = () => {
   const t = useTranslations("about_us");
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const nextImage = () => {
-    setCurrentIndex((currentIndex + 1) % images.length);
-  };
-  useEffect(() => {
-    const timer = setInterval(() => {
-      nextImage();
-    }, 5000);
-    return () => {
-      clearInterval(timer);
-    };
-  }, [currentIndex]);
 
   return (
     <section className={`${styles.about}`} id="about">
@@ -44,15 +20,7 @@ export const AboutUs = () => {
           br: () => <br />,
         })}
         reverse={false}
-      >
-        <Image
-          width={500}
-          height={100}
-          style={{ width: "100%" }}
-          src={images[currentIndex].imageUrl}
-          alt="slider photo"
-        />
-      </AboutUsSection>
+      />
       <AboutUsSection
         title={t("our_background")}
         subtitle={t.rich("our_background_description", {
@@ -61,7 +29,7 @@ export const AboutUs = () => {
         reverse={true}
       >
         <Image
-          src="/3.jpg"
+          src="/3.webp"
           alt=""
           width={500}
           height={100}

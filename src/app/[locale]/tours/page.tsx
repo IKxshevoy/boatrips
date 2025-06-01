@@ -16,33 +16,33 @@ export interface Tour {
 
 const tours_info = [
   {
-    imageUrl: "/1.jpg",
+    imageUrl: "/1.webp",
     id: 0,
     price: 20,
     href: "/ponta-da-piedade-caves-cruise",
   },
   {
-    imageUrl: "/4.jpg",
+    imageUrl: "/2.webp",
     id: 1,
     price: 30,
     href: "/ponta-da-piedade-2-hours-cruise",
   },
   {
-    imageUrl: "/3.jpg",
+    imageUrl: "/3.webp",
     id: 2,
     price: 40,
     href: "/benagil-caves-speed-boat-tour",
   },
   {
-    imageUrl: "/slide2.jpg",
+    imageUrl: "/4.webp",
     id: 3,
-    price: 35,
+    price: 40,
     href: "/sunset-cruise",
   },
   {
-    imageUrl: "/yacht/4.webp",
+    imageUrl: "/yacht/sunset/2.webp",
     id: 4,
-    price: 80,
+    price: 150,
     href: "/yacht-cruise",
   },
 ];

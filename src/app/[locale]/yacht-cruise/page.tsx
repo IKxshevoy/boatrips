@@ -67,7 +67,10 @@ const Tour = () => {
       <TourMap />
       <div className={styles.promotion}>
         <h2 className={styles.promotion__title}>{t("private_tour")}</h2>
-        <AlternativeButton text={t("contact_us")} />
+        <AlternativeButton
+          text={t("contact_us")}
+          url="https://wa.me/351969184712"
+        />
       </div>
     </section>
   );

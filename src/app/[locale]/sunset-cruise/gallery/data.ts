@@ -30,7 +30,22 @@ export const slides = [
     description: "Sunset Cruise",
   },
   {
-    src: "/sunset/7.webp",
+    src: "/sunset/8.webp",
+    title: "Sunset Cruise",
+    description: "Sunset Cruise",
+  },
+  {
+    src: "/sunset/9.webp",
+    title: "Sunset Cruise",
+    description: "Sunset Cruise",
+  },
+  {
+    src: "/sunset/10.webp",
+    title: "Sunset Cruise",
+    description: "Sunset Cruise",
+  },
+  {
+    src: "/sunset/11.webp",
     title: "Sunset Cruise",
     description: "Sunset Cruise",
   },

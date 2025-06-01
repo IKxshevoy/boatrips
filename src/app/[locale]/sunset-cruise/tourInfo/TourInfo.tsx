@@ -50,6 +50,10 @@ const TourInfo = () => {
             <FontAwesomeIcon icon={faCircleCheck} />
             <span>{t("third_perk")}</span>
           </li>
+          <li className={styles.infoList__item}>
+            <FontAwesomeIcon icon={faCircleCheck} />
+            <span>{t("fourth_perk")}</span>
+          </li>
         </ul>
       </div>
       <div className={styles.info__block}>

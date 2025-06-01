@@ -16,10 +16,33 @@
     color: #eb8d2c !important;
   }
 
+  .bookBtn {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    align-items: center;
+    background: #0b5085;
+    max-width: 200px;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      background: #166daf;
+    }
+
+    @media (max-width: 1040px) {
+      margin-left: 5px;
+      margin-top: 20px;
+    }
+  }
+
   .languageSelector {
     margin: auto 0;
     @media (max-width: 1040px) {
-      margin: 0;
+      margin: 0 0 0 5px;
     }
   }
 
@@ -55,7 +78,8 @@
 
     .navigationItems {
       display: flex;
-      align-items: flex-start;
+      width: 100%;
+      align-items: center;
       .wrapperMenuLink {
         display: flex;
         align-items: center;
@@ -170,6 +194,7 @@
           padding: 50px 40px;
           display: flex;
           flex-direction: column;
+          align-items: flex-start;
           box-shadow: 0 5px 25px rgb(1 1 1 / 20%);
         }
         .wrapperMenuLink {

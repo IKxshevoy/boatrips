@@ -3,10 +3,10 @@ import styles from "../customSelect/custom.module.scss";
 import React, { useState, useEffect, useRef } from "react";
 import { usePathname, useRouter } from "@/i18n";
 import { useLocale, useTranslations } from "next-intl";
-import en from "../../../../public/flag/en.png";
-import fr from "../../../../public/flag/fr.png";
-import pt from "../../../../public/flag/pt.jpg";
-import de from "../../../../public/flag/de.png";
+import en from "../../../../public/flag/en.webp";
+import fr from "../../../../public/flag/fr.webp";
+import pt from "../../../../public/flag/pt.webp";
+import de from "../../../../public/flag/de.webp";
 
 const flags = { en, fr, pt, de };
 

@@ -5,11 +5,11 @@ import styles from "./navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import CustomSelect from "./customSelect/CustomSelect";
-import en from "../../../public/flag/en.png";
-import fr from "../../../public/flag/fr.png";
-import pt from "../../../public/flag/pt.jpg";
-import de from "../../../public/flag/de.png";
-import Logo from "../../../public/Logo.png";
+import en from "../../../public/flag/en.webp";
+import fr from "../../../public/flag/fr.webp";
+import pt from "../../../public/flag/pt.webp";
+import de from "../../../public/flag/de.webp";
+import Logo from "../../../public/Logo.webp";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
@@ -159,6 +159,14 @@ const Navbar: React.FC = () => {
           ))}
           <div className={styles.languageSelector}>
             <CustomSelect choice={languageOptions} />
+          </div>
+          <div className={styles.bookBtn}>
+            <a
+              target="_blank"
+              href="https://fareharbor.com/embeds/book/boatrips/?full-items=yes"
+            >
+              {t("book_now")}
+            </a>
           </div>
         </div>
       </div>

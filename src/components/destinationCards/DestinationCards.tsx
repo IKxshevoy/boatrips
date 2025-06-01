@@ -6,19 +6,19 @@ import { useTranslations } from "next-intl";
 
 const destinations_images = [
   {
-    imageUrl: "/1.jpg",
+    imageUrl: "/1.webp",
     price: "20€",
     href: "/ponta-da-piedade-caves-cruise",
     id: 0,
   },
   {
-    imageUrl: "/4.jpg",
+    imageUrl: "/2.webp",
     price: "30€",
     href: "/ponta-da-piedade-2-hours-cruise",
     id: 1,
   },
   {
-    imageUrl: "/3.jpg",
+    imageUrl: "/3.webp",
     price: "40€",
     href: "/benagil-caves-speed-boat-tour",
     id: 2,

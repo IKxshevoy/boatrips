@@ -3,6 +3,8 @@ import styles from "../styles.module.scss";
 import { useTranslations } from "next-intl";
 import WavyButton from "@/ui-kit/wavyButton/WavyButton";
 import Button from "@/ui-kit/button/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMartiniGlassEmpty } from "@fortawesome/free-solid-svg-icons";
 
 const TourHeader = () => {
   const t = useTranslations("yacht-cruise");
@@ -17,7 +19,12 @@ const TourHeader = () => {
   return (
     <div className={styles.tourHeader}>
       <div className={styles.content}>
-        <h4 className={styles.tiny__title}>{t("four_variations")}</h4>
+        <div className={styles.drinks__wrapper}>
+          <h4 className={styles.tiny__title}>{t("free_drinks")}</h4>
+          <span className={styles.orangeWrapper}>
+            <FontAwesomeIcon icon={faMartiniGlassEmpty} />
+          </span>
+        </div>
         <h2>
           {t("explore")}
           <br /> {t("beauty")}

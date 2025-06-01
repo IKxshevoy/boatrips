@@ -53,6 +53,14 @@
     }
   }
 
+  .copyrightWrapper {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
   .endText {
     background-color: rgb(36, 72, 139);
     padding: 20px 30px;

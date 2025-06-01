@@ -8,7 +8,12 @@ interface AlternativeButtonProps {
 
 const AlternativeButton: React.FC<AlternativeButtonProps> = ({ text, url }) => {
   return (
-    <a href={url} className={styles.button}>
+    <a
+      href={url || "#"}
+      className={styles.button}
+      target={url ? "_blank" : undefined}
+      rel={url ? "noopener noreferrer" : undefined}
+    >
       <span>{text}</span>
       <div className={styles.wave}></div>
     </a>

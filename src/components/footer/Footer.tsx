@@ -17,12 +17,11 @@ import livro_reclamacoes from "../../../public/footericons/footerendicon/livro-r
 const Footer: React.FC = () => {
   const t = useTranslations("footer");
 
-  // Map your original linkItems and contactItems to translated labels here
+  // Update the href of terms_conditions to '/terms-and-conditions'
   const translatedLinkItems = [
     { label: t("about_us"), href: "/" },
-    { label: t("terms_conditions"), href: "/" },
-    { label: t("privacy_policy"), href: "/" },
-    { label: t("help"), href: "/" },
+    { label: t("terms_conditions"), href: "/terms-and-conditions" },
+    { label: t("help"), href: "/contact" },
     { label: t("tours"), href: "/" },
   ];
 
@@ -84,13 +83,13 @@ const Footer: React.FC = () => {
           <ListWrapper title={t("certificates")}>
             <div className={styles.certificates}>
               <Image
-                src="/certificates/certificate1.png"
+                src="/certificates/certificate1.webp"
                 alt="certificate1"
                 width={120}
                 height={120}
               />
               <Image
-                src="/certificates/certificate2.png"
+                src="/certificates/certificate2.webp"
                 alt="certificate2"
                 width={120}
                 height={120}
@@ -100,7 +99,10 @@ const Footer: React.FC = () => {
         </div>
       </footer>
       <div className={styles.endText}>
-        <p>{t("copyright")}</p>
+        <div className={styles.copyrightWrapper}>
+          <span>Registo RNAAT 118/2014 – Turismo de Portugal.</span>
+          <p>{t("copyright")}</p>
+        </div>
         <div className={styles.endIcon}>
           <img src={livro_reclamacoes.src} alt="Icon1" />
         </div>

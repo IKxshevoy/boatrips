@@ -5,12 +5,12 @@ export const slides = [
     description: "Yacht Cruise",
   },
   {
-    src: "/yacht/3.webp",
+    src: "/yacht/sunset/7.webp",
     title: "Yacht Cruise",
     description: "Yacht Cruise",
   },
   {
-    src: "/yacht/4.webp",
+    src: "/yacht/sunset/9.webp",
     title: "Yacht Cruise",
     description: "Yacht Cruise",
   },

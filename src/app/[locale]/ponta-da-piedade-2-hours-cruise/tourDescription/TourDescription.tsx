@@ -8,12 +8,12 @@ const descriptionItems_info = [
   {
     id: 1,
     icon: faCreditCard,
-    value: "20 €",
+    value: "30 €",
   },
   {
     id: 2,
     icon: faCreditCard,
-    value: "10 €",
+    value: "15 €",
   },
   {
     id: 3,

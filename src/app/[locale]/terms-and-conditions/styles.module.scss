@@ -1,0 +1,155 @@
+.tourHeader {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  padding: 80px 40px;
+  background: url("/coastline/13.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: screen;
+
+  &::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    background: rgb(8 50 121 / 41%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  .content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    top: 25%;
+
+    h2 {
+      font-size: 4rem;
+      color: #fff;
+      margin-bottom: 0.5em;
+
+      .orangeWrapper {
+        color: #eb8d2c !important;
+      }
+
+      @media (max-width: 850px) {
+        font-size: 3.5rem;
+      }
+      @media (max-width: 600px) {
+        font-size: 3rem;
+      }
+      @media (max-width: 400px) {
+        font-size: 2.4rem;
+      }
+    }
+
+    .description {
+      font-size: 1.4rem;
+      color: #fff;
+      max-width: 600px;
+      margin: 0 auto;
+
+      @media (max-width: 600px) {
+        font-size: 1.2rem;
+      }
+      @media (max-width: 400px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .wave {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 850px) {
+    padding: 60px 20px;
+  }
+  @media (max-width: 600px) {
+    height: 50vh;
+    padding: 40px 10px;
+  }
+}
+
+.tourSection {
+  margin: 0 auto;
+  color: #272323dd;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.7;
+
+  .termsContent {
+    max-width: 70%;
+    margin: 0 auto;
+
+    @media (max-width: 500px) {
+      max-width: 90%;
+    }
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: #eb8d2c; // orange color for titles
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 1.25em;
+    text-align: justify;
+    color: rgba(39, 35, 35, 0.85);
+
+    a {
+      color: #eb8d2c;
+      text-decoration: underline;
+
+      &:hover {
+        color: #cf7616;
+      }
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-bottom: 1.5em;
+
+    li {
+      margin-bottom: 0.8em;
+      font-size: 1.1rem;
+      color: rgba(39, 35, 35, 0.85);
+    }
+  }
+
+  @media (max-width: 850px) {
+    h3 {
+      font-size: 1.7rem;
+    }
+
+    p,
+    ul li {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    h3 {
+      font-size: 1.4rem;
+      margin-top: 1.8em;
+    }
+
+    p,
+    ul li {
+      font-size: 0.95rem;
+    }
+  }
+}

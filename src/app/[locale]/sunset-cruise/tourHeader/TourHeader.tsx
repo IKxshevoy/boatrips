@@ -15,7 +15,7 @@ const TourHeader = () => {
         <p className={styles.discount}>
           <span className={styles.orangeWrapper}>{t("discount")}</span> -{" "}
           {t("special_offer")}{" "}
-          <span className={styles.orangeWrapper}>TRIP2024</span>
+          <span className={styles.orangeWrapper}>SEADAY</span>
         </p>
       </div>
       <svg className={styles.wave} viewBox="0 0 1440 390">

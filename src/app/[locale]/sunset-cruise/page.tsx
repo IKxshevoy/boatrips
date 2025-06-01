@@ -57,7 +57,7 @@ const Tour = () => {
       />
       <div className={styles.reviewsBlock}>
         <h2 className={styles.title}>{t("reviews")}</h2>
-        <ReviewsSlider />
+        <ReviewsSlider type="sunset" />
       </div>
       <TourMap />
       <div className={styles.promotion}>

@@ -58,12 +58,15 @@ const Tour = () => {
       />
       <div className={styles.reviewsBlock}>
         <h2 className={styles.title}>{t("reviews")}</h2>
-        <ReviewsSlider />
+        <ReviewsSlider type="benagil"/>
       </div>
       <TourMap />
       <div className={styles.promotion}>
         <h2 className={styles.promotion__title}>{t("private_tour")}</h2>
-        <AlternativeButton text={t("contact_us")} />
+        <AlternativeButton
+          text={t("contact_us")}
+          url="https://wa.me/351969184712"
+        />
       </div>
     </section>
   );

@@ -69,8 +69,8 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    padding: 100px;
-    background: url("/0618.png");
+    padding: 60px 100px 100px 100px;
+    background: url("/yacht/bg.webp");
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: screen;
@@ -84,6 +84,13 @@
       height: 100%;
       top: 0;
       left: 0;
+    }
+
+    .drinks__wrapper {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 15px;
     }
 
     .content {
@@ -101,7 +108,6 @@
 
       .tiny__title {
         font-size: 25px;
-        margin-bottom: 20px;
         font-weight: 400;
         color: #fff;
       }
@@ -419,7 +425,7 @@
           flex-basis: 100%;
           margin-bottom: 20px;
           text-align: start;
-          align-items: start;
+          align-items: flex-start;
         }
       }
       @media (max-width: 1350px) {

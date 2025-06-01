@@ -248,8 +248,9 @@
     .description__icons {
       display: flex;
       justify-content: space-between;
+      gap: 20px;
       align-items: center;
-      max-width: 70%;
+      max-width: 90%;
 
       .description__item {
         display: flex;

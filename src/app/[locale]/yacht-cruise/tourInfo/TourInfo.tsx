@@ -9,7 +9,7 @@ import styles from "../styles.module.scss";
 import { useTranslations } from "next-intl";
 
 const TourInfo = () => {
-  const t = useTranslations("benagil-caves");
+  const t = useTranslations("yacht-cruise");
   return (
     <div className={styles.info}>
       <div className={styles.info__block}>
@@ -54,6 +54,10 @@ const TourInfo = () => {
             <FontAwesomeIcon icon={faCircleCheck} />
             <span>{t("third_perk")}</span>
           </li>
+          <li className={styles.infoList__item}>
+            <FontAwesomeIcon icon={faCircleCheck} />
+            <span>{t("fourth_perk")}</span>
+          </li>
         </ul>
       </div>
       <div className={styles.info__block}>
@@ -73,10 +77,6 @@ const TourInfo = () => {
           <li className={styles.infoList__item}>
             <FontAwesomeIcon icon={faCircleCheck} />
             <span>{t("third_info")}</span>
-          </li>
-          <li className={styles.infoList__item}>
-            <FontAwesomeIcon icon={faCircleCheck} />
-            <span>{t("fourth_info")}</span>
           </li>
         </ul>
       </div>

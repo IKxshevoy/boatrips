@@ -6,7 +6,7 @@ interface IAboutUsSection {
   title: string;
   subtitle: ReactNode;
   reverse: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   isVideo?: boolean;
   videoUrl?: string; // Add YouTube video URL
 }
@@ -35,7 +35,7 @@ export const AboutUsSection: FC<IAboutUsSection> = ({
             <iframe
               width="100%"
               height="397px"
-              src="https://www.youtube.com/embed/DE5Ii0DnYo8?autoplay=1&mute=1"
+              src="https://www.youtube.com/embed/DE5Ii0DnYo8?autoplay=1&mute=1&loop=1&playlist=DE5Ii0DnYo8"
               title="YouTube video player"
               allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
