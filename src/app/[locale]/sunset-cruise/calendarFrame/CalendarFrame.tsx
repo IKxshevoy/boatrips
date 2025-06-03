@@ -30,7 +30,7 @@ const CalendarFrame = () => {
                 <br />
                 {t("adult_age")}
               </span>
-              <span className={styles.price}>35€</span>
+              <span className={styles.price}>40€</span>
             </div>
             <div className={styles.ages__wrapper}>
               <span className={styles.text}>
@@ -38,7 +38,7 @@ const CalendarFrame = () => {
                 <br />
                 {t("child_age")}
               </span>
-              <span className={styles.price}>15€</span>
+              <span className={styles.price}>20€</span>
             </div>
           </div>
         </div>

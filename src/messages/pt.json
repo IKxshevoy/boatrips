@@ -1,8 +1,10 @@
 {
   "root": {
     "metadata": {
-      "title": "Boatrips",
-      "description": "Werden Sie Teil der nächsten großen Sache in Pharma"
+      "title": "Passeios de barco em Lagos, Portugal | Grutas de Benagil, Golfinhos e Mais",
+      "description": "Passeios de barco com as melhores avaliações em Lagos, Portugal. Explore as grutas de Benagil, observe golfinhos, passe por Ponta da Piedade e desfrute de cruzeiros privados de iate ou catamarã. Ideal para famílias, casais e grupos em visita ao Algarve.",
+      "ogTitle": "Passeios de Barco Inesquecíveis em Lagos, Algarve | Benagil, Golfinhos, Ponta da Piedade",
+      "ogDescription": "Participe dos melhores passeios de barco em Lagos, Algarve. Descubra a gruta de Benagil, veja golfinhos, nade em praias escondidas e navegue pela costa deslumbrante em iate ou catamarã privado."
     }
   },
   "slider": {
@@ -408,12 +410,12 @@
     "first_reminder": "Esta experiência inclui bebidas gratuitas",
     "second_reminder": "Recomendamos trazer protetor solar, roupa de banho, chapéu e toalha;",
     "third_reminder": "Faça o check-in 10 minutos antes do início da experiência;",
-    "fourth_perk": "Bar a bordo",
     "fourth_reminder": "Esta atividade pode ser cancelada devido a condições meteorológicas ou do mar. Nesse caso, será oferecido reembolso ou remarcação;",
     "perks": "Vantagens",
     "first_perk": "Briefing de segurança com guia multilíngue, seguro e coletes salva-vidas incluídos;",
-    "second_perk": "Capitão local dará comentários a bordo sobre os locais visitados;",
-    "third_perk": "Veja as praias deslumbrantes ao redor de Lagos",
+    "second_perk": "3 camas de casal / 2 banheiros completos",
+    "third_perk": "Equipamento de mergulho com snorkel / stand up paddle",
+    "fourth_perk": "Bar a bordo",
     "important_information": "INFORMAÇÕES IMPORTANTES",
     "first_info": "Para cancelamentos com mais de 24 horas de antecedência, reembolsamos o valor total.",
     "second_info": "Crianças devem estar acompanhadas por um adulto",

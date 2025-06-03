@@ -1,8 +1,10 @@
 {
   "root": {
     "metadata": {
-      "title": "Boatrips",
-      "description": ""
+      "title": "Boatrips in Lagos, Portugal | Benagil Caves, Dolphins & More",
+      "description": "Top-rated boat tours in Lagos, Portugal. Explore Benagil caves, see dolphins, cruise past Ponta da Piedade, and enjoy private yacht or catamaran cruises. Perfect for families, couples, and groups visiting the Algarve.",
+      "ogTitle": "Unforgettable Boat Trips in Lagos, Algarve | Benagil, Dolphins, Ponta da Piedade",
+      "ogDescription": "Join the best boat tours in Lagos, Algarve. Discover Benagil cave, watch dolphins, swim in hidden beaches, and cruise the stunning coastline with private yacht or catamaran options."
     }
   },
   "slider": {
@@ -404,12 +406,12 @@
     "first_reminder": "This experience includes free drinks",
     "second_reminder": "We recommend bringing sunscreen, swimming gear, a hat and a towel;",
     "third_reminder": "Please check-in 10 minutes before the start of the experience;",
-    "fourth_perk": "Bar onboard",
     "fourth_reminder": "This activity can be canceled due to bad weather or sea conditions, if this happens a refund will be issued or a different day will be issued;",
     "perks": "Perks",
     "first_perk": "A safety briefing by a multilingual guide, insurance and life-jackets are included;",
-    "second_perk": "A local captain will give you onboard commentary about the sights;",
-    "third_perk": "See the amazing beaches surrounding Lagos",
+    "second_perk": "3 double beds/2 full bath rooms",
+    "third_perk": "Snorkeling/Sup equipment",
+    "fourth_perk": "Bar onboard",
     "important_information": "IMPORTANT INFORMATION",
     "first_info": "For cancellations of customers with more than 24 hours before departure, we refund the amount in full.",
     "second_info": "Children must be accompanied by an adult",
@@ -445,7 +447,7 @@
     "email": "boatripseu@gmail.com",
     "copyright": "Copyright 2025 All rights reserved"
   },
-   "terms-and-conditions": {
+  "terms-and-conditions": {
     "title": "Terms and Conditions",
     "privacyOverviewTitle": "Privacy Policy Overview",
     "privacyOverviewText": "This privacy policy has been compiled to better serve those who are concerned with how their ‘Personally Identifiable Information’ (PII) is being used online. PII is information that can be used on its own or with other information to identify, contact, or locate a single person, or to identify an individual in context.",
@@ -487,33 +489,33 @@
   },
 
   "reviews-slider": {
-"classic": {
-  "0": "The team, Pedro and Daniel were fantastic. Very friendly and with great sea expertise. It was a trip full of laughter and well being. Definitely worth every penny. To repeat in an near future.",
-  "1": "From initially meeting Renato on the marina who sold us our tickets to the trip around the Grotto with Carlos and Lewis who were great company and very knowledgable. Highly recommend this dream team!!",
-  "2": "Great trip around the caves of Lagos. Pierre and Miguel are excellent tour guides and explain the sites and caves. They are very funny and have good banter with everyone on the boat. Highly recommend this trip.",
-  "3": "Miguel was very informative and explained very well. captain Pedro took us close to the caves and did fantastic! my friend and i happened to be the only ones on board so the experience felt very sentimental.",
-  "4": "We had a great time. The views are awesome and the guides are funny, so it makes it all the better experience. Plus the boat is very comfortable. I can 100% recommend :)"
-},
-"coastline": {
-  "0": "Lovely guides and only 9 of us on main boat, so half could swim and half were taken in around the caves, absolutely stunning, and great guide telling us the names for each place.",
-  "1": "Great relaxed experience. It is hard to find the meeting point- its on the marina side past the brown boat and next to the blue shade. The crew were friendly and the caves incredible. Then there was time to swim in the icy clear water",
-  "2": "Boat was comfortable and quite large. Guides were friendly people. Felt like private customised trip.",
-  "3": "Really fun exploring the caves and rock formations of the Ponta da Piedade. Unfortunately on the first section of the trip, no-one at the back of the boat could hear any of the guided commentary.",
-  "4": "Trip on the boat was great. And then the transfer to the smaller boat to take you around the grotto for which The tour guide was multilingual and knowledgeable."
-},
-"benagil": {
-  "0": "The sights are beautiful. The staff were lovely, unfortunately I got sea sick overboard, but the staff were helpful and understanding! My friend and I still enjoyed our time regardless, definitely would recommend",
-  "1": "it's interesting you can see the best place in Portugal and it's affordable in price",
-  "2": "It was a wet, somewhat cold, bouncy trip, but still a great time. The Captain and Mate were great, and made sure everyone was safe and having fun. They provide a rain/wind jacket, but make sure you dress for the conditions!",
-  "3": "Great experience! Caves were incredible and the tour guide was funny and knowledgeable. Speeding across the waves left a huge smile on everyone’s faces. Kids loved it as well. Highly recommend.",
-  "4": "Great fun on the boat. Fast and bumpy. Caves were amazing. Probably busier than I expected. Pictures all show the cave empty. It was full of people but still very impressive."
-},
-"sunset": {
-  "0": "They were very friendly and invited my daughter to steer the boat which she loved! Stunning views of the caves especially as the sun was setting.",
-  "1": "Very relaxed sunset cruise. Crew was amazing! Easy meet up spot on the marina and not overcrowded.",
-  "2": "It was a very nice evening with wonderful people. Beautiful views, very cold but fun swimming, a complimentary drink, and a gorgeous sunset. And even some dolphin sightings on our way back.",
-  "3": "Amazing. The tour guides are very friendly, the views are spectacular and the wine - speechless!",
-  "4": "We had an amazing time on this sunset cruise! Gorgeous views, delicious wines, the opportunity to jump overboard for a sunset dip, and a bonus excursion into the caves all around Ponta De Piedade! We were so pleasantly surprised by the cave tour and all would do this again in a heartbeat!"
-}
+    "classic": {
+      "0": "The team, Pedro and Daniel were fantastic. Very friendly and with great sea expertise. It was a trip full of laughter and well being. Definitely worth every penny. To repeat in an near future.",
+      "1": "From initially meeting Renato on the marina who sold us our tickets to the trip around the Grotto with Carlos and Lewis who were great company and very knowledgable. Highly recommend this dream team!!",
+      "2": "Great trip around the caves of Lagos. Pierre and Miguel are excellent tour guides and explain the sites and caves. They are very funny and have good banter with everyone on the boat. Highly recommend this trip.",
+      "3": "Miguel was very informative and explained very well. captain Pedro took us close to the caves and did fantastic! my friend and i happened to be the only ones on board so the experience felt very sentimental.",
+      "4": "We had a great time. The views are awesome and the guides are funny, so it makes it all the better experience. Plus the boat is very comfortable. I can 100% recommend :)"
+    },
+    "coastline": {
+      "0": "Lovely guides and only 9 of us on main boat, so half could swim and half were taken in around the caves, absolutely stunning, and great guide telling us the names for each place.",
+      "1": "Great relaxed experience. It is hard to find the meeting point- its on the marina side past the brown boat and next to the blue shade. The crew were friendly and the caves incredible. Then there was time to swim in the icy clear water",
+      "2": "Boat was comfortable and quite large. Guides were friendly people. Felt like private customised trip.",
+      "3": "Really fun exploring the caves and rock formations of the Ponta da Piedade. Unfortunately on the first section of the trip, no-one at the back of the boat could hear any of the guided commentary.",
+      "4": "Trip on the boat was great. And then the transfer to the smaller boat to take you around the grotto for which The tour guide was multilingual and knowledgeable."
+    },
+    "benagil": {
+      "0": "The sights are beautiful. The staff were lovely, unfortunately I got sea sick overboard, but the staff were helpful and understanding! My friend and I still enjoyed our time regardless, definitely would recommend",
+      "1": "it's interesting you can see the best place in Portugal and it's affordable in price",
+      "2": "It was a wet, somewhat cold, bouncy trip, but still a great time. The Captain and Mate were great, and made sure everyone was safe and having fun. They provide a rain/wind jacket, but make sure you dress for the conditions!",
+      "3": "Great experience! Caves were incredible and the tour guide was funny and knowledgeable. Speeding across the waves left a huge smile on everyone’s faces. Kids loved it as well. Highly recommend.",
+      "4": "Great fun on the boat. Fast and bumpy. Caves were amazing. Probably busier than I expected. Pictures all show the cave empty. It was full of people but still very impressive."
+    },
+    "sunset": {
+      "0": "They were very friendly and invited my daughter to steer the boat which she loved! Stunning views of the caves especially as the sun was setting.",
+      "1": "Very relaxed sunset cruise. Crew was amazing! Easy meet up spot on the marina and not overcrowded.",
+      "2": "It was a very nice evening with wonderful people. Beautiful views, very cold but fun swimming, a complimentary drink, and a gorgeous sunset. And even some dolphin sightings on our way back.",
+      "3": "Amazing. The tour guides are very friendly, the views are spectacular and the wine - speechless!",
+      "4": "We had an amazing time on this sunset cruise! Gorgeous views, delicious wines, the opportunity to jump overboard for a sunset dip, and a bonus excursion into the caves all around Ponta De Piedade! We were so pleasantly surprised by the cave tour and all would do this again in a heartbeat!"
+    }
   }
 }

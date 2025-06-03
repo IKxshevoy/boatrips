@@ -1,8 +1,10 @@
 {
   "root": {
     "metadata": {
-      "title": "Boatrips",
-      "description": "Werden Sie Teil der nächsten großen Sache in Pharma"
+      "title": "Excursions en bateau à Lagos, Portugal | Grottes de Benagil, Dauphins et plus",
+      "description": "Excursions en bateau les mieux notées à Lagos, Portugal. Explorez les grottes de Benagil, observez les dauphins, passez par Ponta da Piedade et profitez de croisières privées en yacht ou en catamaran. Parfait pour les familles, les couples et les groupes en visite dans l'Algarve.",
+      "ogTitle": "Excursions Inoubliables en Bateau à Lagos, Algarve | Benagil, Dauphins, Ponta da Piedade",
+      "ogDescription": "Participez aux meilleures excursions en bateau à Lagos, Algarve. Découvrez la grotte de Benagil, observez les dauphins, nagez sur des plages cachées et naviguez le long de la magnifique côte en yacht ou en catamaran privé."
     }
   },
 
@@ -386,12 +388,12 @@
     "first_reminder": "Cette expérience inclut des boissons gratuites",
     "second_reminder": "Nous recommandons d’apporter crème solaire, maillot de bain, chapeau et serviette ;",
     "third_reminder": "Veuillez vous enregistrer 10 minutes avant le début de l’expérience ;",
-    "fourth_perk": "Bar à bord",
     "fourth_reminder": "Cette activité peut être annulée en cas de mauvais temps ou de mer agitée. Dans ce cas, un remboursement ou un changement de date vous sera proposé ;",
     "perks": "Avantages",
-    "first_perk": "Briefing de sécurité par un guide multilingue, assurance et gilets de sauvetage inclus ;",
-    "second_perk": "Un capitaine local vous donnera des commentaires à bord sur les lieux visités ;",
-    "third_perk": "Découvrez les magnifiques plages autour de Lagos",
+    "first_perk": "Un briefing de sécurité par un guide multilingue, assurance et gilets de sauvetage inclus ;",
+    "second_perk": "3 lits doubles / 2 salles de bain complètes",
+    "third_perk": "Équipement de plongée en apnée / Stand up paddle",
+    "fourth_perk": "Bar à bord",
     "important_information": "INFORMATIONS IMPORTANTES",
     "first_info": "Pour les annulations effectuées plus de 24 heures avant le départ, le remboursement est intégral.",
     "second_info": "Les enfants doivent être accompagnés d’un adulte",
