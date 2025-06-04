@@ -60,7 +60,7 @@ export async function generateMetadata({
 }: {
   params: { locale: Locale };
 }): Promise<Metadata> {
-  const t = await getTranslations({ locale, namespace: "root" });
+  const t = await getTranslations({ locale });
 
   const keywords = [
     "Benagil cave tours",
@@ -82,12 +82,12 @@ export async function generateMetadata({
   ];
 
   return {
-    title: t("metadata.title"),
-    description: t("metadata.description"),
+    title: t("root.metadata.title"),
+    description: t("root.metadata.description"),
     keywords,
     openGraph: {
-      title: t("metadata.ogTitle"),
-      description: t("metadata.ogDescription"),
+      title: t("root.metadata.ogTitle"),
+      description: t("root.metadata.ogDescription"),
       url: "https://www.boatrips.eu",
       siteName: "Boatrips",
       locale:
