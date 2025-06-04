@@ -1,6 +1,5 @@
 "server-only";
 
-import { notFound } from "next/navigation";
 import { type AbstractIntlMessages } from "next-intl";
 import { createSharedPathnamesNavigation } from "next-intl/navigation";
 import { getRequestConfig } from "next-intl/server";
@@ -22,18 +21,39 @@ export function isValidLocale(locale: unknown): locale is Locale {
 }
 
 export default getRequestConfig(async (params) => {
-  const baseLocale = new Intl.Locale(params.locale).baseName;
-  if (!isValidLocale(baseLocale)) {
-    notFound();
+  const locale = typeof params.locale === "string" ? params.locale : "";
+
+  // Reject locale if it contains a dot (likely a filename like favicon.ico) or invalid pattern
+  if (
+    !locale ||
+    locale.includes(".") ||
+    !/^[a-z]{2}(-[A-Z]{2})?$/.test(locale)
+  ) {
+    console.warn("Invalid locale detected, falling back to default:", locale);
+    return { messages: (await messageImports["en"]()).default };
   }
 
-  const messages = (await messageImports[baseLocale]()).default;
-  return {
-    messages,
-  };
+  try {
+    const baseLocale = new Intl.Locale(locale).baseName;
+    if (!isValidLocale(baseLocale)) {
+      console.warn(
+        "Unsupported locale detected, falling back to default:",
+        baseLocale
+      );
+      return { messages: (await messageImports["en"]()).default };
+    }
+    const messages = (await messageImports[baseLocale]()).default;
+    return { messages };
+  } catch (err) {
+    console.error(
+      "Error loading locale messages, falling back to default:",
+      err
+    );
+    return { messages: (await messageImports["en"]()).default };
+  }
 });
 
-export const localePrefix = "always"; // Default
+export const localePrefix = "always";
 
 export const { Link, redirect, usePathname, useRouter } =
   createSharedPathnamesNavigation({ locales, localePrefix });
