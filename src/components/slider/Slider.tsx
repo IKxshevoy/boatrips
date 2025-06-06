@@ -67,6 +67,10 @@ const Slider = () => {
           <Link
             className={styles.readMoreBtn}
             href={slideContent[activeSlide!].href}
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = slideContent[activeSlide!].href;
+            }}
           >
             <Button text={t("read_more")} />
           </Link>

@@ -39,7 +39,7 @@ const keys = [
 ] as const;
 
 const DestinationCards = () => {
-  const t = useTranslations("expiriences");
+  const t = useTranslations("experiences");
   const destinations = keys.map((key, index) => ({
     title: t(key),
     price: destinations_images[index].price,

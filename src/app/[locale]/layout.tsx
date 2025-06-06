@@ -25,6 +25,7 @@ const RootLayout: React.FC<Props> = async (props) => {
   return (
     <html lang="en">
       <Head>
+        <link rel="icon" href="/favicon.ico" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

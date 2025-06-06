@@ -19,7 +19,7 @@ const DestinationCard = ({
   href,
   price,
 }: IDestinationCard) => {
-  const t = useTranslations("expiriences");
+  const t = useTranslations("experiences");
   const router = useRouter();
 
   const handleCardClick = () => {

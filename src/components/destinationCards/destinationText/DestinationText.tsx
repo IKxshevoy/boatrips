@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 const DestinationText = () => {
-  const t = useTranslations("expiriences");
+  const t = useTranslations("experiences");
   return (
     <div className={styles.greeting}>
       <div className={styles.description}>

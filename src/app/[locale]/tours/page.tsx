@@ -93,7 +93,7 @@ const Tours = () => {
             {selectedTour.title} <span className={styles.orangeWrapper}>.</span>
           </span>
           <span className={styles.price}>
-            {selectedTour.price}${" "}
+            {selectedTour.price}€{" "}
             <span className={styles.orangeWrapper}>/ </span>h
           </span>
           <div className={styles.description}>{selectedTour.description}</div>
