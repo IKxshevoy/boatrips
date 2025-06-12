@@ -45,10 +45,6 @@ const CustomSelect: React.FC<CustomSelectProps> = ({ choice }) => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log("Selected index changed:", selectedIndex);
-  }, [selectedIndex]);
-
   const handleClickOutside = (event: MouseEvent) => {
     if (
       wrapperRef.current &&
