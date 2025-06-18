@@ -20,7 +20,7 @@ const Images: FC<ImagesProps> = (props) => {
 
   return (
     <div className="images-wrapper">
-      <Title title="Image Gallery" bgPicture="/bg_title.webp"></Title>
+      <Title title="Image Gallery" bgPicture="/bg_title.webp" />
       <div className="images-container">
         {data.map((slide, index) => (
           <div
@@ -28,7 +28,7 @@ const Images: FC<ImagesProps> = (props) => {
             key={index}
             className="image"
           >
-            <img src={slide.src} alt={slide.description} />
+            <img src={slide.src} alt={slide.description} loading="lazy" />
           </div>
         ))}
       </div>

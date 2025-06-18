@@ -42,6 +42,7 @@ const Slider = () => {
             alt={`Slide ${index + 1}`}
             fill
             style={{ objectFit: "cover" }}
+            loading={activeSlide === index ? "eager" : "lazy"}
             className={`${styles.imageSlide} ${
               activeSlide === index ? styles.activeSlide : ""
             }`}

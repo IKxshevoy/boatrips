@@ -46,12 +46,13 @@ const Images: FC<ImagesProps> = ({ data, onClick }) => {
             <img
               src={data[thumbnailIndex].src}
               alt={data[thumbnailIndex].description}
+              loading="lazy"
             />
           </div>
         ) : (
           data.map((slide, index) => (
             <div onClick={() => onClick(index)} key={index} className="image">
-              <img src={slide.src} alt={slide.description} />
+              <img src={slide.src} alt={slide.description} loading="lazy" />
             </div>
           ))
         )}

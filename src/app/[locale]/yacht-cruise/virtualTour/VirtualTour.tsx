@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 const keys = ["english", "portuguese", "spanish", "french"] as const;
 
 const VirtualTour = () => {
-  const t = useTranslations("benagil-caves");
+  const t = useTranslations("yacht-cruise");
   const languages = keys.map((key) => t(key));
   return (
     <div className={styles.virtualTour}>

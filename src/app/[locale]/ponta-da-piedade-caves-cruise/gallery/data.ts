@@ -1,6 +1,6 @@
 export const slides = [
   {
-    src: "/classic/1.webp",
+    src: "/classic/19.webp",
     title: "Ponta da Piedade",
     description: "Ponta da Piedade",
   },

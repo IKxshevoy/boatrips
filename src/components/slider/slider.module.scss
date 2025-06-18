@@ -49,11 +49,11 @@
       line-height: 1.4;
     }
     &TextHidden {
+      display: none;
       margin-bottom: 65px;
       text-align: justify;
       font-size: 1.2rem;
       font-weight: 700;
-      display: none;
       line-height: 1.7;
     }
   }
@@ -140,7 +140,6 @@
 
       &Text {
         display: none;
-        margin-bottom: 50px;
       }
       &TextHidden {
         display: block;

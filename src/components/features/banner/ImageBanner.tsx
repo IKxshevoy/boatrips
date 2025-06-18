@@ -7,9 +7,11 @@ const ImageBanner: React.FC = () => {
 
   return (
     <div
-      className={`${styles.featuresBanner} ${!isPlaying ? styles.hasBgImage : ""}`}
+      className={`${styles.featuresBanner} ${
+        !isPlaying ? styles.hasBgImage : ""
+      }`}
       style={{
-        backgroundImage: !isPlaying ? `url('/classic/23.webp')` : "none",
+        backgroundImage: !isPlaying ? `url('/classic/19.webp')` : "none",
         position: "relative",
       }}
     >
