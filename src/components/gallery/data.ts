@@ -1,8 +1,8 @@
 export const slides = [
   {
-    src: "/classic/1.webp",
-    title: "Ponta da Piedade",
-    description: "Ponta da Piedade",
+    src: "/catamaran/7.webp",
+    title: "Catamaran Cruise",
+    description: "Catamaran Cruise",
   },
   {
     src: "/classic/2.webp",
@@ -30,14 +30,14 @@ export const slides = [
     description: "Sunset tour",
   },
   {
-    src: "/yacht/6.webp",
-    title: "Yacht tour",
-    description: "Yacht tour",
+    src: "/catamaran/10.webp",
+    title: "Catamaran cruise",
+    description: "Catamaran Cruise",
   },
   {
-    src: "/yacht/8.webp",
-    title: "Yacht tour",
-    description: "Yacht tour",
+    src: "/catamaran/8.webp",
+    title: "Catamaran Cruise",
+    description: "Catamaran Cruise",
   },
   {
     src: "/yacht/sunrise/1.webp",

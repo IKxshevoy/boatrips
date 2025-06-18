@@ -13,6 +13,7 @@ interface SlideMeta {
 }
 
 const slideContent: SlideMeta[] = [
+  { path: "/catamaran/14.webp", href: "/catamaran-cruise" },
   { path: "/main.webp", href: "/ponta-da-piedade-caves-cruise" },
   { path: "/yacht/1.webp", href: "/yacht-cruise" },
   { path: "/sunset/6.webp", href: "/sunset-cruise" },

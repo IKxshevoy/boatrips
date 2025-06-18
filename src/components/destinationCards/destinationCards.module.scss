@@ -9,26 +9,91 @@
   @media (max-width: 767px) {
     margin: 50px auto 110px;
   }
-
   @media (max-width: 500px) {
     margin: 50px auto 30px;
   }
+}
+
+.carouselWrapper {
+  position: relative;
+}
+
+/* Mobile List - shows all cards in column */
+.mobileList {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 
   @media (min-width: 768px) {
-    .galleryList {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-    }
+    display: none;
+  }
+}
+
+.desktopList {
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media (min-width: 768px) {
+    display: grid;
+  }
+}
+
+.arrowLeft,
+.arrowRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  color: black;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  user-select: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: #2d60ac;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
 
-  @media (min-width: 992px) {
-    .galleryList {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  &:active {
+    transform: translateY(-50%) scale(0.95);
   }
-  @media (min-width: 1260px) {
-    .galleryList {
-      grid-template-columns: repeat(4, 1fr);
-    }
+
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.arrowLeft {
+  left: 8px;
+
+  &:hover {
+    left: 5px;
+  }
+}
+
+.arrowRight {
+  right: 8px;
+
+  &:hover {
+    right: 5px;
   }
 }

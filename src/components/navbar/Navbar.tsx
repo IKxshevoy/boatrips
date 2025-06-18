@@ -40,6 +40,7 @@ const Navbar: React.FC = () => {
       url: "/tours",
       subMenu: [
         { name: t("ponta_da_piedade"), href: "/ponta-da-piedade-caves-cruise" },
+        { name: t("catamaran_cruise"), href: "/catamaran-cruise" },
         { name: t("yacht_cruise"), href: "/yacht-cruise" },
         {
           name: t("coastline_cruise"),

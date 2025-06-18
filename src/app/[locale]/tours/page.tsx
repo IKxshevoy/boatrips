@@ -45,6 +45,12 @@ const tours_info = [
     price: 150,
     href: "/yacht-cruise",
   },
+  {
+    imageUrl: "/catamaran/14.webp",
+    price: 1200,
+    href: "/catamaran-cruise",
+    id: 5,
+  },
 ];
 
 const keys = [
@@ -53,6 +59,7 @@ const keys = [
   "benagil_cave",
   "sunset_cruise",
   "yacht_cruise",
+  "catamaran_cruise",
 ] as const;
 
 const Tours = () => {
