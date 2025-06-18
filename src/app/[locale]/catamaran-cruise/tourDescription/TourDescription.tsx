@@ -64,7 +64,7 @@ const descriptionSunset = [
   {
     id: 1,
     icon: faCreditCard,
-    value: "90€ / Private 700€",
+    value: "90€",
   },
   {
     id: 3,
