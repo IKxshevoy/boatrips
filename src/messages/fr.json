@@ -472,7 +472,10 @@
     "important_information": "INFORMATIONS IMPORTANTES",
     "first_info": "Pour les annulations des clients effectuées plus de 24 heures avant le départ, nous remboursons le montant intégralement.",
     "second_info": "Les enfants doivent être accompagnés d'un adulte",
-    "third_info": "Boatrips n'est pas responsable des objets personnels perdus ou endommagés à bord."
+    "third_info": "Boatrips n'est pas responsable des objets personnels perdus ou endommagés à bord.",
+    "meeting_point": "Point de rencontre",
+    "meet_at": "Rendez-vous devant la porte donnant accès aux pontons E, F, G, H, I.",
+    "cant_find": "Si vous ne trouvez pas l’endroit, veuillez nous contacter au +351969184712"
   },
 
   "contact_form": {

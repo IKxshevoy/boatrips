@@ -489,7 +489,10 @@
     "important_information": "IMPORTANT INFORMATION",
     "first_info": "For cancellations of customers with more than 24 hours before departure, we refund the amount in full.",
     "second_info": "Children must be accompanied by an adult",
-    "third_info": "Boatrips is not responsible for lost or damaged personal items on board."
+    "third_info": "Boatrips is not responsible for lost or damaged personal items on board.",
+    "meeting_point": "Meeting point",
+    "meet_at": "Meet In front of the gate to access the pontoons E, F, G, H, I.",
+    "cant_find": "In case you can't find the place, please contact us +351969184712"
   },
 
   "navbar": {

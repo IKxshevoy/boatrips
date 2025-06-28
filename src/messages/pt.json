@@ -493,7 +493,10 @@
     "important_information": "INFORMAÇÃO IMPORTANTE",
     "first_info": "Para cancelamentos de clientes com mais de 24 horas antes da partida, reembolsamos o valor na totalidade.",
     "second_info": "As crianças devem estar acompanhadas por um adulto",
-    "third_info": "A Boatrips não é responsável por objetos pessoais perdidos ou danificados a bordo."
+    "third_info": "A Boatrips não é responsável por objetos pessoais perdidos ou danificados a bordo.",
+    "meeting_point": "Ponto de encontro",
+    "meet_at": "Encontre-se em frente ao portão de acesso aos pontões E, F, G, H, I.",
+    "cant_find": "Caso não consiga encontrar o local, por favor entre em contato conosco: +351969184712"
   },
 
   "navbar": {

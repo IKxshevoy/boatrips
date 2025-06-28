@@ -30,7 +30,7 @@ export const slides = [
     description: "Sunset tour",
   },
   {
-    src: "/catamaran/10.webp",
+    src: "/catamaran/25.webp",
     title: "Catamaran cruise",
     description: "Catamaran Cruise",
   },

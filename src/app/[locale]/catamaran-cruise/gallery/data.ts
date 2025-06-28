@@ -5,10 +5,11 @@ export const slides = [
     description: "Catamaran Cruise",
   },
   {
-    src: "/catamaran/8.webp",
+    src: "/catamaran/1.webp",
     title: "Catamaran Cruise",
     description: "Catamaran Cruise",
   },
+
   {
     src: "/catamaran/10.webp",
     title: "Catamaran Cruise",
@@ -20,7 +21,7 @@ export const slides = [
     description: "Catamaran Cruise",
   },
   {
-    src: "/catamaran/12.webp",
+    src: "/catamaran/23.webp",
     title: "Catamaran Cruise",
     description: "Catamaran Cruise",
   },
@@ -35,17 +36,17 @@ export const slides = [
     description: "Catamaran Cruise",
   },
   {
-    src: "/catamaran/3.webp",
+    src: "/catamaran/25.webp",
     title: "Catamaran Cruise",
     description: "Catamaran Cruise",
   },
   {
-    src: "/catamaran/4.webp",
+    src: "/catamaran/24.webp",
     title: "Catamaran Cruise",
     description: "Catamaran Cruise",
   },
   {
-    src: "/catamaran/1.webp",
+    src: "/catamaran/8.webp",
     title: "Catamaran Cruise",
     description: "Catamaran Cruise",
   },

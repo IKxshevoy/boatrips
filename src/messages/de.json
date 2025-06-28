@@ -481,7 +481,10 @@
     "important_information": "WICHTIGE INFORMATIONEN",
     "first_info": "Bei Stornierungen von Kunden mit mehr als 24 Stunden vor Abfahrt erstatten wir den Betrag in voller Höhe.",
     "second_info": "Kinder müssen von einem Erwachsenen begleitet werden",
-    "third_info": "Boatrips ist nicht verantwortlich für verlorene oder beschädigte persönliche Gegenstände an Bord."
+    "third_info": "Boatrips ist nicht verantwortlich für verlorene oder beschädigte persönliche Gegenstände an Bord.",
+    "meeting_point": "Treffpunkt",
+    "meet_at": "Treffen Sie sich vor dem Tor, das Zugang zu den Stegen E, F, G, H, I bietet.",
+    "cant_find": "Falls Sie den Ort nicht finden, kontaktieren Sie uns bitte unter +351969184712"
   },
   "navbar": {
     "home": "Startseite",
