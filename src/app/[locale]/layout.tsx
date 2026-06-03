@@ -6,7 +6,7 @@ import Footer from "@/components/footer/Footer";
 import { Locale } from "@/lib/locales";
 import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import Script from "next/script"; // ✅ GTM script support
+import Script from "next/script";
 
 const rubik = Rubik({ weight: "400", subsets: ["latin"] });
 
@@ -17,7 +17,7 @@ type Props = {
   };
 };
 
-const GTM_ID = "GTM-MLJR4KCD";
+const GTM_ID = "GTM-M4B5CSKV";
 
 const RootLayout: React.FC<Props> = async (props) => {
   const messages = await getMessages();
@@ -75,13 +75,29 @@ export async function generateMetadata({
     "dolphin watching Lagos",
     "swimming boat tours",
     "yacht cruises Lagos",
+    "yacht tour Lagos",
+    "yacht cruise Algarve",
+    "yacht charter Lagos",
+    "private yacht tour Lagos",
+    "sailing yacht Lagos",
     "catamaran cruises Algarve",
+    "catamaran cruise Lagos",
+    "catamaran tour Lagos",
+    "catamaran tour Algarve",
+    "sailing catamaran Lagos",
+    "private catamaran Lagos",
     "private yacht tours Lagos",
     "private catamaran tours",
+    "sailing tour Lagos",
+    "sailing tour Algarve",
     "sunset boat tour Lagos",
+    "sunset catamaran Lagos",
+    "sunset yacht Lagos",
     "sunrise tour Lagos",
     "Algarve boat tours",
     "Lagos Portugal boat trips",
+    "boat trips Lagos Portugal",
+    "sea tours Lagos",
   ];
 
   return {
@@ -97,10 +113,10 @@ export async function generateMetadata({
         locale === "pt"
           ? "pt_PT"
           : locale === "fr"
-          ? "fr_FR"
-          : locale === "de"
-          ? "de_DE"
-          : "en_US",
+            ? "fr_FR"
+            : locale === "de"
+              ? "de_DE"
+              : "en_US",
       type: "website",
       images: [
         {

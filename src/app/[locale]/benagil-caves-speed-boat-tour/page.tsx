@@ -1,75 +1,45 @@
-"use client";
-import React, { useState } from "react";
-import styles from "./styles.module.scss";
-import ReviewsSlider from "@/components/reviewsSlider/ReviewsSlider";
-import TourHeader from "./tourHeader/TourHeader";
-import TourDescription from "./tourDescription/TourDescription";
-import CalendarFrame from "./calendarFrame/CalendarFrame";
-import VirtualTour from "./virtualTour/VirtualTour";
-import TourInfo from "./tourInfo/TourInfo";
-import TourMap from "./tourMap/TourMap";
-import WavyButton from "@/ui-kit/wavyButton/WavyButton";
-import { useTranslations } from "next-intl";
-import Images from "./gallery/Images";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import {
-  Captions,
-  Download,
-  Fullscreen,
-  Slideshow,
-  Thumbnails,
-  Zoom,
-} from "yet-another-react-lightbox/plugins";
-import "yet-another-react-lightbox/plugins/captions.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { slides } from "./gallery/data";
-import AlternativeButton from "@/ui-kit/alternative-button/Button";
+import type { Metadata } from "next";
+import BenagilCavesClient from "./BenagilCavesClient";
 
-const Tour = () => {
-  const t = useTranslations("benagil-caves");
-  const [index, setIndex] = useState<number>(-1);
-  return (
-    <section className={styles.tourSection}>
-      <TourHeader />
-      <div className={styles.descriptionBlock}>
-        <TourDescription />
-        <CalendarFrame />
-      </div>
-      <VirtualTour />
-      <TourInfo />
-
-      <Images
-        data={slides}
-        onClick={(currentIndex) => setIndex(currentIndex)}
-      />
-
-      <Lightbox
-        plugins={[Captions, Download, Fullscreen, Zoom, Thumbnails, Slideshow]}
-        slideshow={{ autoplay: true, delay: 5000 }}
-        captions={{
-          showToggle: true,
-          descriptionTextAlign: "end",
-        }}
-        index={index}
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        slides={slides}
-      />
-      <div className={styles.reviewsBlock}>
-        <h2 className={styles.title}>{t("reviews")}</h2>
-        <ReviewsSlider type="benagil"/>
-      </div>
-      <TourMap />
-      <div className={styles.promotion}>
-        <h2 className={styles.promotion__title}>{t("private_tour")}</h2>
-        <AlternativeButton
-          text={t("contact_us")}
-          url="https://wa.me/351969184712"
-        />
-      </div>
-    </section>
-  );
+export const metadata: Metadata = {
+  title: "Benagil Cave Speed Boat Tour Lagos | Algarve Cave Tour | Boatrips",
+  description:
+    "Visit the world-famous Benagil Cave on a thrilling speed boat tour from Lagos. One of the most breathtaking sea caves in the world, on the Algarve coast.",
+  keywords: [
+    "Benagil cave tour",
+    "Benagil cave Lagos",
+    "Benagil cave boat tour",
+    "Benagil speed boat",
+    "Benagil cave Algarve",
+    "Benagil grotto tour",
+    "speed boat tour Lagos",
+    "speed boat Algarve",
+    "Benagil cave Portugal",
+    "Algarve cave boat tour",
+    "Benagil sea cave",
+    "boat tour Benagil",
+    "Lagos speed boat tour",
+    "Benagil cave trip",
+    "best Benagil cave tour",
+  ],
+  openGraph: {
+    title: "Benagil Cave Speed Boat Tour from Lagos | Boatrips",
+    description:
+      "See the iconic Benagil Cave — one of the world's most beautiful sea caves — on a thrilling speed boat tour departing from Lagos, Algarve.",
+    url: "https://www.boatrips.eu/benagil-caves-speed-boat-tour",
+    siteName: "Boatrips",
+    type: "website",
+    images: [
+      {
+        url: "https://www.boatrips.eu/Logo.webp",
+        width: 600,
+        height: 600,
+        alt: "Benagil Cave Speed Boat Tour Lagos Algarve",
+      },
+    ],
+  },
 };
 
-export default Tour;
+export default function BenagilCavesPage() {
+  return <BenagilCavesClient />;
+}

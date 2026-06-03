@@ -1,79 +1,49 @@
-"use client";
-import React, { useState } from "react";
-import styles from "./styles.module.scss";
-import ReviewsSlider from "@/components/reviewsSlider/ReviewsSlider";
-import TourHeader from "./tourHeader/TourHeader";
-import TourDescription from "./tourDescription/TourDescription";
-import CalendarFrame from "./calendarFrame/CalendarFrame";
-import VirtualTour from "./virtualTour/VirtualTour";
-import TourInfo from "./tourInfo/TourInfo";
-import TourMap from "./tourMap/TourMap";
-import WavyButton from "@/ui-kit/wavyButton/WavyButton";
-import { useTranslations } from "next-intl";
-import Images from "./gallery/Images";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import {
-  Captions,
-  Download,
-  Fullscreen,
-  Slideshow,
-  Thumbnails,
-  Zoom,
-} from "yet-another-react-lightbox/plugins";
-import "yet-another-react-lightbox/plugins/captions.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { slides } from "./gallery/data";
-import { Title } from "@/ui-kit/title/Title";
-import ToursBottom from "./tourDescription/SingleTour";
-import Button from "@/ui-kit/button/Button";
-import AlternativeButton from "@/ui-kit/alternative-button/Button";
+import type { Metadata } from "next";
+import YachtCruiseClient from "./YachtCruiseClient";
 
-const Tour = () => {
-  const t = useTranslations("yacht-cruise");
-  const [index, setIndex] = useState<number>(-1);
-  return (
-    <section className={styles.tourSection}>
-      <TourHeader />
-      <div className={styles.descriptionBlock}>
-        <TourDescription />
-      </div>
-
-      <VirtualTour />
-
-      <TourInfo />
-
-      <div className={styles.descriptionBlock}>
-        <ToursBottom />
-      </div>
-
-      <Images
-        data={slides}
-        onClick={(currentIndex) => setIndex(currentIndex)}
-      />
-
-      <Lightbox
-        plugins={[Captions, Download, Fullscreen, Zoom, Thumbnails, Slideshow]}
-        slideshow={{ autoplay: true, delay: 5000 }}
-        captions={{
-          showToggle: true,
-          descriptionTextAlign: "end",
-        }}
-        index={index}
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        slides={slides}
-      />
-      <TourMap />
-      <div className={styles.promotion}>
-        <h2 className={styles.promotion__title}>{t("private_tour")}</h2>
-        <AlternativeButton
-          text={t("contact_us")}
-          url="https://wa.me/351969184712"
-        />
-      </div>
-    </section>
-  );
+export const metadata: Metadata = {
+  title: "Yacht Cruise Lagos | Private Sailing Tours Algarve | Boatrips",
+  description:
+    "Luxury yacht cruises in Lagos, Portugal. Sunset, sunrise, golden hour & full-day private yacht tours along the stunning Algarve coastline.",
+  keywords: [
+    "yacht cruise Lagos",
+    "yacht tour Lagos",
+    "private yacht tour Lagos",
+    "luxury yacht Algarve",
+    "yacht tour Portugal",
+    "sailing yacht Lagos",
+    "private yacht rental Lagos",
+    "yacht trip Lagos",
+    "yacht sailing Algarve",
+    "luxury yacht cruise Lagos Portugal",
+    "sunset yacht cruise Lagos",
+    "sunrise yacht Lagos",
+    "golden hour yacht cruise",
+    "private sailing tour Lagos",
+    "yacht charter Lagos",
+    "yacht charter Algarve",
+    "boat sailing tour Lagos",
+    "yacht cruise Portugal",
+    "full day yacht tour Algarve",
+  ],
+  openGraph: {
+    title: "Yacht Cruise in Lagos, Algarve | Boatrips",
+    description:
+      "Experience a luxury yacht cruise in Lagos, Portugal. Private sunset, sunrise & full-day yacht tours along the breathtaking Algarve coast.",
+    url: "https://www.boatrips.eu/yacht-cruise",
+    siteName: "Boatrips",
+    type: "website",
+    images: [
+      {
+        url: "https://www.boatrips.eu/Logo.webp",
+        width: 600,
+        height: 600,
+        alt: "Yacht Cruise Lagos Algarve",
+      },
+    ],
+  },
 };
 
-export default Tour;
+export default function YachtCruisePage() {
+  return <YachtCruiseClient />;
+}

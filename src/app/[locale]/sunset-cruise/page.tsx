@@ -1,76 +1,44 @@
-"use client";
-import React, { useState } from "react";
-import styles from "./styles.module.scss";
-import ReviewsSlider from "@/components/reviewsSlider/ReviewsSlider";
-import TourHeader from "./tourHeader/TourHeader";
-import TourDescription from "./tourDescription/TourDescription";
-import CalendarFrame from "./calendarFrame/CalendarFrame";
-import VirtualTour from "./virtualTour/VirtualTour";
-import TourInfo from "./tourInfo/TourInfo";
-import TourMap from "./tourMap/TourMap";
-import WavyButton from "@/ui-kit/wavyButton/WavyButton";
-import { useTranslations } from "next-intl";
-import Images from "./gallery/Images";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import {
-  Captions,
-  Download,
-  Fullscreen,
-  Slideshow,
-  Thumbnails,
-  Zoom,
-} from "yet-another-react-lightbox/plugins";
-import "yet-another-react-lightbox/plugins/captions.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { slides } from "./gallery/data";
-import AlternativeButton from "@/ui-kit/alternative-button/Button";
+import type { Metadata } from "next";
+import SunsetCruiseClient from "./SunsetCruiseClient";
 
-const Tour = () => {
-  const t = useTranslations("sunset-cruise");
-  const [index, setIndex] = useState<number>(-1);
-  return (
-    <section className={styles.tourSection}>
-      <TourHeader />
-      <div className={styles.descriptionBlock}>
-        <TourDescription />
-        <CalendarFrame />
-      </div>
-      <VirtualTour />
-      <TourInfo />
-      <Images
-        data={slides}
-        onClick={(currentIndex) => setIndex(currentIndex)}
-      />
-
-      <Lightbox
-        plugins={[Captions, Download, Fullscreen, Zoom, Thumbnails, Slideshow]}
-        slideshow={{ autoplay: true, delay: 5000 }}
-        captions={{
-          showToggle: true,
-          descriptionTextAlign: "end",
-        }}
-        index={index}
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        slides={slides}
-      />
-      <div className={styles.reviewsBlock}>
-        <h2 className={styles.title}>{t("reviews")}</h2>
-        <ReviewsSlider type="sunset" />
-      </div>
-      <TourMap />
-      <div className={styles.promotion}>
-        <h2 className={styles.promotion__title} id="private-sunset">
-          {t("private_tour")}
-        </h2>
-        <AlternativeButton
-          url="https://fareharbor.com/embeds/book/boatrips/items/478706/?full-items=yes&flow=536599"
-          text={t("book_it")}
-        />
-      </div>
-    </section>
-  );
+export const metadata: Metadata = {
+  title: "Sunset Cruise Lagos | Algarve Sunset Boat Tour | Boatrips",
+  description:
+    "Watch the golden Algarve sunset from the sea on a romantic boat cruise in Lagos, Portugal. Perfect for couples, families and groups. Book your sunset tour today.",
+  keywords: [
+    "sunset cruise Lagos",
+    "sunset boat tour Lagos",
+    "sunset cruise Algarve",
+    "sunset tour Portugal",
+    "romantic sunset cruise Lagos",
+    "evening boat tour Lagos",
+    "sunset sailing Lagos",
+    "golden hour cruise Algarve",
+    "Lagos sunset boat trip",
+    "sunset boat tour Algarve",
+    "sunset cruise Portugal",
+    "sunset tour Lagos Portugal",
+    "evening cruise Algarve",
+    "sunset boat ride Lagos",
+  ],
+  openGraph: {
+    title: "Sunset Cruise in Lagos, Algarve | Boatrips",
+    description:
+      "Watch a spectacular Algarve sunset from the sea. Join our sunset boat cruise in Lagos, Portugal — perfect for couples and groups.",
+    url: "https://www.boatrips.eu/sunset-cruise",
+    siteName: "Boatrips",
+    type: "website",
+    images: [
+      {
+        url: "https://www.boatrips.eu/Logo.webp",
+        width: 600,
+        height: 600,
+        alt: "Sunset Cruise Lagos Algarve",
+      },
+    ],
+  },
 };
 
-export default Tour;
+export default function SunsetCruisePage() {
+  return <SunsetCruiseClient />;
+}

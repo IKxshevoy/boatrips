@@ -1,73 +1,44 @@
-"use client";
-import React, { useState } from "react";
-import styles from "./styles.module.scss";
-import ReviewsSlider from "@/components/reviewsSlider/ReviewsSlider";
-import TourHeader from "./tourHeader/TourHeader";
-import TourDescription from "./tourDescription/TourDescription";
-import CalendarFrame from "./calendarFrame/CalendarFrame";
-import VirtualTour from "./virtualTour/VirtualTour";
-import TourInfo from "./tourInfo/TourInfo";
-import TourMap from "./tourMap/TourMap";
-import WavyButton from "@/ui-kit/wavyButton/WavyButton";
-import { useTranslations } from "next-intl";
-import Images from "./gallery/Images";
-import Lightbox from "yet-another-react-lightbox";
-import "yet-another-react-lightbox/styles.css";
-import {
-  Captions,
-  Download,
-  Fullscreen,
-  Slideshow,
-  Thumbnails,
-  Zoom,
-} from "yet-another-react-lightbox/plugins";
-import "yet-another-react-lightbox/plugins/captions.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
-import { slides } from "./gallery/data";
-import AlternativeButton from "@/ui-kit/alternative-button/Button";
+import type { Metadata } from "next";
+import PontaDaPiedade2HoursClient from "./PontaDaPiedade2HoursClient";
 
-const Tour = () => {
-  const t = useTranslations("ponta-da-piedade-2-hours-cruise");
-  const [index, setIndex] = useState<number>(-1);
-  return (
-    <section className={styles.tourSection}>
-      <TourHeader />
-      <div className={styles.descriptionBlock}>
-        <TourDescription />
-        <CalendarFrame />
-      </div>
-      <VirtualTour />
-      <TourInfo />
-      <Images
-        data={slides}
-        onClick={(currentIndex) => setIndex(currentIndex)}
-      />
-      <Lightbox
-        plugins={[Captions, Download, Fullscreen, Zoom, Thumbnails, Slideshow]}
-        slideshow={{ autoplay: true, delay: 5000 }}
-        captions={{
-          showToggle: true,
-          descriptionTextAlign: "end",
-        }}
-        index={index}
-        open={index >= 0}
-        close={() => setIndex(-1)}
-        slides={slides}
-      />
-      <div className={styles.reviewsBlock}>
-        <h2 className={styles.title}>{t("reviews")}</h2>
-        <ReviewsSlider type="coastline"/>
-      </div>
-      <TourMap />
-      <div className={styles.promotion}>
-        <h2 className={styles.promotion__title}>{t("private_tour")}</h2>
-        <AlternativeButton
-          text={t("contact_us")}
-          url="https://wa.me/351969184712"
-        />
-      </div>
-    </section>
-  );
+export const metadata: Metadata = {
+  title: "Ponta da Piedade 2 Hour Coastline Cruise Lagos | Boatrips",
+  description:
+    "2-hour coastline boat cruise along Ponta da Piedade in Lagos, Portugal. See golden cliffs, hidden grottoes and swim in crystal-clear Atlantic waters.",
+  keywords: [
+    "Ponta da Piedade 2 hour cruise",
+    "coastline cruise Lagos",
+    "Lagos coastline tour",
+    "2 hour boat tour Lagos",
+    "Algarve coastline cruise",
+    "Ponta da Piedade boat trip",
+    "Lagos boat cruise 2 hours",
+    "cliff tour Lagos Portugal",
+    "coastline boat trip Algarve",
+    "swimming tour Lagos",
+    "boat tour Lagos Portugal",
+    "scenic cruise Algarve",
+    "Lagos scenic boat tour",
+    "Algarve cliff boat tour",
+  ],
+  openGraph: {
+    title: "2 Hour Coastline Cruise at Ponta da Piedade | Lagos | Boatrips",
+    description:
+      "Cruise along the stunning Ponta da Piedade coastline in Lagos. See dramatic cliffs, hidden grottoes and enjoy a swim in the crystal-clear Atlantic.",
+    url: "https://www.boatrips.eu/ponta-da-piedade-2-hours-cruise",
+    siteName: "Boatrips",
+    type: "website",
+    images: [
+      {
+        url: "https://www.boatrips.eu/Logo.webp",
+        width: 600,
+        height: 600,
+        alt: "Ponta da Piedade Coastline Cruise Lagos",
+      },
+    ],
+  },
 };
 
-export default Tour;
+export default function PontaDaPiedade2HoursPage() {
+  return <PontaDaPiedade2HoursClient />;
+}
