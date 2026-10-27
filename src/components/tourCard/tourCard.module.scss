@@ -1,107 +1,138 @@
-.title {
-  color: hsl(209, 40%, 14%);
-  font-weight: 600;
-  line-height: 1.45;
-}
+@use "mixins" as *;
 
-.imgCover {
-  width: 100%;
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  object-fit: cover;
-  transition: 500ms ease;
-}
-
-.imgHolder {
-  aspect-ratio: 600 / 650;
-  background-color: hsl(0, 0%, 85%);
+  border-radius: var(--radius-lg);
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  box-shadow: var(--shadow-sm);
   overflow: hidden;
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease);
 
-  .span {
-    display: block;
+  @include hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+
+    .img {
+      transform: scale(1.06);
+    }
+
+    .cta {
+      color: var(--c-accent);
+      gap: 10px;
+    }
+  }
+
+  &:focus-within {
+    outline: 3px solid var(--c-accent);
+    outline-offset: 3px;
   }
 }
 
-.destinationCard {
-  & .cardBanner {
-    position: relative;
-    border-radius: 30px;
-  }
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--c-sky);
+}
 
-  &:is(:hover, :focusWithin) .imgCover {
-    transform: scale(1.05);
-  }
+.img {
+  object-fit: cover;
+  transition: transform 0.9s var(--ease);
+}
 
-  & .cardPrice {
+.duration {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 92%);
+  color: var(--c-navy);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+  padding: clamp(18px, 2.4vw, 26px);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  font-weight: 600;
+  color: var(--c-navy);
+}
+
+// covers the whole card so it is one big tap target
+.stretched {
+  outline: none;
+
+  &::after {
+    content: "";
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    color: hsl(249, 95%, 63%);
-    font-weight: 700;
-    font-size: 1.2rem;
-    line-height: 1.1;
-    padding: 5px 15px;
-    border-radius: 200px;
+    inset: 0;
+    z-index: 1;
   }
+}
 
-  & .cardTitle {
-    margin-block: 15px 5px;
-    transition: 250ms ease;
+.text {
+  @include line-clamp(3);
+  color: var(--c-muted);
+  font-size: var(--fs-sm);
+}
 
-    &:is(:hover, :focusVisible) {
-      color: hsl(249, 95%, 63%);
-    }
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--c-line);
+}
+
+.price {
+  display: grid;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--c-navy);
+  white-space: nowrap;
+  flex: none;
+
+  small {
+    font-family: var(--font-body);
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    color: var(--c-muted);
   }
+}
 
-  & :is(.cardRating, .span) {
-    display: flex;
-    align-items: center;
-  }
-
-  & .cardRating {
-    margin-block-start: 10px;
-    gap: 10px;
-
-    & .span {
-      background-color: hsla(48, 100%, 50%, 0.1);
-      gap: 5px;
-      padding: 4px 12px;
-      border-radius: 200px;
-    }
-
-    .ratingText {
-      color: #7b7a7a;
-    }
-  }
-
-  & .cardText {
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #7b7a7a;
-  }
-
-  & .cardRating {
-    color: hsl(48, 100%, 50%);
-  }
-
-  @media (min-width: 768px) {
-    & .cardTitle {
-      margin-block-start: 25px;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    & .cardPrice {
-      font-size: 1.4rem;
-      padding: 8px 20px;
-    }
-
-    & .cardTitle {
-      margin-block: 30px 10px;
-    }
-
-    & .cardRating {
-      margin-block-start: 15px;
-    }
-  }
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--c-ocean);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  line-height: 1.3;
+  text-align: right;
+  transition:
+    color 0.2s,
+    gap 0.25s var(--ease);
 }

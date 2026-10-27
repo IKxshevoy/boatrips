@@ -1,16 +1,18 @@
-"use client";
 import React from "react";
 import styles from "./styles.module.scss";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
 const TermsHeader = () => {
   const t = useTranslations("terms-and-conditions");
   return (
-    <div className={styles.tourHeader}>
-      <div className={styles.content}>
-        <h2>{t("title")}</h2>
+    <header className={styles.tourHeader}>
+      <div className={`container ${styles.content}`}>
+        <h1>{t("title")}</h1>
       </div>
-    </div>
+    </header>
   );
 };
 
@@ -20,7 +22,7 @@ const TermsAndConditions = () => {
   return (
     <section className={styles.tourSection}>
       <TermsHeader />
-      <div className={styles.termsContent}>
+      <div className={`container ${styles.termsContent}`}>
         <h3>{t("privacyOverviewTitle")}</h3>
         <p>{t("privacyOverviewText")}</p>
 
@@ -85,3 +87,17 @@ const TermsAndConditions = () => {
 };
 
 export default TermsAndConditions;
+
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  const t = await getTranslations({ locale, namespace: "terms-and-conditions" });
+  return pageMetadata({
+    locale,
+    path: "/terms-and-conditions",
+    title: `${t("title")} | Boatrips`,
+    description: t("privacyOverviewText"),
+  });
+}

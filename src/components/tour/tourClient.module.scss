@@ -1,0 +1,376 @@
+@use "mixins" as *;
+
+.cover {
+  object-fit: cover;
+}
+
+/* ---------- video facade ---------- */
+.video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--c-navy);
+  box-shadow: var(--shadow-lg);
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}
+
+.videoPoster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      circle at center,
+      rgb(5 20 35 / 10%),
+      rgb(5 20 35 / 50%)
+    );
+    transition: background 0.3s;
+  }
+
+  @include hover {
+    .play {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+  }
+}
+
+.play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: clamp(64px, 8vw, 92px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--c-white);
+  color: var(--c-accent);
+  transform: translate(-50%, -50%);
+  transition: transform 0.35s var(--ease);
+  box-shadow: 0 0 0 10px rgb(255 255 255 / 25%);
+  animation: pulse 2.4s var(--ease) infinite;
+
+  svg {
+    width: 42%;
+    margin-left: 8%;
+    fill: currentColor;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(255 255 255 / 45%);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgb(255 255 255 / 0%);
+  }
+}
+
+/* ---------- gallery ---------- */
+.gallery {
+  @include reset-list;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 82%;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding-inline: var(--gutter);
+  margin-inline: calc(var(--gutter) * -1);
+  scroll-padding-inline: var(--gutter);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include up(sm) {
+    grid-auto-columns: 60%;
+  }
+
+  @include up(md) {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    aspect-ratio: 2 / 1;
+    gap: 14px;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.galleryItem {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  scroll-snap-align: start;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--c-sky);
+
+  button {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+
+    @include hover {
+      .cover {
+        transform: scale(1.06);
+      }
+    }
+  }
+
+  .cover {
+    transition: transform 0.9s var(--ease);
+  }
+
+  @include up(md) {
+    aspect-ratio: auto;
+
+    &:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
+}
+
+.galleryExtra {
+  @include up(md) {
+    display: none;
+  }
+}
+
+.galleryMore {
+  display: none;
+
+  @include up(md) {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: rgb(10 42 67 / 62%);
+    color: var(--c-white);
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    backdrop-filter: blur(2px);
+    transition: background 0.3s;
+
+    small {
+      font-family: var(--font-body);
+      font-size: var(--fs-sm);
+      font-weight: 600;
+    }
+  }
+}
+
+/* ---------- expandable text ---------- */
+.expandable {
+  position: relative;
+}
+
+.expandableBody {
+  display: grid;
+  gap: 1em;
+  color: var(--c-muted);
+  max-height: 11.5em;
+  overflow: hidden;
+
+  @include up(lg) {
+    max-height: 16em;
+  }
+}
+
+// fade only when the copy really is cut off
+.clamped {
+  mask-image: linear-gradient(to bottom, #000 65%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent);
+}
+
+.expanded {
+  max-height: none;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  color: var(--c-ocean);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+  }
+
+  @include hover {
+    color: var(--c-accent);
+  }
+}
+
+/* ---------- reviews ---------- */
+.reviews {
+  position: relative;
+}
+
+.reviewsViewport {
+  overflow: hidden;
+  margin: -12px;
+  padding: 12px;
+}
+
+.reviewsTrack {
+  @include reset-list;
+  display: flex;
+  gap: 18px;
+  touch-action: pan-y pinch-zoom;
+}
+
+.reviewSlide {
+  flex: 0 0 88%;
+  min-width: 0;
+
+  @include up(md) {
+    flex-basis: calc((100% - 18px) / 2);
+  }
+
+  @include up(lg) {
+    flex-basis: calc((100% - 36px) / 3);
+  }
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  padding: clamp(22px, 3vw, 32px);
+  border-radius: var(--radius);
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  box-shadow: var(--shadow-sm);
+
+  blockquote {
+    flex: 1;
+    color: var(--c-text);
+    font-size: var(--fs-base);
+    line-height: 1.7;
+  }
+
+  figcaption {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    strong {
+      display: block;
+      color: var(--c-navy);
+    }
+
+    small {
+      color: var(--c-muted);
+      font-size: var(--fs-xs);
+    }
+  }
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #f5b301;
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+}
+
+.avatar {
+  position: relative;
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--c-sky);
+
+  img {
+    object-fit: cover;
+  }
+}
+
+.reviewsNav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid var(--c-line);
+    background: var(--c-white);
+    color: var(--c-navy);
+    transition:
+      background 0.2s,
+      border-color 0.2s,
+      color 0.2s,
+      opacity 0.2s;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    &:not(:disabled) {
+      @include hover {
+        background: var(--c-navy);
+        border-color: var(--c-navy);
+        color: var(--c-white);
+      }
+    }
+  }
+}

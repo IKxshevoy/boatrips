@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import ToursClient from "./ToursClient";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const meta = {
   title: "All Boat Tours Lagos Portugal | Boatrips",
   description:
     "Browse all boat tours in Lagos, Portugal. Cave tours, sunset cruises, catamaran sailing, yacht charters & more along the stunning Algarve coastline.",
@@ -35,8 +36,26 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+} as const;
 
-export default function ToursPage() {
+export function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Metadata {
+  return pageMetadata({
+    locale,
+    path: "/tours",
+    title: meta.title,
+    description: meta.description,
+    keywords: [...meta.keywords],
+    ogTitle: meta.openGraph.title,
+    ogDescription: meta.openGraph.description,
+    image: "/classic/19.webp",
+    imageAlt: meta.openGraph.images[0].alt,
+  });
+}
+
+export default function Page() {
   return <ToursClient />;
 }

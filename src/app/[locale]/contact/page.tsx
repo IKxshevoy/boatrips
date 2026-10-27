@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import ContactClient from "./ContactClient";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const meta = {
   title: "Contact Boatrips | Boat Tours Lagos Portugal",
   description:
     "Get in touch with Boatrips to book a boat tour, private charter, or custom excursion in Lagos, Algarve, Portugal. We speak English, Portuguese, Spanish, French & Russian.",
@@ -29,8 +30,26 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+} as const;
 
-export default function ContactPage() {
+export function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Metadata {
+  return pageMetadata({
+    locale,
+    path: "/contact",
+    title: meta.title,
+    description: meta.description,
+    keywords: [...meta.keywords],
+    ogTitle: meta.openGraph.title,
+    ogDescription: meta.openGraph.description,
+    image: "/main.webp",
+    imageAlt: meta.openGraph.images[0].alt,
+  });
+}
+
+export default function Page() {
   return <ContactClient />;
 }

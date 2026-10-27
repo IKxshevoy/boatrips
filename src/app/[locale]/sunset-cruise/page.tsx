@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import SunsetCruiseClient from "./SunsetCruiseClient";
+import TourPage from "@/components/tour/TourPage";
+import { tours } from "@/data/tours";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const SLUG = "sunset-cruise" as const;
+
+const meta = {
   title: "Sunset Cruise Lagos | Algarve Sunset Boat Tour | Boatrips",
   description:
     "Watch the golden Algarve sunset from the sea on a romantic boat cruise in Lagos, Portugal. Perfect for couples, families and groups. Book your sunset tour today.",
@@ -37,8 +41,26 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+} as const;
 
-export default function SunsetCruisePage() {
-  return <SunsetCruiseClient />;
+export function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Metadata {
+  return pageMetadata({
+    locale,
+    path: `/${SLUG}`,
+    title: meta.title,
+    description: meta.description,
+    keywords: [...meta.keywords],
+    ogTitle: meta.openGraph.title,
+    ogDescription: meta.openGraph.description,
+    image: tours[SLUG].hero.image,
+    imageAlt: meta.openGraph.images[0].alt,
+  });
+}
+
+export default function Page() {
+  return <TourPage slug={SLUG} />;
 }

@@ -1,14 +1,29 @@
 import "./globals.scss";
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Manrope, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import { Locale } from "@/lib/locales";
 import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import Script from "next/script";
+import PageLoader from "@/components/loader/PageLoader";
+import { JsonLd, alternates } from "@/lib/seo";
+import { EMAIL, PHONE, SITE_URL } from "@/data/tours";
 
-const rubik = Rubik({ weight: "400", subsets: ["latin"] });
+const manrope = Manrope({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-manrope",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin", "latin-ext"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+  display: "swap",
+});
 
 type Props = {
   children: React.ReactNode;
@@ -19,13 +34,45 @@ type Props = {
 
 const GTM_ID = "GTM-M4B5CSKV";
 
-const RootLayout: React.FC<Props> = async (props) => {
+const organization = {
+  "@context": "https://schema.org",
+  "@type": ["TravelAgency", "LocalBusiness"],
+  "@id": `${SITE_URL}/#organization`,
+  name: "Boatrips",
+  url: SITE_URL,
+  logo: `${SITE_URL}/Logo.webp`,
+  image: `${SITE_URL}/main.webp`,
+  telephone: PHONE,
+  email: EMAIL,
+  foundingDate: "2000",
+  priceRange: "€€",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Passeio dos Descobrimentos",
+    postalCode: "8600-315",
+    addressLocality: "Lagos",
+    addressRegion: "Algarve",
+    addressCountry: "PT",
+  },
+  geo: { "@type": "GeoCoordinates", latitude: 37.1081, longitude: -8.6741 },
+  areaServed: "Algarve, Portugal",
+  sameAs: [
+    "https://www.instagram.com/boatrips/",
+    "https://www.facebook.com/boatrips.eu",
+  ],
+};
+
+const RootLayout: React.FC<Props> = async ({ children, params }) => {
   const messages = await getMessages();
 
   return (
-    <html lang="en">
+    <html
+      lang={params.locale}
+      className={`${manrope.variable} ${playfair.variable}`}
+    >
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -38,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           }}
         />
       </head>
-      <body className={rubik.className}>
+      <body>
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
@@ -47,10 +94,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             style={{ display: "none", visibility: "hidden" }}
           ></iframe>
         </noscript>
+        <JsonLd data={organization} />
+
+        <PageLoader />
 
         <NextIntlClientProvider messages={messages}>
+          <a className="skip-link" href="#main">
+            Skip to content
+          </a>
           <Navbar />
-          {props.children}
+          <main id="main">{children}</main>
           <Footer />
         </NextIntlClientProvider>
       </body>
@@ -104,10 +157,18 @@ export async function generateMetadata({
     title: t("root.metadata.title"),
     description: t("root.metadata.description"),
     keywords,
+    alternates: alternates(locale),
+    themeColor: "#0a2a43",
+    formatDetection: { telephone: true, email: true, address: false },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: { "max-image-preview": "large", "max-snippet": -1 },
+    },
     openGraph: {
       title: t("root.metadata.ogTitle"),
       description: t("root.metadata.ogDescription"),
-      url: "https://www.boatrips.eu",
+      url: `${SITE_URL}/${locale}`,
       siteName: "Boatrips",
       locale:
         locale === "pt"
@@ -120,14 +181,15 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "https://www.boatrips.eu/Logo.webp",
-          width: 600,
-          height: 600,
+          url: `${SITE_URL}/main.webp`,
+          width: 1920,
+          height: 1080,
           alt: "Boat Tours in Lagos, Algarve",
         },
       ],
     },
-    metadataBase: new URL("https://www.boatrips.eu"),
+    twitter: { card: "summary_large_image" },
+    metadataBase: new URL(SITE_URL),
     other: {
       instagram: "https://www.instagram.com/boatrips/",
       facebook: "https://www.facebook.com/boatrips.eu",

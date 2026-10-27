@@ -1,0 +1,212 @@
+@use "mixins" as *;
+
+.slider {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--c-sky);
+  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 3;
+  isolation: isolate;
+  outline: none;
+
+  &:focus-visible {
+    outline: 3px solid var(--c-accent);
+    outline-offset: 4px;
+  }
+
+  @include up(xl) {
+    aspect-ratio: 16 / 11;
+  }
+
+  // bottom scrim keeps controls legible on any photo
+  &::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 30%;
+    background: linear-gradient(to top, rgb(5 20 35 / 55%), transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+.viewport {
+  height: 100%;
+  overflow: hidden;
+  touch-action: pan-y pinch-zoom;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+}
+
+.zoom {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+  overflow: hidden;
+
+  @include hover {
+    .img {
+      transform: scale(1.04);
+    }
+  }
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+  user-select: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 88%);
+  color: var(--c-navy);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-50%);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition:
+    background 0.2s,
+    transform 0.2s var(--ease),
+    opacity 0.3s;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  @include hover {
+    background: var(--c-white);
+    transform: translateY(-50%) scale(1.08);
+  }
+
+  // on touch devices swiping is primary — keep arrows small and subtle
+  @include down(md) {
+    width: 38px;
+    height: 38px;
+    background: rgb(255 255 255 / 70%);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    opacity: 0;
+
+    .slider:hover &,
+    .slider:focus-within & {
+      opacity: 1;
+    }
+  }
+}
+
+.prev {
+  left: 14px;
+}
+
+.next {
+  right: 14px;
+}
+
+.bottom {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  pointer-events: none;
+
+  > * {
+    pointer-events: auto;
+  }
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 55%);
+  overflow: hidden;
+  transition:
+    width 0.35s var(--ease),
+    background 0.3s;
+
+  // bigger invisible hit target
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -10px -4px;
+  }
+}
+
+.dotActive {
+  width: 28px;
+  background: rgb(255 255 255 / 45%);
+
+  &:not(:has(.progress)) {
+    background: var(--c-white);
+  }
+}
+
+.progress {
+  position: absolute;
+  inset: 0;
+  background: var(--c-white);
+  transform-origin: left;
+  animation: fill linear forwards;
+}
+
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.counter {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgb(5 20 35 / 45%);
+  color: var(--c-white);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}

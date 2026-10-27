@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import YachtCruiseClient from "./YachtCruiseClient";
+import TourPage from "@/components/tour/TourPage";
+import { tours } from "@/data/tours";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const SLUG = "yacht-cruise" as const;
+
+const meta = {
   title: "Yacht Cruise Lagos | Private Sailing Tours Algarve | Boatrips",
   description:
     "Luxury yacht cruises in Lagos, Portugal. Sunset, sunrise, golden hour & full-day private yacht tours along the stunning Algarve coastline.",
@@ -42,8 +46,26 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+} as const;
 
-export default function YachtCruisePage() {
-  return <YachtCruiseClient />;
+export function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Metadata {
+  return pageMetadata({
+    locale,
+    path: `/${SLUG}`,
+    title: meta.title,
+    description: meta.description,
+    keywords: [...meta.keywords],
+    ogTitle: meta.openGraph.title,
+    ogDescription: meta.openGraph.description,
+    image: tours[SLUG].hero.image,
+    imageAlt: meta.openGraph.images[0].alt,
+  });
+}
+
+export default function Page() {
+  return <TourPage slug={SLUG} />;
 }

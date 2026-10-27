@@ -1,6 +1,6 @@
 .contact {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: #fff;
 
   .successMessage {
@@ -30,7 +30,7 @@
       width: 100%;
       max-width: 80rem;
       margin: 0 auto;
-      padding: 65px 1.5rem 0;
+      padding: calc(var(--header-h) + 40px) 1.5rem 40px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
@@ -43,14 +43,15 @@
         .contactHeading {
           h1 {
             font-weight: 600;
-            color: #000;
+            font-family: var(--font-display);
+            color: var(--c-navy);
             font-size: 3.5rem;
             line-height: 0.9;
             white-space: nowrap;
             margin-bottom: 1.2rem;
 
             span {
-              color: blue;
+              color: var(--c-accent);
             }
           }
           .text {
@@ -59,7 +60,7 @@
             font-size: 1rem;
 
             a {
-              color: blue;
+              color: var(--c-accent);
               transition: 0.3s;
             }
             a:hover {
@@ -84,9 +85,9 @@
               border: none;
               outline: none;
               border-radius: 20px;
-              color: #000;
+              color: var(--c-navy);
               font-weight: 600;
-              font-size: 0.95rem;
+              font-size: 1rem;
               border: 2px solid transparent;
               box-shadow: 0 0 0 0px hsla(208, 92%, 54%, 0.169);
               transition: 0.3s;
@@ -162,7 +163,7 @@
             .btn {
               display: inline-block;
               padding: 1.1rem 2rem;
-              background-color: hsla(208, 91%, 55%);
+              background-color: var(--c-accent);
               color: #fff;
               border-radius: 40px;
               border: none;
@@ -172,7 +173,7 @@
               transition: 0.3s;
             }
             .btn:hover {
-              background-color: rgb(21, 116, 199);
+              background-color: var(--c-ocean-700);
             }
             .upload {
               position: relative;
@@ -335,8 +336,11 @@
   }
   @media (max-width: 650px) {
     .container {
+      height: auto;
+      min-height: 100vh;
+      padding: 20px 0;
       .left {
-        padding: 50px 1.5rem 0;
+        padding: calc(var(--header-h) + 32px) 1.5rem 0;
         grid-template-columns: 1fr;
         justify-items: center;
         .formWrapper {

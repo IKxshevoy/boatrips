@@ -1,17 +1,15 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import React, { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n";
 import styles from "./navbar.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import CustomSelect from "./customSelect/CustomSelect";
+import Logo from "../../../public/Logo.webp";
 import en from "../../../public/flag/en.webp";
 import fr from "../../../public/flag/fr.webp";
 import pt from "../../../public/flag/pt.webp";
 import de from "../../../public/flag/de.webp";
-import Logo from "../../../public/Logo.webp";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
 
 const languageOptions = [
   { value: "en", label: "EN", flag: en },
@@ -20,157 +18,179 @@ const languageOptions = [
   { value: "de", label: "DE", flag: de },
 ];
 
+const BOOK_URL = "https://fareharbor.com/embeds/book/boatrips/?full-items=yes";
+
+const Chevron = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" className={styles.chevron}>
+    <path d="M6 9l6 6 6-6" />
+  </svg>
+);
+
 const Navbar: React.FC = () => {
   const t = useTranslations("navbar");
-  const [isMenuActive, setIsMenuActive] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
-  const [isSubMenuActive, setIsSubMenuActive] = useState(false);
+  const ui = useTranslations("tour_ui");
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [toursOpen, setToursOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const toursRef = useRef<HTMLLIElement>(null);
 
-  // Define links inside the component to use translations
-  const links = [
+  const tours = [
+    { name: t("ponta_da_piedade"), href: "/ponta-da-piedade-caves-cruise" },
+    { name: t("catamaran_cruise"), href: "/catamaran-cruise" },
+    { name: t("yacht_cruise"), href: "/yacht-cruise" },
+    { name: t("coastline_cruise"), href: "/ponta-da-piedade-2-hours-cruise" },
+    { name: t("benagil_cave"), href: "/benagil-caves-speed-boat-tour" },
+    { name: t("sunset_tour"), href: "/sunset-cruise" },
     {
-      id: 0,
-      title: t("home"),
-      url: "/",
+      name: t("private_ponta_da_piedade"),
+      href: "/ponta-da-piedade-caves-cruise#private-classic",
     },
-    {
-      id: 1,
-      title: t("tours"),
-      url: "/tours",
-      subMenu: [
-        { name: t("ponta_da_piedade"), href: "/ponta-da-piedade-caves-cruise" },
-        { name: t("catamaran_cruise"), href: "/catamaran-cruise" },
-        { name: t("yacht_cruise"), href: "/yacht-cruise" },
-        {
-          name: t("coastline_cruise"),
-          href: "/ponta-da-piedade-2-hours-cruise",
-        },
-        { name: t("benagil_cave"), href: "/benagil-caves-speed-boat-tour" },
-        { name: t("sunset_tour"), href: "/sunset-cruise" },
-        {
-          name: t("private_ponta_da_piedade"),
-          href: "/ponta-da-piedade-caves-cruise#private-classic",
-        },
-        { name: t("private_sunset"), href: "/sunset-cruise#private-sunset" },
-      ],
-    },
-    {
-      id: 2,
-      title: t("contact_us"),
-      url: "/contact",
-    },
+    { name: t("private_sunset"), href: "/sunset-cruise#private-sunset" },
   ];
 
   useEffect(() => {
-    setIsSticky(true);
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // close everything on navigation
+  useEffect(() => {
+    setMenuOpen(false);
+    setToursOpen(false);
   }, [pathname]);
 
   useEffect(() => {
-    const closeSubMenu = (event: MouseEvent) => {
-      const submenu = document.querySelector(`.${styles.listOfTours}`);
-      if (submenu && !submenu.contains(event.target as Node)) {
-        setIsSubMenuActive(false);
-      }
-    };
-    if (isSubMenuActive) {
-      document.addEventListener("click", closeSubMenu);
-    } else {
-      document.removeEventListener("click", closeSubMenu);
-    }
+    document.body.classList.toggle("no-scroll", menuOpen);
+    if (!menuOpen) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setMenuOpen(false);
+    window.addEventListener("keydown", onKey);
     return () => {
-      document.removeEventListener("click", closeSubMenu);
+      window.removeEventListener("keydown", onKey);
+      document.body.classList.remove("no-scroll");
     };
-  }, [isSubMenuActive]);
+  }, [menuOpen]);
 
-  const toggleMenu = () => {
-    setIsMenuActive(!isMenuActive);
-  };
+  useEffect(() => {
+    if (!toursOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (!toursRef.current?.contains(e.target as Node)) setToursOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setToursOpen(false);
+    document.addEventListener("click", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("click", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [toursOpen]);
 
-  const toggleSubMenu = () => {
-    setIsSubMenuActive(!isSubMenuActive);
-  };
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className={`${styles.header} ${isSticky ? styles.sticky : ""}`}>
-      <a className={styles.brand} href={"/"}>
-        <Image
-          src={Logo}
-          alt="logo"
-          style={{ width: "20%", height: "20%", maxWidth: "400px" }}
-        />
-      </a>
-      {isMenuActive ? (
-        <FontAwesomeIcon
-          icon={faTimes}
-          className={`${styles.menuBtn} ${styles.closeBtn} ${styles.active} ${
-            isSticky ? styles.sticky : ""
-          }`}
-          onClick={toggleMenu}
-        />
-      ) : (
-        <FontAwesomeIcon
-          icon={faBars}
-          className={`${styles.menuBtn} ${isMenuActive ? styles.active : ""} ${
-            isSticky ? styles.sticky : ""
-          }`}
-          onClick={toggleMenu}
-        />
-      )}
-      <div
-        className={`${styles.navigation} ${isMenuActive ? styles.active : ""}`}
-      >
-        <div className={styles.navigationItems}>
-          {links.map((link) => (
-            <div className={styles.wrapperMenuLink} key={link.title}>
-              <div className={styles.linkAndBtn}>
-                <a key={link.id} href={link.url} className={styles.menuLink}>
-                  {link.title}
-                </a>
-                {link.subMenu ? (
-                  <button
-                    onClick={toggleSubMenu}
-                    className={`${styles.arr} ${
-                      isSubMenuActive ? styles.active : ""
-                    }`}
-                  >
-                    &lt;
-                  </button>
-                ) : null}
-              </div>
-              {link.subMenu ? (
-                <div
-                  className={`${styles.listOfTours} ${
-                    isSubMenuActive ? styles.active : ""
-                  }`}
+    <header
+      className={`${styles.header} ${scrolled ? styles.scrolled : ""} ${
+        menuOpen ? styles.open : ""
+      }`}
+    >
+      <div className={styles.bar}>
+        <Link href="/" className={styles.brand} aria-label="Boatrips — home">
+          <Image src={Logo} alt="Boatrips" priority sizes="120px" />
+        </Link>
+
+        <nav className={styles.nav} id="site-nav" aria-label="Main">
+          <ul className={styles.links}>
+            <li>
+              <Link
+                href="/"
+                className={styles.link}
+                aria-current={isActive("/") ? "page" : undefined}
+                onClick={closeMenu}
+              >
+                {t("home")}
+              </Link>
+            </li>
+            <li
+              ref={toursRef}
+              className={`${styles.hasMenu} ${toursOpen ? styles.menuOpen : ""}`}
+            >
+              <div className={styles.linkRow}>
+                <Link
+                  href="/tours"
+                  className={styles.link}
+                  aria-current={isActive("/tours") ? "page" : undefined}
+                  onClick={closeMenu}
                 >
-                  <ul>
-                    {link.subMenu.map((tour) => (
-                      <li key={tour.name} className={styles.tourWrapper}>
-                        <a className={styles.tour} href={tour.href}>
-                          {tour.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
-              <div className={styles.underline}></div>
-            </div>
-          ))}
-          <div className={styles.languageSelector}>
+                  {t("tours")}
+                </Link>
+                <button
+                  type="button"
+                  className={styles.toggle}
+                  aria-expanded={toursOpen}
+                  aria-controls="tours-menu"
+                  aria-label={t("tours")}
+                  onClick={() => setToursOpen((v) => !v)}
+                >
+                  <Chevron />
+                </button>
+              </div>
+              <ul className={styles.dropdown} id="tours-menu">
+                {tours.map((tour) => (
+                  <li key={tour.href}>
+                    <Link
+                      href={tour.href}
+                      className={styles.dropdownLink}
+                      onClick={closeMenu}
+                    >
+                      {tour.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className={styles.link}
+                aria-current={isActive("/contact") ? "page" : undefined}
+                onClick={closeMenu}
+              >
+                {t("contact_us")}
+              </Link>
+            </li>
+          </ul>
+
+          <div className={styles.actions}>
             <CustomSelect choice={languageOptions} />
-          </div>
-          <div className={styles.bookBtn}>
             <a
+              className={styles.book}
+              href={BOOK_URL}
               target="_blank"
-              href="https://fareharbor.com/embeds/book/boatrips/?full-items=yes"
+              rel="noopener noreferrer"
             >
               {t("book_now")}
             </a>
           </div>
-        </div>
+        </nav>
+
+        <button
+          type="button"
+          className={styles.burger}
+          aria-expanded={menuOpen}
+          aria-controls="site-nav"
+          aria-label={menuOpen ? ui("close") : ui("menu")}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </div>
+      <div className={styles.backdrop} onClick={closeMenu} aria-hidden="true" />
     </header>
   );
 };

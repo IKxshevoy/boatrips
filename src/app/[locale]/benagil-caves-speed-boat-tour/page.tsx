@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import BenagilCavesClient from "./BenagilCavesClient";
+import TourPage from "@/components/tour/TourPage";
+import { tours } from "@/data/tours";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const SLUG = "benagil-caves-speed-boat-tour" as const;
+
+const meta = {
   title: "Benagil Cave Speed Boat Tour Lagos | Algarve Cave Tour | Boatrips",
   description:
     "Visit the world-famous Benagil Cave on a thrilling speed boat tour from Lagos. One of the most breathtaking sea caves in the world, on the Algarve coast.",
@@ -38,8 +42,26 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+} as const;
 
-export default function BenagilCavesPage() {
-  return <BenagilCavesClient />;
+export function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Metadata {
+  return pageMetadata({
+    locale,
+    path: `/${SLUG}`,
+    title: meta.title,
+    description: meta.description,
+    keywords: [...meta.keywords],
+    ogTitle: meta.openGraph.title,
+    ogDescription: meta.openGraph.description,
+    image: tours[SLUG].hero.image,
+    imageAlt: meta.openGraph.images[0].alt,
+  });
+}
+
+export default function Page() {
+  return <TourPage slug={SLUG} />;
 }

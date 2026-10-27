@@ -1,0 +1,32 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 50% 42%,
+    #ffffff 0%,
+    #eaf1f4 62%,
+    #dceaef 100%
+  );
+  transition:
+    opacity 0.55s ease,
+    visibility 0.55s ease;
+  /* Fail-safe: if JS never dismisses the overlay, reveal the page after 8s */
+  animation: overlayFailsafe 0.4s linear 8s forwards;
+}
+
+.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes overlayFailsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

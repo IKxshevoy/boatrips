@@ -1,129 +1,59 @@
 import React from "react";
-import styles from "./destinationCards.module.scss";
-import DestinationText from "./destinationText/DestinationText";
-import DestinationCard from "./destinationCard/DestinationCard";
 import { useTranslations } from "next-intl";
-
-const destinations_images = [
-  {
-    imageUrl: "/catamaran/14.webp",
-    price: "1200€",
-    href: "/catamaran-cruise",
-    id: 0,
-  },
-  {
-    imageUrl: "/1.webp",
-    price: "20€",
-    href: "/ponta-da-piedade-caves-cruise",
-    id: 1,
-  },
-  {
-    imageUrl: "/2.webp",
-    price: "30€",
-    href: "/ponta-da-piedade-2-hours-cruise",
-    id: 2,
-  },
-  {
-    imageUrl: "/3.webp",
-    price: "40€",
-    href: "/benagil-caves-speed-boat-tour",
-    id: 3,
-  },
-  {
-    imageUrl: "/yacht/sunrise/1.webp",
-    price: "150€",
-    href: "/yacht-cruise",
-    id: 4,
-  },
-  {
-    imageUrl: "/sunset/2.webp",
-    price: "40€",
-    href: "/sunset-cruise",
-    id: 5,
-  },
-];
-
-const keys = [
-  "catamaran_cruise",
-  "ponta_da_piedade",
-  "coastline_tour",
-  "benagil_cave",
-  "yacht_cruise",
-  "sunset_cruise",
-] as const;
+import TourCard from "@/components/tourCard/TourCard";
+import { tourCards, cardMeta } from "@/data/tourCards";
+import { Link } from "@/i18n";
+import { toParagraphs } from "@/lib/text";
+import Icon from "@/components/tour/Icon";
+import styles from "./destinationCards.module.scss";
 
 const DestinationCards = () => {
   const t = useTranslations("experiences");
-  const destinations = keys.map((key, index) => ({
-    title: t(key),
-    price: destinations_images[index].price,
-    imageUrl: destinations_images[index].imageUrl,
-    id: destinations_images[index].id,
-    href: destinations_images[index].href,
-  }));
-
-  const [startIndex, setStartIndex] = React.useState(0);
-
-  const visibleCards = [];
-  for (let i = 0; i < 4; i++) {
-    visibleCards.push(destinations[(startIndex + i) % destinations.length]);
-  }
-
-  const handleNext = () => {
-    setStartIndex((prev) => (prev + 1) % destinations.length);
-  };
-
-  const handlePrev = () => {
-    setStartIndex(
-      (prev) => (prev - 1 + destinations.length) % destinations.length
-    );
-  };
+  const tours = useTranslations("tours");
+  const ui = useTranslations("tour_ui");
+  const quote = toParagraphs(t.raw("blockquote"));
 
   return (
-    <section className={styles.gallery}>
-      <DestinationText />
-      <div className={styles.carouselWrapper}>
-        <button
-          className={styles.arrowLeft}
-          onClick={handlePrev}
-          aria-label="Previous"
-        >
-          &#8592;
-        </button>
+    <section className={styles.section} aria-labelledby="experiences-title">
+      <div className="container">
+        <div className={styles.head}>
+          <div>
+            <p className={styles.eyebrow}>Boatrips · Lagos</p>
+            <h2 className={styles.title} id="experiences-title">
+              {t("title")}
+            </h2>
+            <p className={styles.text}>{t("description")}</p>
+            <Link href="/tours" className={styles.all}>
+              {t("view_all_tours_button")}
+              <Icon name="arrowRight" size={18} />
+            </Link>
+          </div>
+          <blockquote className={styles.quote}>
+            <p>{quote[0]}</p>
+            <cite>— {t("ceo")}</cite>
+          </blockquote>
+        </div>
 
-        <ul className={styles.mobileList}>
-          {destinations.map(({ title, price, imageUrl, id, href }) => (
-            <li key={id}>
-              <DestinationCard
-                title={title}
-                imageUrl={imageUrl}
-                href={href}
-                price={price}
-              />
-            </li>
-          ))}
+        <ul className={styles.cards}>
+          {tourCards.map(({ slug, key, image }) => {
+            const meta = cardMeta(slug);
+            return (
+              <li key={slug}>
+                <TourCard
+                  href={`/${slug}`}
+                  image={image}
+                  title={tours(`${key}.title` as never)}
+                  description={tours(`${key}.description` as never)}
+                  duration={meta.duration}
+                  price={meta.price}
+                  fromLabel={ui("from")}
+                  ctaLabel={t("view_tour_button")}
+                  sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 80vw"
+                />
+              </li>
+            );
+          })}
         </ul>
-
-        <ul className={styles.desktopList}>
-          {visibleCards.map(({ title, price, imageUrl, id, href }) => (
-            <li key={id}>
-              <DestinationCard
-                title={title}
-                imageUrl={imageUrl}
-                href={href}
-                price={price}
-              />
-            </li>
-          ))}
-        </ul>
-
-        <button
-          className={styles.arrowRight}
-          onClick={handleNext}
-          aria-label="Next"
-        >
-          &#8594;
-        </button>
       </div>
     </section>
   );

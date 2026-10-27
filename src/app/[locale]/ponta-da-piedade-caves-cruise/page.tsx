@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
-import PontaDaPiedadeCavesClient from "./PontaDaPiedadeCavesClient";
+import TourPage from "@/components/tour/TourPage";
+import { tours } from "@/data/tours";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const SLUG = "ponta-da-piedade-caves-cruise" as const;
+
+const meta = {
   title: "Ponta da Piedade Caves Cruise Lagos | Sea Cave Tour Algarve | Boatrips",
   description:
     "Explore the stunning sea caves and golden rock formations of Ponta da Piedade on a boat tour from Lagos. One of the most beautiful coastlines in the Algarve.",
@@ -38,8 +42,26 @@ export const metadata: Metadata = {
       },
     ],
   },
-};
+} as const;
 
-export default function PontaDaPiedadeCavesPage() {
-  return <PontaDaPiedadeCavesClient />;
+export function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Metadata {
+  return pageMetadata({
+    locale,
+    path: `/${SLUG}`,
+    title: meta.title,
+    description: meta.description,
+    keywords: [...meta.keywords],
+    ogTitle: meta.openGraph.title,
+    ogDescription: meta.openGraph.description,
+    image: tours[SLUG].hero.image,
+    imageAlt: meta.openGraph.images[0].alt,
+  });
+}
+
+export default function Page() {
+  return <TourPage slug={SLUG} />;
 }

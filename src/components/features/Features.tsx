@@ -1,78 +1,48 @@
-import { Modal } from "@/ui-kit/modal/Modal";
-import VideoPlayer from "@/ui-kit/video/Video";
-import React, { useState } from "react";
-import styles from "./features.module.scss";
-import Feature from "./feature/Feature";
-import {
-  faThumbsUp,
-  faPeopleGroup,
-  faUserPlus,
-  faNotesMedical,
-  faDog,
-} from "@fortawesome/free-solid-svg-icons";
-import ImageBanner from "./banner/ImageBanner";
+import React from "react";
 import { useTranslations } from "next-intl";
+import Icon, { type IconName } from "@/components/tour/Icon";
+import VideoFacade from "@/components/tour/VideoFacade";
+import styles from "./features.module.scss";
 
-const benefits_icons = [
-  {
-    icon: faThumbsUp,
-    id: 0,
-  },
-  {
-    icon: faPeopleGroup,
-    id: 1,
-  },
-  {
-    icon: faUserPlus,
-    id: 2,
-  },
-  {
-    icon: faNotesMedical,
-    id: 3,
-  },
-  {
-    icon: faDog,
-    id: 4,
-  },
+const items: { key: string; icon: IconName }[] = [
+  { key: "first_feature", icon: "shield" },
+  { key: "second_feature", icon: "users" },
+  { key: "third_feature", icon: "sparkle" },
+  { key: "fourth_feature", icon: "checkCircle" },
+  { key: "fifth_feature", icon: "paw" },
 ];
-
-const keys = [
-  "first_feature",
-  "second_feature",
-  "third_feature",
-  "fourth_feature",
-  "fifth_feature",
-] as const;
 
 const Features = () => {
   const t = useTranslations("features");
 
-  const benefits = keys.map((key, index) => ({
-    title: t(`${key}.title`),
-    description: t(`${key}.description`),
-    icon: benefits_icons[index].icon,
-    id: benefits_icons[index].id,
-  }));
-
   return (
-    <section className={`${styles.features}`} aria-label="features">
-      <ImageBanner />
-      <div className={`${styles.section} ${styles.featuresContent}`}>
-        <div className={styles.container}>
-          <h2 className={styles.title}>
-            {t("why")} <span className={styles.orangeWrapper}>{t("you")}</span>{" "}
-            {t("should_go_with")}{" "}
-            <span className={styles.orangeWrapper}>{t("us")}</span>?
+    <section className={styles.features} aria-labelledby="features-title">
+      <div className={`container ${styles.grid}`}>
+        <div className={styles.intro}>
+          <h2 className={styles.title} id="features-title">
+            {t("why")} <span className={styles.accent}>{t("you")}</span>{" "}
+            {t("should_go_with")} <span className={styles.accent}>{t("us")}</span>?
           </h2>
-          <p className={styles.sectionText}>{t("description")}</p>
-          <ul>
-            {benefits.map(({ title, description, icon, id }) => (
-              <li key={id}>
-                <Feature title={title} description={description} icon={icon} />
-              </li>
-            ))}
-          </ul>
+          <p className={styles.text}>{t("description")}</p>
+          <VideoFacade
+            youtubeId="NBvS3qXCZpA"
+            poster="/coastline/4.webp"
+            title="Ponta da Piedade"
+          />
         </div>
+        <ul className={styles.list}>
+          {items.map(({ key, icon }) => (
+            <li key={key} className={styles.card}>
+              <span className={styles.icon}>
+                <Icon name={icon} size={24} />
+              </span>
+              <div>
+                <h3 className={styles.cardTitle}>{t(`${key}.title` as never)}</h3>
+                <p className={styles.cardText}>{t(`${key}.description` as never)}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

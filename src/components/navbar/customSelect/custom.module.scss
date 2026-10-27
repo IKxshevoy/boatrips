@@ -1,97 +1,120 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+@use "mixins" as *;
 
 .customWrapper {
-  margin-left: 20px;
-  .selectedLanguage {
-    position: relative;
-    cursor: pointer;
+  position: relative;
+}
+
+.selectedLanguage {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--c-line);
+  background: var(--c-white);
+  color: var(--c-navy);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+
+  img {
+    width: 20px;
+    height: 14px;
+    border-radius: 3px;
+    object-fit: cover;
+  }
+
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.25s var(--ease);
+  }
+
+  &.active svg {
+    transform: rotate(180deg);
+  }
+
+  @include hover {
+    border-color: var(--c-ocean);
+  }
+}
+
+.languageMenu {
+  @include reset-list;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 10;
+  min-width: 120px;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  box-shadow: var(--shadow-lg);
+  animation: pop 0.2s var(--ease);
+
+  button {
     display: flex;
     align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: var(--fs-sm);
+    color: var(--c-text);
+
     img {
-      width: 15px;
-      height: 10px;
-      margin-right: 2px;
+      width: 20px;
+      height: 14px;
+      border-radius: 3px;
+      object-fit: cover;
     }
-    p {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 600;
-      font-size: 1em;
-      color: #fff;
+
+    &[aria-selected="true"] {
+      color: var(--c-ocean);
+      background: var(--c-sky);
     }
-  }
-  .languageMenu {
-    position: absolute;
-    &.active {
-      margin-top: 10px;
-      padding: 2px 10px 5px 10px;
-      background-color: #fff;
-      border-left: 2px solid #166daf;
-    }
-    button {
-      display: flex;
-      align-items: center;
-      margin: 5px 0px;
-      &:hover {
-        border-bottom: 2px solid #166daf;
-        img {
-          width: 12px;
-          height: 9px;
-        }
-        p {
-          color: #166daf;
-          font-weight: 700;
-          font-size: 16px;
-        }
-      }
-      img {
-        width: 10px;
-        height: 8px;
-        margin-right: 2px;
-      }
-      p {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        font-size: 14px;
-      }
+
+    @include hover {
+      background: var(--c-foam);
     }
   }
 }
 
-@media (max-width: 1040px) {
-  .customWrapper {
-    margin-left: 0px;
-    .selectedLanguage {
-      img {
-        width: 20px;
-        height: 15px;
-        margin-right: 4px;
-      }
-      p {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 500;
-        font-size: 20px;
-        color: #166daf;
-      }
-    }
-    .languageMenu {
-      &.active {
-        margin-top: 10px;
-        padding: 6px 15px 10px 15px;
-      }
-      button {
-        margin: 20px 0px;
-        border-bottom: 2px solid #166daf;
-        img {
-          width: 20px;
-          height: 15px;
-          margin-right: 4px;
-        }
-        p {
-          color: #166daf;
-          font-weight: 700;
-          font-size: 18px;
-        }
-      }
-    }
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+
+// inside the mobile drawer: show all languages as a row of pills
+@include down(lg) {
+  .selectedLanguage {
+    width: 100%;
+    justify-content: center;
+    min-height: 50px;
+  }
+
+  .languageMenu {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 8px;
+    box-shadow: none;
+  }
+
+  .languageMenu button {
+    justify-content: center;
   }
 }

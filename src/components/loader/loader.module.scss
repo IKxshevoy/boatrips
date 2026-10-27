@@ -1,0 +1,182 @@
+$orange: #eb8d2c;
+$orange-dark: #d97b16;
+$blue: #0b5085;
+$teal: #3fb8cb;
+$gray: #a9adb1;
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* large & centred: fills the screen while keeping the aspect ratio in check */
+  width: min(94vw, 168vh, 960px);
+}
+
+.art {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* ---------- ship's wheel ---------- */
+.wheel {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 4s linear infinite;
+}
+
+.spoke {
+  stroke: $orange;
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+
+.handle {
+  stroke: $orange;
+  stroke-width: 11;
+  stroke-linecap: round;
+}
+
+.rim {
+  fill: none;
+  stroke: $orange;
+  stroke-width: 11;
+}
+
+.ring {
+  fill: none;
+  stroke: $orange;
+  stroke-width: 3.5;
+  opacity: 0.9;
+}
+
+.hub {
+  fill: $orange;
+}
+
+.hubDot {
+  fill: #fff;
+}
+
+.knob {
+  fill: $orange-dark;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- seagulls ---------- */
+.bird {
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation:
+    fly 1.1s ease-out 0.2s forwards,
+    bob 2.8s ease-in-out 1.4s infinite;
+}
+
+.birdB {
+  animation-delay: 0.5s, 1.75s;
+}
+
+@keyframes fly {
+  0% {
+    opacity: 0;
+    transform: translate(90px, -42px) scale(0.3);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ---------- waves (full-width water line at the bottom of the screen) ---------- */
+.waves {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: min(16vh, 130px);
+  display: block;
+  pointer-events: none;
+}
+
+.wave {
+  fill: $teal;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: swell 2.8s ease-in-out infinite;
+}
+
+.waveBack {
+  fill: rgba(63, 184, 203, 0.4);
+  animation-duration: 3.6s;
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* ---------- typed wordmark ---------- */
+.ink {
+  font-size: 66px;
+  fill: $blue;
+}
+
+.inkSub {
+  font-size: 44px;
+  fill: $teal;
+}
+
+.letter {
+  opacity: 0;
+  animation: type 0.18s ease forwards;
+}
+
+@keyframes type {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------- accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .wheel {
+    animation-duration: 10s;
+  }
+  .bird,
+  .wave,
+  .waveBack {
+    animation: none;
+    opacity: 1;
+  }
+  .letter {
+    animation: none;
+    opacity: 1;
+  }
+}
